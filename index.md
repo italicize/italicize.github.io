@@ -133,7 +133,7 @@ Copyright (c) 2020 Jay Martin.
 under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
 or any later version published by the Free Software Foundation; 
 with no Invariant Sections, no Front Cover Texts, and no Back-Cover Texts.
-A copy of the license is included in the section entitled "[GNU Free Documentation License](gnu-free-documentation-license.md)".
+A copy of the license is included in the section entitled "[GNU Free Documentation License](fdl-1.3.md)".
 
 Microsoft Windows is a trademark of Microsoft. All other trademarks are the property of their respective owners. 
 
