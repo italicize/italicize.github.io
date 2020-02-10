@@ -1,3 +1,6 @@
+[View My LinkedIn Profile](https://www.linkedin.com/in/jayedwardmartin)<br><br>
+
+
 # Next steps after a fresh installation of Windows 10
 
 A new computer, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include a few steps for security but most steps are personal customizations. 
