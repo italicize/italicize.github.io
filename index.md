@@ -2,7 +2,7 @@
 
 A new computer, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include a few steps for security but most steps are personal customizations. 
 
-The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > System > Display** and change the monitor settings. Close Settings (<img src='fas/times.svg' alt='X' height='12'>). 
+The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 
 ## Save a Wi-Fi password
 
@@ -12,8 +12,8 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 1. Select a network, click **Connect**, type a password, and click **Next**. 
     - If at home or work, click **Yes**. 
     - If away from home or work, click **No**.
-1. Close Settings (<img src='fas/times.svg' alt='X' height='12'>).
-1. To change the time zone, click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Time & Language**. Select a time zone. Close Settings (<img src='fas/times.svg' alt='X' height='12'>).
+1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
+1. To change the time zone, click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Time & Language**. Select a time zone. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 
 ## Turn on security
 
@@ -29,9 +29,9 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 1. Repeat these steps until you're up to date:
    1. Click **Check for updates**.
    1. When asked to restart, click **Restart**.
-1. Close Settings (<img src='fas/times.svg' alt='X' height='12'>).
+1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'> **> Downloads and updates > Get updates**.
-1. After updates finish, close Microsoft Store (<img src='fas/times.svg' alt='X' height='12'>).
+1. After updates finish, <img src='fas/times.svg' alt='X' height='12'> **Close** Microsoft Store.
 1. To check your Windows activation, visit <https://support.microsoft.com/en-us/help/12440/windows-10-activate>·
 
 ## Disable Flash and select other settings in Microsoft Edge
@@ -47,7 +47,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
    1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'> **Save**.
 1. Click <img src='fas/key.svg' alt='Key' height='12'> **Passwords & autofill**.
    1. Click "Save form data" **Off**.
-1. Close Microsoft Edge (<img src='fas/times.svg' alt='X' height='12'>).
+1. <img src='fas/times.svg' alt='X' height='12'> **Close** Microsoft Edge (<img src='fas/times.svg' alt='X' height='12'>).
 
 ## Download and install apps
 
@@ -73,7 +73,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
   - For photo viewer, choose Paint.
   - For video player, choose VLC.
   - For web browser, choose Google Chrome.
-  - Close Settings (<img src='fas/times.svg' alt='X' height='12'>).
+  - <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start**. Right-click each app and select **More > Pin to taskbar**.
    - Excel
    - Google Chrome
@@ -97,7 +97,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
 
 1. <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Ease of Access > Display**. 
    1. Click "Automatically hide scroll bars in Windows" **Off**. 
-   1. Close Settings (<img src='fas/times.svg' alt='X' height='12'>).
+   1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 1. Click **File Explorer** (the folder icon in the Windows taskbar).
 1. (?) Right-click the Documents folder and select Properties.
     1. (?) On the Customize tab, select "General items" and click OK.
