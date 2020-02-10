@@ -2,52 +2,52 @@
 
 A new computer, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include a few steps for security but most steps are personal customizations. 
 
-The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
+The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
 ## Save a Wi-Fi password
 
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Network & Internet > Wi-Fi**.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Network & Internet > Wi-Fi**.
 1. Turn Wi-Fi **On**.
 1. Click **Show available networks.**
 1. Select a network, click **Connect**, type a password, and click **Next**. 
     - If at home or work, click **Yes**. 
     - If away from home or work, click **No**.
-1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
-1. To change the time zone, click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Time & Language**. Select a time zone. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
+1. To change the time zone, click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Time & Language**. Select a time zone. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
 ## Turn on security
 
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Update & Security > Windows Security**. 
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Update & Security > Windows Security**. 
 1. Click **Open Windows Security**.
 1. Take the recommended actions for Virus & threat protection, Account protection, and the other security categories.
-    - For example, click **Virus & threat protection**. Click **Quick scan**. After the scan, take the actions recommended by Windows. If no current threats, click <img src='fas/arrow-left.svg' alt='X' height='12'> **Back**.
+    - For example, click **Virus & threat protection**. Click **Quick scan**. After the scan, take the actions recommended by Windows. If no current threats, click <img src='fas/arrow-left.svg' alt='X' height='12'>&nbsp;**Back**.
     - For example, click **Account protection**. Click **Set up**. Sign in with a Microsoft account. Verify your identity.
 
 ## Update Windows
 
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Update & Security > Windows Update**.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Update & Security > Windows Update**.
 1. Repeat these steps until you're up to date:
    1. Click **Check for updates**.
    1. When asked to restart, click **Restart**.
-1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'> **See more > Downloads and updates > Get updates**.
-1. After updates finish, <img src='fas/times.svg' alt='X' height='12'> **Close** Microsoft Store.
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'>&nbsp;**See more > Downloads and updates > Get updates**.
+1. After updates finish, <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Store.
 1. To check your Windows activation, visit <https://support.microsoft.com/en-us/help/12440/windows-10-activate>·
 
 ## Disable Flash and select other settings in Microsoft Edge
 
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start > Microsoft Edge**.
-1. Click <img src='fas/ellipsis-h.svg' alt='...' width='12'> **Settings and more >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings >** <img src='fas/sliders-h.svg' alt='Advanced' height='12'> **Advanced**. 
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start > Microsoft Edge**.
+1. Click <img src='fas/ellipsis-h.svg' alt='...' width='12'>&nbsp;**Settings and more >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings >** <img src='fas/sliders-h.svg' alt='Advanced' height='12'>&nbsp;**Advanced**. 
 1. Click "Use Adobe Flash Player" **Off** (a security recommendation).
-1. Click <img src='fas/cog.svg' alt='Settings' height='12'> **Settings**.
+1. Click <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings**.
    1. For "Open Microsoft Edge with," select **A specific page or pages**.
-   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'> **Save**.
+   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
    1. For "Open new tabs with," select **A blank page**.
    1. For "Set your home page," select **A specific page**.
-   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'> **Save**.
-1. Click <img src='fas/key.svg' alt='Key' height='12'> **Passwords & autofill**.
+   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
+1. Click <img src='fas/key.svg' alt='Key' height='12'>&nbsp;**Passwords & autofill**.
    1. Click "Save form data" **Off**.
-1. <img src='fas/times.svg' alt='X' height='12'> **Close** Microsoft Edge (<img src='fas/times.svg' alt='X' height='12'>).
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Edge (<img src='fas/times.svg' alt='X' height='12'>).
 
 ## Download and install apps
 
@@ -67,20 +67,20 @@ Install the apps you use frequently. My list of apps is only an example. To star
 
 Arrange shortcuts to apps the way you're used to. My shortcuts are only an example.
 
-1. <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Apps > Default apps**.
+1. <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Apps > Default apps**.
   - For email, choose Outlook.
   - For music player, choose VLC.
   - For photo viewer, choose Paint.
   - For video player, choose VLC.
   - For web browser, choose Google Chrome.
-  - <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start**. Right-click each app and select **More > Pin to taskbar**.
+  - <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start**. Right-click each app and select **More > Pin to taskbar**.
    - Excel
    - Google Chrome
    - Outlook
    - Word
    - Visual Studio Code
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start**. Right-click each app and select **Pin to Start**.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start**. Right-click each app and select **Pin to Start**.
    - Windows Accessories > Notepad
    - Windows Accessories > Paint
    - Windows Accessories > Snipping Tool
@@ -95,9 +95,9 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
    
 ## Customize File Explorer
 
-1. <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > Ease of Access > Display**. 
+1. <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Ease of Access > Display**. 
    1. Click "Automatically hide scroll bars in Windows" **Off**. 
-   1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
+   1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 1. Click **File Explorer** (the folder icon in the Windows taskbar).
 1. (?) Right-click the Documents folder and select Properties.
     1. (?) On the Customize tab, select "General items" and click OK.
@@ -128,7 +128,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
 
 ## Legal
 
-Copyright (c) 2020 Jay Martin. 
+Copyright (C) 2020 Jay Martin. 
 
 **Permission is granted** to copy, distribute and/or modify this document
 under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
