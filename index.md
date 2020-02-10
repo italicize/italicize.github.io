@@ -30,7 +30,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
    1. Click **Check for updates**.
    1. When asked to restart, click **Restart**.
 1. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'> **> Downloads and updates > Get updates**.
+1. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'> **See more > Downloads and updates > Get updates**.
 1. After updates finish, <img src='fas/times.svg' alt='X' height='12'> **Close** Microsoft Store.
 1. To check your Windows activation, visit <https://support.microsoft.com/en-us/help/12440/windows-10-activate>·
 
