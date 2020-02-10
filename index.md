@@ -1,9 +1,6 @@
-[View My LinkedIn Profile](https://www.linkedin.com/in/jayedwardmartin)<br><br>
-
-
 # Next steps after a fresh installation of Windows 10
 
-A new computer, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include a few steps for security but most steps are personal customizations. 
+A new computer at a new job, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include steps for security but most steps are personal customizations. 
 
 The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
