@@ -53,8 +53,8 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 
 Install the apps you use frequently. My list of apps is only an example. To start, I install Chrome, Dropbox, Visual Studio Code, and a few others. I install [other apps]() later.
 
-- Driver for a printer and scanner, such as my Brother printer, <https://www.brother-usa.com/support/dcpl2540dw>
-- Driver a mouse, such as my Logitech mouse, <https://support.logi.com/hc/en-us/articles/360025297913-Unifying-Software>
+- Driver for a mouse, such as a Logitech mouse, <https://support.logi.com/hc/en-us/articles/360025297913-Unifying-Software>
+- Driver for a printer, such as a Brother printer, <https://www.brother-usa.com/support/dcpl2540dw>
 - Company fonts or personal favorites, such as Charter, <https://practicaltypography.com/charter.html>
 - Chrome, <https://www.google.com/chrome/>, or Firefox, <https://www.mozilla.org/en-US/firefox/new/>, and sign in for your bookmarks
 - Dropbox, <https://www.dropbox.com/install>, and sign in for your files
