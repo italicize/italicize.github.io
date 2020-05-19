@@ -51,7 +51,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 
 ## Download and install apps
 
-Install the apps you use frequently. My list of apps is only an example. To start, I install Chrome, Dropbox, Visual Studio Code, and a few others. I install [other apps]() later.
+Install the apps you use frequently. My list of apps is only an example. To start, I install Chrome, Dropbox, Visual Studio Code, and a few others. 
 
 - Driver for a mouse, such as a Logitech mouse, <https://support.logi.com/hc/en-us/articles/360025297913-Unifying-Software>
 - Driver for a printer, such as a Brother printer, <https://www.brother-usa.com/support/dcpl2540dw>
