@@ -1,14 +1,14 @@
 
 
-### [Checklist for a quick proofread](/proofread_checklist)
+## [Checklist for a quick proofread](/proofread_checklist)
 
 Many problems are fixed (or confirmed absent) by a [quick proofread](/proofread_checklist) of a Word document.
 
-### [Next steps after a fresh installation of Windows 10](/windows_setup)
+## [Next steps after a fresh installation of Windows 10](/windows_setup)
 
 A new computer at a new job, or a reimaged computer, often requires [further setup](/windows_setup) of Windows 10. 
 
-### Legal
+#### Legal
 
 Copyright (C) 2020 Jay Martin. 
 
