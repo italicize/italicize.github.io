@@ -1,8 +1,8 @@
-## Checklist for a quick proofread
+# Checklist for a quick proofread
 
 Many problems are fixed (or confirmed absent) by a quick proofread of a Word document.
 
-#### Prep
+### Prep
 
 1. Save a copy of the file as received. Save another copy to edit. 
 2. Turn off Tracked Changes. 
@@ -16,7 +16,7 @@ check box for “Do not check spelling and grammar” and click OK.
 9. Search for highlighting. Click Home > Find&#9662; > Advanced Find. Clear the Find What box. 
 Click More. Click Format > Highlight. Click Find Next. 
 
-#### Content
+### Content
 
 - Confirm that the latest version of the data is in the document, such as 
 charts and tables copied from Excel. Confirm that any numbers in the 
@@ -37,7 +37,7 @@ chart, page, section, append, attach, and exhibit.
 - Proofread the captions. 
 - Check the document properties, such as title, author, and company. 
 
-#### Layout
+### Layout
 
 - Watch for long paragraphs. Read a long paragraph twice and split it, if an 
 acceptable break is obvious. Check how the change affects pagination. 
@@ -52,7 +52,21 @@ and numbers align right. To find, click Home > Find&#9662; > Go To. Select Table
 section of the document. Review every footer. Check the page numbers. 
 - Open the Styles pane and look for unfamiliar styles, accidentally pasted in. 
 
-#### Finish
+### Finish
 
 - Stop when time is up. Update the table of contents. Save the file. Move on 
 to the next step, such as sending a message about the file or making a PDF.
+
+### Legal
+
+Copyright (C) 2020 Jay Martin. 
+
+**Permission is granted** to copy, distribute and/or modify this document
+under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
+or any later version published by the Free Software Foundation; 
+with no Invariant Sections, no Front Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "[GNU Free Documentation License](fdl-1.3.md)".
+
+Microsoft Windows is a trademark of Microsoft. All other trademarks are the property of their respective owners. 
+
+<!--- --->
