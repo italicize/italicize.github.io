@@ -126,7 +126,9 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
     1. Select **Always search file names and contents (this might take several minutes)**.
 1. Click **OK**.
 
-## Legal
+---
+
+### Legal
 
 Copyright (C) 2020 Jay Martin. 
 
