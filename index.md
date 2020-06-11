@@ -1,5 +1,7 @@
 # Help for technical writers and editors
 
+Information to help technical writers and editors.
+
 ## [Checklist for a quick proofread](/proofread_checklist)
 
 Many problems are fixed (or confirmed absent) by a [quick proofread of a Word document](/proofread_checklist).
