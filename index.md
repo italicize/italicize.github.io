@@ -1,4 +1,4 @@
-
+# Help for technical writers and editors
 
 ## [Checklist for a quick proofread](/proofread_checklist)
 
@@ -8,7 +8,9 @@ Many problems are fixed (or confirmed absent) by a [quick proofread](/proofread_
 
 A new computer at a new job, or a reimaged computer, often requires [further setup](/windows_setup) of Windows 10. 
 
-#### Legal
+---
+
+### Legal
 
 Copyright (C) 2020 Jay Martin. 
 
