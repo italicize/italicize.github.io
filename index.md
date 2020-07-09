@@ -2,13 +2,13 @@
 
 Information to help technical writers and editors.
 
-## [Checklist for a quick proofread](/proofread_checklist)
-
-Many problems are fixed (or confirmed absent) by a [quick proofread of a Word document](/proofread_checklist).
-
 ## [Next steps after a fresh installation of Windows 10](/windows_setup)
 
 A new computer at a new job, or a reimaged computer, often requires [further setup of Windows 10](/windows_setup). 
+
+## [Checklist for a quick proofread](/proofread_checklist)
+
+Many problems are fixed (or confirmed absent) by a [quick proofread of a Word document](/proofread_checklist).
 
 ---
 
