@@ -2,9 +2,9 @@
 
 Information to help technical writers and editors.
 
-## [Next steps after a fresh installation of Windows 10](/windows_setup)
+## [Next steps after a fresh installation of Windows&nbsp;10](/windows_setup)
 
-A new computer at a new job, or a reimaged computer, often requires [further setup of Windows 10](/windows_setup). 
+A new computer at a new job, or a reimaged computer, often requires [further setup of Windows&nbsp;10](/windows_setup). 
 
 ## [Checklist for a quick proofread](/proofread_checklist)
 
