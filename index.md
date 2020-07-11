@@ -1,5 +1,3 @@
----
-
 # Help for technical writers and editors
 
 Information to help technical writers and editors.
