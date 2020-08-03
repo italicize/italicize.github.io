@@ -22,6 +22,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 1. Take the recommended actions for Virus & threat protection, Account protection, and the other security categories.
     - For example, click **Virus & threat protection**. Click **Quick scan**. After the scan, take the actions recommended by Windows. If no current threats, click <img src='fas/arrow-left.svg' alt='X' height='12'>&nbsp;**Back**.
     - For example, click **Account protection**. Click **Set up**. Sign in with a Microsoft account. Verify your identity.
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
 ## Update Windows
 
@@ -39,7 +40,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start > Microsoft Edge**.
 1. Click <img src='fas/ellipsis-h.svg' alt='...' width='12'>&nbsp;**Settings and more >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings >** <img src='fas/sliders-h.svg' alt='Advanced' height='12'>&nbsp;**Advanced**. 
 1. Click "Use Adobe Flash Player" **Off** (a security recommendation).
-1. Click <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings**.
+1. Click <img src='fas/cog.svg' alt='General' height='12'>&nbsp;**General**.
    1. For "Open Microsoft Edge with," select **A specific page or pages**.
    1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
    1. For "Open new tabs with," select **A blank page**.
@@ -47,7 +48,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
    1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
 1. Click <img src='fas/key.svg' alt='Key' height='12'>&nbsp;**Passwords & autofill**.
    1. Click "Save form data" **Off**.
-1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Edge (<img src='fas/times.svg' alt='X' height='12'>).
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Edge.
 
 ## Download and install apps
 
@@ -89,7 +90,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
 1. On the Windows taskbar, right-click these apps and select **Unpin from taskbar.**
     - Mail
     - Microsoft Store
-1. On the Windows desktop, right-click these shortcut and select **Delete**.
+1. On the Windows desktop, right-click these shortcuts and select **Delete**.
    - Microsoft Edge
    - Google Chrome
    
@@ -99,10 +100,6 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
    1. Click "Automatically hide scroll bars in Windows" **Off**. 
    1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 1. Click **File Explorer** (the folder icon in the Windows taskbar).
-1. (?) Right-click the Documents folder and select Properties.
-    1. (?) On the Customize tab, select "General items" and click OK.
-1. (?) Right-click the Downloads folder and select Properties.
-    1. (?) On the Customize tab, select "General items" and click OK.
 1. Click the **Documents** folder.
 1. If the ribbon is not visible, double-click **Home**.
 1. On the **View** menu, for the layout, select **Details**.
