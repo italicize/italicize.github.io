@@ -1,16 +1,17 @@
 # Make waffles
 
-Contents
-Prepare the ingredients and utensils	3
-Prepare the waffle iron	4
-Prepare the toppings	4
-Prepare the dry ingredients	5
-Prepare the wet ingredients	5
-Heat the waffle iron and oven	6
-Combine the dry and wet ingredients	6
-Bake the batter	7
-Serve the waffles	8
-Clean up	8
+Recipes, and other instructions, assume skills and context. But if a recipe included every step, it might look like these highly detailed instructions for making waffles.
+
+* [Prepare the ingredients and utensils](#prepare-the-ingredients-and-utensils)
+* [Prepare the waffle iron](#prepare-the-waffle-iron)
+* [Prepare the toppings](#prepare-the-toppings)
+* [Prepare the dry ingredients](#prepare-the-dry-ingredients)
+* [Prepare the wet ingredients](#prepare-the-wet-ingredients)
+* [Heat the waffle iron and oven](#heat-the-waffle-iron-and-oven)
+* [Combine the dry and wet ingredients](#combine-the-dry-and-wet-ingredients)
+* [Bake the batter](#bake-the-batter)
+* [Serve the waffles](#serve-the-waffles)
+* [Clean up](#clean-up)
 
 ## Prepare the ingredients and utensils
 
@@ -20,7 +21,7 @@ Before you make waffles, confirm that you have the ingredients and utensils.
 
 1. Turn on the light.
 2. Wash your hands. \
-For steps see the task "[Wash your hands]()."
+For steps see the task [Wash your hands](make_waffles).
 3. Place the ingredients and utensils in counter area A.
 
 #### Table 1: Ingredients and utensils for waffles
@@ -29,33 +30,16 @@ Where to find|Item
 :---|:---
 _Ingredients_|&nbsp;
 Refrigerator door, top shelf|butter (1 stick)
-Refrigerator middle shelf|butter dish
-&nbsp;|eggs (3)
-Refrigerator bottom shelf|carton of milk
-&nbsp;|bottle of maple syrup
-Pantry shelf 2|bag of flour
-&nbsp;|bag of sugar
-Pantry shelf 4|can of baking powder
-&nbsp;|carton of salt
+Refrigerator middle shelf|butter dish<br>eggs (3)
+Refrigerator bottom shelf|carton of milk<br>bottle of maple syrup
+Pantry shelf 2|bag of flour<br>bag of sugar
+Pantry shelf 4|can of baking powder<br>carton of salt
 _Utensils_|&nbsp;
-Brown hutch cupboard 1|large mixing bowl
-&nbsp;|medium mixing bowl
-&nbsp;|small mixing bowl
+Brown hutch cupboard 1|large mixing bowl<br>medium mixing bowl<br>small mixing bowl
 Red hutch, left side|1 quart sauce pots (2)
 Red hutch shelf|small plates (2)
-Drawer 1 (silverware drawer)|table knife
-&nbsp;|1 tablespoon measuring spoon
-&nbsp;|1 teaspoon measuring spoon
-&nbsp;|&frac12; teaspoon measuring spoon
-Drawer 2 (utensil drawer)|1 cup measuring cup
-&nbsp;|&frac12; cup measuring cup
-&nbsp;|&frac14; cup measuring cup
-&nbsp;|wire mesh strainer
-&nbsp;|wire whisk
-&nbsp;|plastic mixing spoon
-&nbsp;|plastic spatula
-&nbsp;|plastic ice cream scoop
-&nbsp;|(optional) plastic spoon with holes
+Drawer 1 (silverware drawer)|table knife<br>1 tablespoon measuring spoon<br>1 teaspoon measuring spoon<br>&frac12; teaspoon measuring spoon
+Drawer 2 (utensil drawer)|1 cup measuring cup<br>&frac12; cup measuring cup<br>&frac14; cup measuring cup<br>wire mesh strainer<br>wire whisk<br>plastic mixing spoon<br>plastic spatula<br>plastic ice cream scoop<br>(optional) plastic spoon with holes
 Drawer 3 (towel drawer)|manual egg beater
 Lower cupboard 3|waffle iron
 
@@ -77,7 +61,8 @@ The bottom side of the waffle iron has the power cord.
 Holding the plastic handle, move the upper griddle away from the lower griddle as far as it can move.
 8. If the griddles are not clean, wipe with a paper towel.
    1. Fold a paper towel in quarters.
-   1. Push a corner of the paper towel through the groves on the griddles. The paper towel soaks up the butter on the griddle.
+   1. Push a corner of the paper towel through the groves on the griddles. \
+The paper towel soaks up the butter on the griddle.
    1. Place the paper towel in the compost bin.
 
 ## Prepare the toppings
@@ -145,12 +130,14 @@ After you mix the dry ingredients, mix the wet ingredients for the batter.
    1. After five minutes, turn the burner knob to off.
 2. Separate 3 eggs.
    1. Tap the side of an egg against the inside of the small mixing bowl until the eggshell cracks.
-   1. Pull apart the ends of the eggshell and pour the egg white and egg yolk into the small mixing bowl. c) Place the eggshell in the compost bin.
+   1. Pull apart the ends of the eggshell and pour the egg white and egg yolk into the small mixing bowl.
+   1. Place the eggshell in the compost bin.
    1. Move the egg yolk to the large mixing bowl using your fingers or a plastic spoon with holes.
 3. Measure 1 cup, &frac12; cup, and &frac14; cup of milk.
    1. Open the carton of milk.
    1. Pour milk from the carton into each measuring cup.
-   1. Pour milk from the measuring cups into the large mixing bowl with the egg yolks. d) Close the carton of milk.
+   1. Pour milk from the measuring cups into the large mixing bowl with the egg yolks.
+   1. Close the carton of milk.
    1. Place the carton of milk in the refrigerator, bottom shelf.
    1. Place the measuring cups in the sink.
 4. Mix the butter, egg yolks, and milk.
@@ -165,18 +152,19 @@ Stir quickly and make forty strokes from left to right.
    1. Place the manual egg beater in the small mixing bowl.
    1. Turn the handle 150 times quickly. \
 The peaks of egg white are firm.
-   1. Tap the manual egg beater against the inside of the small mixing bowl to remove egg white. d) Place the manual egg beater in the sink.
+   1. Tap the manual egg beater against the inside of the small mixing bowl to remove egg white.
+   1. Place the manual egg beater in the sink.
 
 ## Heat the waffle iron and oven
 
-Plug in the waffle iron, use setting 6, set the oven to 200°F, and turn on the fan.
+Plug in the waffle iron, use setting 6, set the oven to 200&deg;F, and turn on the fan.
 
 After you prepare the dry ingredients and wet ingredients, turn on the waffle iron and oven.
 
 1. Plug in the waffle iron. \
 Use the power outlet in counter area B.
 2. Slide the temperature control on the waffle iron to setting 6.
-3. Set the oven temperature to 200°F.
+3. Set the oven temperature to 200&deg;F.
    1. Press **Bake** on the oven control panel.
    1. Press the down arrow repeatedly until 200 appears on the display.
    1. If a baking tray is inside the oven, remove it and place above upper cupboard 6.
@@ -200,7 +188,7 @@ Stir slowly and make 30 folds, scooping batter from the bottom to the top.
 8. Place the plastic mixing spoon in the sink.
 9. Place the plastic ice cream scoop in the large mixing bowl. \
 Lean the handle on the edge of the large mixing bowl so that the handle will not slide into the batter.
-10.Place the large mixing bowl in counter area B, next to the waffle iron.
+10. Place the large mixing bowl in counter area B, next to the waffle iron.
 
 ## Bake the batter
 
@@ -223,7 +211,7 @@ Holding the plastic handle, move the upper griddle until it touches the lower gr
    1. Check the time on the kitchen clock.
    1. After six minutes, open the waffle iron. \
 Holding the plastic handle, move the upper griddle away from the lower griddle as far as it can move. \
-**Note.** During the six minutes that the waffle is baking, you can do other tasks, such as "[Make coffee]()," "[Set the table]()," and "[Wash dishes]()."
+**Note.** During the six minutes that the waffle is baking, you can do other tasks, such as [Make coffee](make_waffles), [Set the table](make_waffles), and [Wash dishes](make_waffles).
 4. Place the waffle in the oven. \
 If someone is ready to eat, place the waffle on a plate instead.
    1. Open the oven door.
@@ -282,11 +270,27 @@ The paper towel soaks up the butter on the griddle.
    1. Press the prong end of the power cord into the plug holder.
 3. Place the waffle iron in lower cupboard 3.
 4. Clear the table. \
-For steps see "[Clear the table]()."
+For steps see [Clear the table](https://www.mechanicaledit.com/make_waffles).
 5. Wash the dishes in the sink. \
-For steps see "[Wash dishes]()."
+For steps see [Wash dishes](https://www.mechanicaledit.com/make_waffles).
 6. Wipe the counters. \
-For steps see "[Wipe counters]()."
+For steps see [Wipe counters](https://www.mechanicaledit.com/make_waffles).
 7. Sweep the floor. \
-For steps see "[Sweep the floor]()."
+For steps see [Sweep the floor](https://www.mechanicaledit.com/make_waffles).
 8. Turn off the light.
+
+---
+
+### Legal
+
+Copyright (C) 2020 Jay Martin. 
+
+**Permission is granted** to copy, distribute and/or modify this document
+under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
+or any later version published by the Free Software Foundation; 
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "[GNU Free Documentation License](fdl-1.3.md)."
+
+Microsoft Windows is a trademark of Microsoft. All other trademarks are the property of their respective owners. 
+
+<!--- --->
