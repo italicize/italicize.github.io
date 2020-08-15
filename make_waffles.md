@@ -1,6 +1,6 @@
 # Make waffles
 
-Recipes, and other instructions, assume skills and context. But if a recipe included every step, it might look like these highly detailed instructions for making waffles.
+Recipes, and other instructions, assume skills and context. But if a recipe included more of the unwritten steps, it might look like these highly detailed instructions for making waffles.
 
 * [Prepare the ingredients and utensils](#prepare-the-ingredients-and-utensils)
 * [Prepare the waffle iron](#prepare-the-waffle-iron)
