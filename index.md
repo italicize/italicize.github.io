@@ -10,6 +10,10 @@ A new computer at a new job, or a reimaged computer, often requires [further set
 
 Many problems are fixed (or confirmed absent) by a [quick proofread of a Word document](/proofread_checklist).
 
+## [Recipe with every step](/make_waffles) &#9786;
+
+If a recipe included every step, it might look like these [highly detailed instructions](/make_waffles) for making waffles.
+
 ---
 
 ### Legal
