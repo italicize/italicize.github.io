@@ -15,13 +15,13 @@ Recipes, and other instructions, assume skills and context. But if a recipe incl
 
 ## Prepare the ingredients and utensils
 
-Place the ingredients and utensils on the counter.
+&#8227;&nbsp; Place the ingredients and utensils on the counter.
 
 Before you make waffles, confirm that you have the ingredients and utensils.
 
 1. Turn on the light.
 2. Wash your hands. \
-For steps see the task [Wash your hands](make_waffles).
+For steps see the task [Wash your hands](#prepare-the-ingredients-and-utensils).
 3. Place the ingredients and utensils in counter area A.
 
 #### Table 1: Ingredients and utensils for waffles
@@ -45,7 +45,7 @@ Lower cupboard 3|waffle iron
 
 ## Prepare the waffle iron
 
-Unwind the power cord and check whether the waffle iron is clean.
+&#8227;&nbsp; Unwind the power cord and check whether the waffle iron is clean.
 
 Before you make waffles, confirm that the waffle iron is ready.
 
@@ -62,12 +62,12 @@ Holding the plastic handle, move the upper griddle away from the lower griddle a
 8. If the griddles are not clean, wipe with a paper towel.
    1. Fold a paper towel in quarters.
    1. Push a corner of the paper towel through the groves on the griddles. \
-The paper towel soaks up the butter on the griddle.
+The paper towel soaks up the butter on the griddles.
    1. Place the paper towel in the compost bin.
 
 ## Prepare the toppings
 
-Place the butter dish on the table. Place the maple syrup bottle in a sauce pot of warm water.
+&#8227;&nbsp; Place the butter dish on the table. Place the maple syrup bottle in a sauce pot of warm water.
 
 After the ingredients, utensils, and waffle iron are ready, soften the butter and warm the maple syrup.
 
@@ -84,7 +84,7 @@ Butter is in the refrigerator door, top shelf.
 
 ## Prepare the dry ingredients
 
-Measure and mix the flour, sugar, baking powder, and salt.
+&#8227;&nbsp; Measure and mix the flour, sugar, baking powder, and salt.
 
 After the ingredients, utensils, and waffle iron are ready, mix the dry ingredients for the batter.
 
@@ -115,7 +115,7 @@ Stir slowly and make fifty circular strokes.
 
 ## Prepare the wet ingredients
 
-Measure and mix the butter, milk, and egg yolks. Whip the egg whites.
+&#8227;&nbsp; Measure and mix the butter, milk, and egg yolks. Whip the egg whites.
 
 After you mix the dry ingredients, mix the wet ingredients for the batter.
 
@@ -157,7 +157,7 @@ The peaks of egg white are firm.
 
 ## Heat the waffle iron and oven
 
-Plug in the waffle iron, use setting 6, set the oven to 200&deg;F, and turn on the fan.
+&#8227;&nbsp; Plug in the waffle iron, use setting 6, set the oven to 200&deg;F, and turn on the fan.
 
 After you prepare the dry ingredients and wet ingredients, turn on the waffle iron and oven.
 
@@ -172,7 +172,7 @@ Use the power outlet in counter area B.
 
 ## Combine the dry and wet ingredients
 
-Add the dry ingredients to the wet ingredients and stir. Fold in the egg whites.
+&#8227;&nbsp; Add the dry ingredients to the wet ingredients and stir. Fold in the egg whites.
 
 After you prepare the dry ingredients and wet ingredients, combine them to make the batter.
 
@@ -192,7 +192,7 @@ Lean the handle on the edge of the large mixing bowl so that the handle will not
 
 ## Bake the batter
 
-Bake two scoops of batter on the waffle iron for six minutes at setting 6.
+&#8227;&nbsp; Bake two scoops of batter on the waffle iron for six minutes at setting 6.
 
 After you heat the waffle iron and make the batter, immediately start to bake waffles.
 
@@ -211,7 +211,7 @@ Holding the plastic handle, move the upper griddle until it touches the lower gr
    1. Check the time on the kitchen clock.
    1. After six minutes, open the waffle iron. \
 Holding the plastic handle, move the upper griddle away from the lower griddle as far as it can move. \
-**Note.** During the six minutes that the waffle is baking, you can do other tasks, such as [Make coffee](make_waffles), [Set the table](make_waffles), and [Wash dishes](make_waffles).
+**Note.** During the six minutes that the waffle is baking, you can do other tasks, such as [Make coffee](#bake-the-batter), [Set the table](#bake-the-batter), and [Wash dishes](#bake-the-batter).
 4. Place the waffle in the oven. \
 If someone is ready to eat, place the waffle on a plate instead.
    1. Open the oven door.
@@ -226,7 +226,7 @@ If someone is ready to eat, place the waffle on a plate instead.
 
 ## Serve the waffles
 
-Place the maple syrup on the table and place the waffles on plates.
+&#8227;&nbsp; Place the maple syrup on the table and place the waffles on plates.
 
 After you bake the waffles and people are ready to eat, serve the waffles.
 
@@ -247,20 +247,20 @@ Leave the small plate in the bottom of the sauce pot.
    1. Place the plate and waffle on the table.
 3. After the waffles are served, press **Clear** on the oven control panel. \
 The oven turns off.
-4. If any waffles are not eaten, place them in the compost bin.
+4. If any waffles are not eaten, place them in a plastic bag from drawer 4, and place the plastic bag in the freezer.
 5. Place the plastic spatula on the sink.
 
 ## Clean up
 
-Wipe the griddles with a paper towel, wind up the power cord, and store the waffle iron.
+&#8227;&nbsp; Wipe the griddles with a paper towel, wind up the power cord, and store the waffle iron.
 
-After people have eaten, clean the kitchen.
+After the waffles are eaten, clean the kitchen.
 
 1. Wipe the griddles with a paper towel.
    1. Open the waffle iron.
    1. Fold a paper towel in quarters.
    1. Push a corner of the paper towel through the groves on the griddles. \
-The paper towel soaks up the butter on the griddle.
+The paper towel soaks up the butter on the griddles.
    1. Close the waffle iron.
    1. If batter spilled on the outside of the waffle iron, wipe it off.
    1. Put the paper towel in the compost bin.
@@ -270,13 +270,13 @@ The paper towel soaks up the butter on the griddle.
    1. Press the prong end of the power cord into the plug holder.
 3. Place the waffle iron in lower cupboard 3.
 4. Clear the table. \
-For steps see [Clear the table](https://www.mechanicaledit.com/make_waffles).
+For steps see [Clear the table](#clean-up).
 5. Wash the dishes in the sink. \
-For steps see [Wash dishes](https://www.mechanicaledit.com/make_waffles).
+For steps see [Wash dishes](#clean-up).
 6. Wipe the counters. \
-For steps see [Wipe counters](https://www.mechanicaledit.com/make_waffles).
+For steps see [Wipe counters](#clean-up).
 7. Sweep the floor. \
-For steps see [Sweep the floor](https://www.mechanicaledit.com/make_waffles).
+For steps see [Sweep the floor](#clean-up).
 8. Turn off the light.
 
 ---
