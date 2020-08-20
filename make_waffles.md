@@ -15,7 +15,7 @@ Recipes, and other instructions, assume skills and context. But if a recipe incl
 
 ## Prepare the ingredients and utensils
 
-&#8227;&nbsp; Place the ingredients and utensils on the counter.
+<img src='fas/caret-right.svg' alt='-' height='12'> Place the ingredients and utensils on the counter.
 
 Before you make waffles, confirm that you have the ingredients and utensils.
 
@@ -45,7 +45,7 @@ Lower cupboard 3|waffle iron
 
 ## Prepare the waffle iron
 
-&#8227;&nbsp; Unwind the power cord and check whether the waffle iron is clean.
+<img src='fas/caret-right.svg' alt='-' height='12'> Unwind the power cord and check whether the waffle iron is clean.
 
 Before you make waffles, confirm that the waffle iron is ready.
 
@@ -67,7 +67,7 @@ The paper towel soaks up the butter on the griddles.
 
 ## Prepare the toppings
 
-&#8227;&nbsp; Place the butter dish on the table. Place the maple syrup bottle in a sauce pot of warm water.
+<img src='fas/caret-right.svg' alt='-' height='12'> Place the butter dish on the table. Place the maple syrup bottle in a sauce pot of warm water.
 
 After the ingredients, utensils, and waffle iron are ready, soften the butter and warm the maple syrup.
 
@@ -84,7 +84,7 @@ Butter is in the refrigerator door, top shelf.
 
 ## Prepare the dry ingredients
 
-&#8227;&nbsp; Measure and mix the flour, sugar, baking powder, and salt.
+<img src='fas/caret-right.svg' alt='-' height='12'> Measure and mix the flour, sugar, baking powder, and salt.
 
 After the ingredients, utensils, and waffle iron are ready, mix the dry ingredients for the batter.
 
@@ -115,7 +115,7 @@ Stir slowly and make fifty circular strokes.
 
 ## Prepare the wet ingredients
 
-&#8227;&nbsp; Measure and mix the butter, milk, and egg yolks. Whip the egg whites.
+<img src='fas/caret-right.svg' alt='-' height='12'> Measure and mix the butter, milk, and egg yolks. Whip the egg whites.
 
 After you mix the dry ingredients, mix the wet ingredients for the batter.
 
@@ -157,7 +157,7 @@ The peaks of egg white are firm.
 
 ## Heat the waffle iron and oven
 
-&#8227;&nbsp; Plug in the waffle iron, use setting 6, set the oven to 200&deg;F, and turn on the fan.
+<img src='fas/caret-right.svg' alt='-' height='12'> Plug in the waffle iron, use setting 6, set the oven to 200&deg;F, and turn on the fan.
 
 After you prepare the dry ingredients and wet ingredients, turn on the waffle iron and oven.
 
@@ -172,7 +172,7 @@ Use the power outlet in counter area B.
 
 ## Combine the dry and wet ingredients
 
-&#8227;&nbsp; Add the dry ingredients to the wet ingredients and stir. Fold in the egg whites.
+<img src='fas/caret-right.svg' alt='-' height='12'> Add the dry ingredients to the wet ingredients and stir. Fold in the egg whites.
 
 After you prepare the dry ingredients and wet ingredients, combine them to make the batter.
 
@@ -192,7 +192,7 @@ Lean the handle on the edge of the large mixing bowl so that the handle will not
 
 ## Bake the batter
 
-&#8227;&nbsp; Bake two scoops of batter on the waffle iron for six minutes at setting 6.
+<img src='fas/caret-right.svg' alt='-' height='12'> Bake two scoops of batter on the waffle iron for six minutes at setting 6.
 
 After you heat the waffle iron and make the batter, immediately start to bake waffles.
 
@@ -226,7 +226,7 @@ If someone is ready to eat, place the waffle on a plate instead.
 
 ## Serve the waffles
 
-&#8227;&nbsp; Place the maple syrup on the table and place the waffles on plates.
+<img src='fas/caret-right.svg' alt='-' height='12'> Place the maple syrup on the table and place the waffles on plates.
 
 After you bake the waffles and people are ready to eat, serve the waffles.
 
@@ -252,7 +252,7 @@ The oven turns off.
 
 ## Clean up
 
-&#8227;&nbsp; Wipe the griddles with a paper towel, wind up the power cord, and store the waffle iron.
+<img src='fas/caret-right.svg' alt='-' height='12'> Wipe the griddles with a paper towel, wind up the power cord, and store the waffle iron.
 
 After the waffles are eaten, clean the kitchen.
 
