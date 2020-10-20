@@ -2,12 +2,12 @@
 
 For full endorsements, see these links:
 
-- Bay Guardian Clean Slate, https://www.sfbg.com/2020/10/01/endorsements-fall-2020/
-- League of Pissed-Off Voters, https://www.theleaguesf.org/voter_guides
-- SF Tenants Union, https://sftu.org/endorsements/
-- SF Bike Coalition, https://sfbike.org/news/our-endorsements-november-3-2020-elections/
-- Sierra Club, https://www.sierraclub.org/san-francisco-bay/2020
-- SF Chronicle, https://www.sfchronicle.com/projects/2020/voter-guide/endorsements/
+- Bay Guardian Clean Slate, <https://www.sfbg.com/2020/10/01/endorsements-fall-2020/>
+- League of Pissed-Off Voters, <https://www.theleaguesf.org/voter_guides>
+- SF Tenants Union, <https://sftu.org/endorsements/>
+- SF Bike Coalition, <https://sfbike.org/news/our-endorsements-november-3-2020-elections/>
+- Sierra Club, <https://www.sierraclub.org/san-francisco-bay/2020>
+- SF Chronicle, <https://www.sfchronicle.com/projects/2020/voter-guide/endorsements/>
 
 For a comparison of those endorsements, see below. 
 
