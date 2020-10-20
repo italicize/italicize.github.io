@@ -18,6 +18,9 @@ For a comparison of those endorsements, see below.
 The descriptions of the propositions are by the Bay Guardian, such as "Prop. L, Business tax on CEO compensation."
 
 ## Candidates
+
+Biden, Pelosi, Fielder, Chiu. Boggess, Alexander, Sanchez, Fisher. Wong, Williams, Temprano, Martinez. Dufty. Ronen.
+
 - President and Vice President: Joe Biden and Kamala Harris
 - Congress, District 12: No endorsement (The Chronicle says Nancy Pelosi.)
 - State Senate, District 11: Jackie Fielder (The Chronicle says Scott Wiener.)
@@ -40,6 +43,10 @@ For candidates in other districts, see the links to the full endorsements.
 - Anita Martinez (The SF Tenants Union says Han Zou instead. The Chronicle says Jeanette Quick instead.)
 
 ## State propositions
+
+14-No.* 15-Yes. 16-Yes. 17-Yes. 18-Yes. 19-No.* 20-No. 21-Yes. 22-No. 23-No.* 24-No. 25-Yes.* \
+\* Some progressives differ on 14, 19, 23, and 25. Moderates agree with progressives on all but 21 and 22.
+
 - Prop. 14, Stem Cell bonds: No (The SF Tenants Union says Yes.)
 - Prop. 15, Commercial real estate taxes: Yes
 - Prop. 16, Affirmative Action: Yes
@@ -49,11 +56,14 @@ For candidates in other districts, see the links to the full endorsements.
 - Prop. 20, Restrictions on parole: No
 - Prop. 21, Rent control: Yes (The Chronicle says No.)
 - Prop. 22, Uber and Lyft bailout: No (The Chronicle says Yes.)
-- Prop. 23, Dialysis clinics: NO (The League of Pissed-Off Voters says Yes.)
+- Prop. 23, Dialysis clinics: No (The League of Pissed-Off Voters says Yes.)
 - Prop. 24, Consumer Privacy Laws: No
 - Prop. 25, Bail: Yes (The League of Pissed-Off Voters says No.)
 
 ## City propositions
+
+A to L and RR&mdash;no on H and yes on others. Some progressives differ on H and RR.
+
 - Prop. A, Homeless and Parks Bond: Yes
 - Prop. B, Sanitation and Streets Commission: Yes (The Chronicle says No.)
 - Prop. C, Removing citizenship requirement for local commissions: Yes (The Chronicle says No.)
