@@ -15,7 +15,7 @@ For a comparison of those endorsements, see below.
 - Prop. B says "Yes (The Chronicle says No.)" because the Bay Guardian and other progressive groups said yes, and only the Chronicle said no. 
 - Prop. H is one to look at more closely, because other progressive groups said no but the SF Bike Coalition said yes. 
 
-The descriptions of the propositions are by the Bay Guardian, such as "Business tax on CEO compensation."
+The descriptions of the propositions are by the Bay Guardian, such as "Prop. L, Business tax on CEO compensation."
 
 ## Candidates
 - President and Vice President: Joe Biden and Kamala Harris
@@ -52,7 +52,6 @@ For candidates in other districts, see the links to the full endorsements.
 - Prop. 23, Dialysis clinics: NO (The League of Pissed-Off Voters says Yes.)
 - Prop. 24, Consumer Privacy Laws: No
 - Prop. 25, Bail: Yes (The League of Pissed-Off Voters says No.)
-- Measure RR, Caltrain sales tax: Yes (The Bay Guardian took no position.)
 
 ## City propositions
 - Prop. A, Homeless and Parks Bond: Yes
@@ -67,3 +66,4 @@ For candidates in other districts, see the links to the full endorsements.
 - Prop. J, Parcel Tax for SF Schools: Yes
 - Prop. K, Affordable Housing: Yes
 - Prop. L, Business tax on CEO compensation: Yes (The Chronicle says No.)
+- Prop. RR, Caltrain sales tax: Yes (The Bay Guardian took no position.)
