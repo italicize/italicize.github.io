@@ -45,7 +45,7 @@ For candidates in other districts, see the links to the full endorsements.
 
 ## State propositions
 
-14-No.* 15-Yes. 16-Yes. 17-Yes. 18-Yes. 19-No.* 20-No. 21-Yes. 22-No. 23-No.* 24-No. 25-Yes.* \
+14-No.\* 15-Yes. 16-Yes. 17-Yes. 18-Yes. 19-No.\* 20-No. 21-Yes. 22-No. 23-No.\* 24-No. 25-Yes.* \
 \* Some progressives differ on 14, 19, 23, and 25. Moderates agree with progressives on all but 21 and 22.
 
 - Prop. 14, Stem Cell bonds: No (The SF Tenants Union and Bay Area Reporter say Yes.)
