@@ -4,7 +4,7 @@ A new computer at a new job, or a reimaged computer, often requires further setu
 
 The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
-The first step is often to adjust an external monitor. Click **<img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;Start > <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;Settings > System > Display** and change the monitor settings. **<img src='fas/times.svg' alt='X' height='12'>&nbsp;Close** Settings.
+The first step is often to adjust an external monitor. Click **<img src='fab/windows.svg' alt='Windows' height='12'>Start > <img src='fas/cog.svg' alt='Settings' height='12'>Settings > System > Display** and change the monitor settings. **<img src='fas/times.svg' alt='X' height='12'>Close** Settings.
 
 ## Save a Wi-Fi password
 
