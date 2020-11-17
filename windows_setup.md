@@ -82,11 +82,10 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
    - Word
    - Visual Studio Code
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start**. Right-click each app and select **Pin to Start**.
-   - Windows Accessories > Notepad
    - Windows Accessories > Paint
    - Windows Accessories > Snipping Tool
-   - What others?  
-- Open Notepad. Select **Format > Word Wrap**. Close Notepad.
+   - Windows Accessories > Notepad
+   - Open Notepad. Select **Format > Word Wrap**. Close Notepad.
 1. On the Windows taskbar, right-click these apps and select **Unpin from taskbar.**
     - Mail
     - Microsoft Store
@@ -113,7 +112,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
     1. Select **Show hidden files, folders, and drives**.
     1. Deselect **Hide extensions for known file types**.
     1. Deselect **Hide folder merge conflicts**.
-    1. Leave selected **Hide protected operating system files (Recommended)** (a security recommendation which disallows some bad behavior by viruses, according to <https://www.howtogeek.com/228076/how-to-configure-folder-options-in-windows-10/>).
+    1. Leave selected **Hide protected operating system files (Recommended)**, which disallows some bad behavior by viruses, according to [Chris Stobing](https://www.howtogeek.com/228076/how-to-configure-folder-options-in-windows-10/).
     1. Deselect **Use check boxes to select items**.
     1. Select **Expand to open folder**.
     1. Click **Apply to Folders**.
