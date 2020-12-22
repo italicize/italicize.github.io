@@ -1,6 +1,6 @@
 # Next steps after a fresh installation of Windows 10
 
-A new computer at a new job, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include steps for security but most steps are personal customizations. 
+A new computer at a new job, or a reimaged computer, often requires further setup, such as connecting to Wi-Fi, turning on Windows security, and updating Windows. My fix-ups include steps for security, but most steps are personal customizations. 
 
 The first step is often to adjust an external monitor. Click <img src='fab/windows.svg' alt='Windows' height='12'> **Start >** <img src='fas/cog.svg' alt='Settings' height='12'> **Settings > System > Display** and change the monitor settings. <img src='fas/times.svg' alt='X' height='12'> **Close** Settings.
 
@@ -22,7 +22,7 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 1. Take the recommended actions for Virus & threat protection, Account protection, and the other security categories.
     - For example, click **Virus & threat protection**. Click **Quick scan**. After the scan, take the actions recommended by Windows. If no current threats, click <img src='fas/arrow-left.svg' alt='X' height='12'>&nbsp;**Back**.
     - For example, click **Account protection**. Click **Set up**. Sign in with a Microsoft account. Verify your identity.
-1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
+1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Windows Security and <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 
 ## Update Windows
 
@@ -78,6 +78,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start**. Right-click each app and select **More > Pin to taskbar**.
    - Excel
    - Google Chrome
+   - Microsoft Teams
    - Outlook
    - Word
    - Visual Studio Code
@@ -112,7 +113,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
     1. Select **Show hidden files, folders, and drives**.
     1. Deselect **Hide extensions for known file types**.
     1. Deselect **Hide folder merge conflicts**.
-    1. Leave selected **Hide protected operating system files (Recommended)**, which disallows some bad behavior by viruses, according to [Chris Stobing](https://www.howtogeek.com/228076/how-to-configure-folder-options-in-windows-10/).
+    1. Select **Hide protected operating system files (Recommended)**, which disallows some bad behavior by viruses, according to [Chris Stobing](https://www.howtogeek.com/228076/how-to-configure-folder-options-in-windows-10/).
     1. Deselect **Use check boxes to select items**.
     1. Select **Expand to open folder**.
     1. Click **Apply to Folders**.
