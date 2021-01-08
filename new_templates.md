@@ -1,9 +1,11 @@
-###  Open a document without styles
+# Make a new Word template
+
+##  Open a document without styles
 
 1. Type **winword /a /w** in the Windows taskbar and press **Enter**. \
-<span style='font-size:small; color:darkgray;'>&#128712; The /a switch opens Word without opening your Normal template, which might have custom styles. The /w switch opens a new blank document. For more info see [Command-line switches for Microsoft Office products](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6).</span>
+<span style='font-size:small;'>&#128712; <span style='color:darkgray;'>The /a switch opens Word without opening your Normal template, which might have custom styles. The /w switch opens a new blank document. For more info see [Command-line switches for Microsoft Office products](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6).</span></span>
 
-### Set the style defaults
+## Set the style defaults
 
 1. Click the **Design** menu. 
 1. Click **Fonts** and click **Customize Fonts**. 
@@ -19,8 +21,8 @@ For a test, type Garamond With Gill Sans.
 1. Click the **Manage Styles** button (the third button at the bottom of the Styles pane).
 1. Click the **Set Defaults** tab of the Manage Styles dialog. 
     1. Select the font for tables: \
-    &bullet; To use the same font as body text, select **+Body**. \
-    &bullet; To use the same font as headings, select **+Headings**. \
+    &bull; To use the same font as body text, select **+Body**. \
+    &bull; To use the same font as headings, select **+Headings**. \
 For a test, select +Headings.
     1. Select the size for tables. \
 For a test, select 8. 
@@ -34,7 +36,7 @@ For a test, leave the default, Multiple at 1.08.
     1. Checkmark **Kerning for fonts** and select **8** points. 
     1. Click **OK**. Click **OK** again.
 
-### Define a new table style
+## Define a new table style
 
 1. Click the **New Style** button (in the lower-left corner of the Styles pane).
 1. Type a name. \
@@ -82,7 +84,7 @@ For a test, click the top-border and bottom-border buttons.
         1. Click **OK**.
 1. Click **OK**.
 
-###  Save the new table style as the default
+##  Save the new table style as the default
 
 1. Click the **Insert** menu.
 1. Click **Table** and select a **3x3 Table** (or larger). \
