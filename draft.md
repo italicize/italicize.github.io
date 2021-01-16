@@ -366,9 +366,9 @@ Sub sctApplySpecs()
                         ElseIf Right(strSpec, 4) = "font" Then
                             If Right(strSpec, 11) = "bullet font" _
                                 Or Right(strSpec, 11) = "number font" Then
-                                strSpec = Left(strSpec, Len(strSpec) - 13)
+                                strSpec = Left(strSpec, Len(strSpec) - 12)
                             Else
-                                strSpec = Left(strSpec, Len(strSpec) - 6)
+                                strSpec = Left(strSpec, Len(strSpec) - 5)
                             End If
                             If strSpec = "Body" Or strSpec = "Headings" Then
                                 strSpec = "+" & strSpec
@@ -445,8 +445,8 @@ Sub sctApplySpecs()
                     Next lngA
                 End If
             Next objListParagraph
-'Stop
-'lngA = 2: ? arrList(lngA, 1) & ", " & arrList(lngA, 2) & ", " & arrList(lngA, 3) & ", " & arrList(lngA, 4) & ", " & arrList(lngA, 5) & ", " & arrList(lngA, 6) & ", " & arrList(lngA, 7) & ", " & arrList(lngA, 8) & ", " & arrList(lngA, 9) & ", " & arrList(lngA, 10) & ", " & arrList(lngA, 11) & ", " & arrList(lngA, 12) & ", " & arrList(lngA, 13) & ", " & arrList(lngA, 14) & ", " & arrList(lngA, 15) & ", " & arrList(lngA, 16) & ", " & arrList(lngA, 17) & ", " & arrList(lngA, 18) & ", " & arrList(lngA, 19) & ", " & arrList(lngA, 20)
+Stop
+'lngA = 2: Print arrList(lngA, 1) & ", " & arrList(lngA, 2) & ", " & arrList(lngA, 3) & ", " & arrList(lngA, 4) & ", " & arrList(lngA, 5) & ", " & arrList(lngA, 6) & ", " & arrList(lngA, 7) & ", " & arrList(lngA, 8) & ", " & arrList(lngA, 9) & ", " & arrList(lngA, 10) & ", " & arrList(lngA, 11) & ", " & arrList(lngA, 12) & ", " & arrList(lngA, 13) & ", " & arrList(lngA, 14) & ", " & arrList(lngA, 15) & ", " & arrList(lngA, 16) & ", " & arrList(lngA, 17) & ", " & arrList(lngA, 18) & ", " & arrList(lngA, 19) & ", " & arrList(lngA, 20)
             
             'Adds the list template if it doesn't exist.
             If Not sctStyleExists(strList, ActiveDocument) Then
