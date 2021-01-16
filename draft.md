@@ -132,7 +132,7 @@ Sub sctApplySpecs()
     Dim objParagraph As Paragraph, objListParagraph As Paragraph
     Dim arrSpecs As Variant, strSpec As String, dblSpec As Double
     Dim arrStyles As Variant, lngStyles As Long, strStyle As String
-    Dim arrList As Variant, strList As String
+    Dim arrList As Variant, strList As String, objListTemplate As ListTemplate
     Dim rngSearch As Range, rngFound As Range
     Dim lngA As Long, lngB As Long
 '    Dim dblBodyTextIndent As Double, dblBodyTextWidth As Double
@@ -207,7 +207,7 @@ Sub sctApplySpecs()
         ElseIf Right(arrSpecs(0), 11) = "list styles" _
             Or Right(arrSpecs(0), 13) = "list template" Then
             'Saves the list template name.
-            strList = Left(arrSpecs(0), InStr(arrSpecs(0), "list styles") - 2)
+            strList = Left(arrSpecs(0), InStr(arrSpecs(0), " list ") - 1)
             'Saves the style names and defaults in an array (_, 1).
             ReDim Preserve arrSpecs(9)
             ReDim arrList(1 To 9, 1 To 20)
@@ -445,15 +445,18 @@ Sub sctApplySpecs()
                     Next lngA
                 End If
             Next objListParagraph
-Stop
+'Stop
 'lngA = 2: Print arrList(lngA, 1) & ", " & arrList(lngA, 2) & ", " & arrList(lngA, 3) & ", " & arrList(lngA, 4) & ", " & arrList(lngA, 5) & ", " & arrList(lngA, 6) & ", " & arrList(lngA, 7) & ", " & arrList(lngA, 8) & ", " & arrList(lngA, 9) & ", " & arrList(lngA, 10) & ", " & arrList(lngA, 11) & ", " & arrList(lngA, 12) & ", " & arrList(lngA, 13) & ", " & arrList(lngA, 14) & ", " & arrList(lngA, 15) & ", " & arrList(lngA, 16) & ", " & arrList(lngA, 17) & ", " & arrList(lngA, 18) & ", " & arrList(lngA, 19) & ", " & arrList(lngA, 20)
             
             'Adds the list template if it doesn't exist.
-            If Not sctStyleExists(strList, ActiveDocument) Then
-                ActiveDocument.ListTemplates.Add True, strList
+            If sctStyleExists(strList, ActiveDocument) Then
+                Set objListTemplate = ActiveDocument.ListTemplates(strList)
+            Else
+                Set objListTemplate = _
+                    ActiveDocument.ListTemplates.Add(True, strList)
             End If
             'Applies the list template specifications.
-            With ActiveDocument.ListTemplates(strList)
+            With objListTemplate
                 For lngA = 1 To 9
                     With .ListLevels(lngA)
                         .NumberFormat = arrList(lngA, 2)
@@ -482,6 +485,7 @@ Stop
                     End With
                 Next lngA
             End With
+            Set objListTemplate = Nothing
 'Margins'
 '-------'Sets the margins.
         ElseIf arrSpecs(0) = "Margins" Then
@@ -542,7 +546,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
         strSpec = arrSpecs(lngA)
         
         With ActiveDocument.Styles(strStyle)
-            If Left(strSpec, 9) = "based on " Then '------------ based on style
+            If Left(strSpec, 8) = "based on" Then '------------- based on style
                 strSpec = Right(strSpec, Len(strSpec) - 9)
                 If strSpec = "no style" Then
                     .BaseStyle = ""
@@ -550,7 +554,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                     And strStyle <> "Default Paragraph Font" Then
                     .BaseStyle = strSpec
                 End If
-            ElseIf Left(strSpec, 12) = "followed by " Then '--- following style
+            ElseIf Left(strSpec, 11) = "followed by" Then '---- following style
                 strSpec = Right(strSpec, Len(strSpec) - 12)
                 If Right(strSpec, 6) = " style" Then
                     strSpec = Left(strSpec, Len(strSpec) - 6)
