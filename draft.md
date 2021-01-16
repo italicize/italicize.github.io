@@ -1,80 +1,126 @@
 # Sample specifications
 
-Margins, 2" left, 2" right, 0.5" top, 0.5" bottom, 0.25" header, 0.25" footer.  
-Styles gallery, Body Text, List Bullet, List Number, List Continue, Heading 1, Heading 2, Heading 3, Heading 4, Caption.  
-Defaults for all defined styles, Body font, 11 pt size, 1.15 line spacing, 0 pt before, 0 pt after, 0" left indent, 0" right indent, left aligned, based on no style, followed by Body Text, normal character spacing, kerning.  
-Normal style, defaults.  
-Body Text style, 6 pt after, 0.5" left indent.  
+Copy and paste these specifications into your document, then make changes.
 
-Heading 1 style, Headings font, bold, #2D415A (blue) color, 16 pt size, 12 pt before, 6 pt after, keep with next, page break before.  
-Heading 2 style, Body font, bold, #2D415A (blue) color, uppercase, 12 pt size, 12 pt before, 6 pt after, keep with next.  
-Heading 3 style, Body font, bold, #2D415A (blue) color, uppercase, 10 pt size, 12 pt before, 6 pt after, 0.5" left indent, keep with next.  
-Heading 4 style, Body font, bold, #2D415A (blue) color, 0.5" left indent, keep with next.  
-Heading 5 style, Body font, italic, 6 pt after, 0.5" left indent, keep with next.  
-TOC Heading style, based on Heading 1.  
 
-Title style, Headings font, bold, #F8F8F8 (gray) color, 42 pt size, 1.03 line spacing. 
-Subtitle style, Headings font, #F8F8F8 (gray) color, 24 pt size, 1.03 line spacing.  
+## General settings
 
-List Bullet style, 6 pt after, indents from the list template.  
-List Number style, 6 pt after, indents from the list template.  
-List Continue style, 6 pt after, indents from the list template.  
+**Margins**, 0.5" left, 0.5" right, 0.5" top, 0.5" bottom, 0.25" header, 0.25" footer.
 
-Header style, Body font italic, #2D415A (blue) color, 10 pt size, no tabs, bottom border.  
-Footer style, Body font, #2D415A (blue) color, 10 pt size, centered tab, right tab, top border.  
-Caption style, Headings font, #2D415A (blue) color, 10 pt size, 6 pt after, 0.5" left indent.  
-Quote style, italic, 0.75" left indent.  
+**Styles** gallery, Body Text, List Bullet, List Number, List Continue, Heading 1, Heading 2, Heading 3, Heading 4, Caption.
 
-Rev Table Body Left style, 9 pt size, align left.  
-Rev Table Body Center style, based on Rev Table Body Left, align center.  
-Rev Table Body Right style, based on Rev Table Body Left, align right.  
-Rev Table Head style, bold, uppercase, 8 pt size, align center.  
-Rev Table Head Left style, based on Rev Table Head, align left.  
-Rev Table Head Right style, based on Rev Table Head, align right.  
+**Defaults** for all defined styles, Body font, 11 pt size, 1.15 line spacing, 0 pt before, 0 pt after, 0" left indent, 0" right indent, left aligned, based on no style, followed by Body Text, normal character spacing, kerning.
 
-Overemphasis style, new character style, bold, italic, uppercase.  
+**Normal** style, defaults.
 
-ListBullets list styles, List Bullet, List Bullet 2, List Bullet 3, List Bullet 4, List Bullet 5.  
-ListBullets bullets, • bullet, ◦ bullet, ▪ bullet, ▫ bullet, ∙ bullet.  
-ListBullets bullet defaults, Segoe UI font, #2D415A (blue) color, tab after bullet.  
-List Bullet style, 0.5" bullet indent, 0.75" text indent, 6 pt after, space between, followed by List Bullet.  
-List Bullet 2 style, 0.75" bullet indent, 1" text indent, 6 pt after, space between, followed by List Bullet 2.  
-List Bullet 3 style, 1" bullet indent, 1.25" text indent, 6 pt after, no space between, followed by List Bullet 3.  
-List Bullet 4 style, 1.25" bullet indent, 1.5" text indent, 6 pt after, no space between, followed by List Bullet 4.  
-List Bullet 5 style, 1.5" bullet indent, 1.75" text indent, 6 pt after, no space between, followed by List Bullet 5.  
-(End of ListBullets)  
+**Body Text** style, 6 pt after, 0.5" left indent.
 
-ListContinues list styles, List Continue, List Continue 2, List Continue 3, List Continue 4, List Continue 5.  
-ListContinues defaults, tabs only, no bullets.  
-List Continue style, 0.5" bullet indent, 0.75" text indent, 6 pt after, space between, followed by List Bullet.  
-List Continue 2 style, 0.75" bullet indent, 1" text indent, 6 pt after, space between, followed by List Bullet 2.  
-List Continue 3 style, 1" bullet indent, 1.25" text indent, 6 pt after, no space between, followed by List Bullet 3.  
-List Continue 4 style, 1.25" bullet indent, 1.5" text indent, 6 pt after, no space between, followed by List Bullet 4.  
-List Continue 5 style, 1.5" bullet indent, 1.75" text indent, 6 pt after, no space between, followed by List Bullet 5.  
-(End of ListContinues)  
 
-ListHeadingsToNumbers list styles, Heading 1, Heading 2, Heading 3, Heading 4, List Number, List Number 2, List Number 3, List Number 4, List Number 5.  
-ListHeadingsToNumbers numbers,
-"%1. " arabic number,
-"%1.%2. " arabic number,
-"" number,
-"" number,
-"%5." arabic number,
-"%6." lowercase letter,
-"%7." lowercase roman numeral,
-"%8." uppercase letter,
-"%9." uppercase roman numeral.  
-ListHeadingsToNumbers number defaults, default font, default color, tab after number.  
-Heading 1 style, 0" number indent, 0.5" text indent.  
-Heading 2 style, 0" number indent, 0.5" text indent.  
-Heading 3 style, 0" number indent, 0.5" text indent.  
-Heading 4 style, 0" number indent, 0.5" text indent.  
-List Number style, 0.5" number indent, 0.75" text indent, 6 pt after, space between, followed by List Number.  
-List Number 2 style, 0.75" number indent, 1" text indent, 6 pt after, space between, followed by List Number 2.  
-List Number 3 style, 1" number indent, 1.25" text indent, 6 pt after, no space between, followed by List Number 3.  
-List Number 4 style, 1.25" number indent, 1.5" text indent, 6 pt after, no space between, followed by List Number 4.  
-List Number 5 style, 1.5" number indent, 1.75" text indent, 6 pt after, no space between, followed by List Number 5.  
-(End of ListHeadingsToNumbers)  
+## Heading styles
+
+**Heading 1** style, Headings font, bold, #2D415A (blue) color, 16 pt size, 12 pt before, 6 pt after, keep with next, page break before.
+
+**Heading 2** style, Body font, bold, #2D415A (blue) color, uppercase, 12 pt size, 12 pt before, 6 pt after, keep with next.
+
+**Heading 3** style, Body font, bold, #2D415A (blue) color, uppercase, 10 pt size, 12 pt before, 6 pt after, 0.5" left indent, keep with next.
+
+**Heading 4** style, Body font, bold, #2D415A (blue) color, 0.5" left indent, keep with next.
+
+**Heading 5** style, Body font, italic, 6 pt after, 0.5" left indent, keep with next.
+
+**TOC Heading** style, based on Heading 1.
+
+
+## Other styles
+
+**Header** style, Body font italic, #2D415A (blue) color, 10 pt size, no tabs, bottom border.
+
+**Footer** style, Body font, #2D415A (blue) color, 10 pt size, centered tab, right tab, top border.
+
+**Caption** style, Headings font, #2D415A (blue) color, 10 pt size, 6 pt after, 0.5" left indent.
+
+**Title** style, Headings font, bold, #F8F8F8 (gray) color, 42 pt size, 1.03 line spacing.
+
+**Subtitle** style, Headings font, #F8F8F8 (gray) color, 24 pt size, 1.03 line spacing.
+
+
+## Bullet list
+
+**ListBullets** list styles, List Bullet, List Bullet 2, List Bullet 3, List Bullet 4, List Bullet 5.
+
+ListBullets bullets, • bullet, ◦ bullet, ▪ bullet, ▫ bullet, ∙ bullet.
+
+ListBullets bullet defaults, Segoe UI font, #2D415A (blue) color, tab after bullet.
+
+**List Bullet** style, 0.5" bullet indent, 0.75" text indent, 6 pt after, space between, followed by List Bullet.
+
+**List Bullet 2** style, 0.75" bullet indent, 1" text indent, 6 pt after, space between, followed by List Bullet 2.
+
+**List Bullet 3** style, 1" bullet indent, 1.25" text indent, 6 pt after, no space between, followed by List Bullet 3.
+
+**List Bullet 4** style, 1.25" bullet indent, 1.5" text indent, 6 pt after, no space between, followed by List Bullet 4.
+
+**List Bullet 5** style, 1.5" bullet indent, 1.75" text indent, 6 pt after, no space between, followed by List Bullet 5.
+
+(End of ListBullets)
+
+
+## List without bullets
+
+**ListContinues** list styles, List Continue, List Continue 2, List Continue 3, List Continue 4, List Continue 5.
+
+ListContinues defaults, tabs only, no bullets.
+
+**List Continue** style, 0.5" bullet indent, 0.75" text indent, 6 pt after, space between, followed by List Bullet.
+
+**List Continue 2** style, 0.75" bullet indent, 1" text indent, 6 pt after, space between, followed by List Bullet 2.
+
+**List Continue 3** style, 1" bullet indent, 1.25" text indent, 6 pt after, no space between, followed by List Bullet 3.
+
+**List Continue 4** style, 1.25" bullet indent, 1.5" text indent, 6 pt after, no space between, followed by List Bullet 4.
+
+**List Continue 5** style, 1.5" bullet indent, 1.75" text indent, 6 pt after, no space between, followed by List Bullet 5.
+
+(End of ListContinues)
+
+
+## Heading List
+
+**ListHeadingsToNumbers** list styles, Heading 1, Heading 2, Heading 3, Heading 4, List Number, List Number 2, List Number 3, List Number 4, List Number 5.
+
+ListHeadingsToNumbers numbers,  
+"%1. " arabic number,  
+"%1.%2. " arabic number,  
+"" number,  
+"" number,  
+"%5." arabic number,  
+"%6." lowercase letter,  
+"%7." lowercase roman numeral,  
+"%8." uppercase letter,  
+"%9." uppercase roman numeral.
+
+ListHeadingsToNumbers number defaults, default font, default color, tab after number.
+
+**Heading 1** style, 0" number indent, 0.5" text indent.
+
+**Heading 2** style, 0" number indent, 0.5" text indent.
+
+**Heading 3** style, 0" number indent, 0.5" text indent.
+
+**Heading 4** style, 0" number indent, 0.5" text indent.
+
+**List Number** style, 0.5" number indent, 0.75" text indent, 6 pt after, space between, followed by List Number.
+
+**List Number 2** style, 0.75" number indent, 1" text indent, 6 pt after, space between, followed by List Number 2.
+
+**List Number 3** style, 1" number indent, 1.25" text indent, 6 pt after, no space between, followed by List Number 3.
+
+**List Number 4** style, 1.25" number indent, 1.5" text indent, 6 pt after, no space between, followed by List Number 4.
+
+**List Number 5** style, 1.5" number indent, 1.75" text indent, 6 pt after, no space between, followed by List Number 5.
+
+(End of ListHeadingsToNumbers)
+
 
 # Code
 
