@@ -101,13 +101,13 @@ ListHeadingsToNumbers numbers,
 
 ListHeadingsToNumbers number defaults, default font, default color, tab after number.
 
-**Heading 1** style, 0&quot; number indent, 0.5&quot; text indent.
+**Heading 1**  style, 0&quot; number indent, 0.5&quot; text indent.
 
-**Heading 2** style, 0&quot; number indent, 0.5&quot; text indent.
+**Heading 2**  style, 0&quot; number indent, 0.5&quot; text indent.
 
-**Heading 3** style, 0&quot; number indent, 0.5&quot; text indent.
+**Heading 3**  style, 0&quot; number indent, 0.5&quot; text indent.
 
-**Heading 4** style, 0&quot; number indent, 0.5&quot; text indent.
+**Heading 4**  style, 0&quot; number indent, 0.5&quot; text indent.
 
 **List Number** style, 0.5&quot; number indent, 0.75&quot; text indent, 6 pt after, space between, followed by List Number.
 
@@ -258,7 +258,9 @@ Sub sctApplySpecs()
                 
                 'If a line says "end of," stops looking at lines.
                 If Left(arrSpecs(0), 7) = "(End of" _
-                    Or Left(arrSpecs(0), 6) = "End of" Then
+                    Or Left(arrSpecs(0), 6) = "End of" _
+                    Or Left(arrSpecs(0), 7) = "(end of" _
+                    Or Left(arrSpecs(0), 6) = "end of" Then
                     Exit For
                 
                 'If a line has bullets, saves bullets (_, 2) and style (_, 4).
@@ -330,23 +332,21 @@ Sub sctApplySpecs()
                             Or strSpec = "no numbers and bullets" _
                             Or strSpec = "no bullets and numbers" _
                             Or strSpec = "no numbers or bullets" _
-                            Or strSpec = "no bullets or numbers" _
-                            Then
+                            Or strSpec = "no bullets or numbers" Then
                             For lngB = 1 To 9
                                 arrList(lngB, 2) = ""
                                 arrList(lngB, 4) = wdListNumberStyleNone
                             Next lngB
-                        End If
                         'Saves whether a tab or space follows (_, 3).
-                        If strSpec = "only tabs" Then strSpec = "tabs"
-                        If strSpec = "tabs" Or strSpec = "tabs only" _
+                        ElseIf strSpec = "tabs" _
+                            Or strSpec = "tabs only" Or strSpec = "only tabs" _
                             Or Right(strSpec, 12) = "after bullet" _
                             Or Right(strSpec, 14) = "follows bullet" _
                             Or Right(strSpec, 12) = "after number" _
-                            Or Right(strSpec, 14) = "follows number" _
-                            Then
+                            Or Right(strSpec, 14) = "follows number" Then
                             If Split(strSpec, " ")(0) = "one" _
-                                Or Split(strSpec, " ")(0) = "a" Then
+                                Or Split(strSpec, " ")(0) = "a" _
+                                Or Split(strSpec, " ")(0) = "only" Then
                                 strSpec = Split(strSpec, " ")(1)
                             Else
                                 strSpec = Split(strSpec, " ")(0)
@@ -355,8 +355,7 @@ Sub sctApplySpecs()
                                 dblSpec = wdTrailingTab
                             ElseIf strSpec = "space" Then
                                 dblSpec = wdTrailingSpace
-                            ElseIf strSpec = "nothing" _
-                                Or strSpec = "no" Then
+                            ElseIf strSpec = "nothing" Or strSpec = "no" Then
                                 dblSpec = wdTrailingNone
                             End If
                             For lngB = 1 To 9
@@ -379,51 +378,27 @@ Sub sctApplySpecs()
                         'Saves the bold spec (_, 12).
                         ElseIf strSpec = "bold bullet" _
                             Or strSpec = "bold bullets" _
-                            Or strSpec = "bold italic bullet" _
-                            Or strSpec = "bold italic bullets" _
-                            Or strSpec = "italic bold bullet" _
-                            Or strSpec = "italic bold bullets" _
-                            Or strSpec = "bold and italic bullet" _
-                            Or strSpec = "bold and italic bullets" _
-                            Or strSpec = "italic and bold bullet" _
-                            Or strSpec = "italic and bold bullets" _
                             Or strSpec = "bold number" _
-                            Or strSpec = "bold numbers" _
-                            Or strSpec = "bold italic number" _
-                            Or strSpec = "bold italic numbers" _
-                            Or strSpec = "italic bold number" _
-                            Or strSpec = "italic bold numbers" _
-                            Or strSpec = "bold and italic number" _
-                            Or strSpec = "bold and italic numbers" _
-                            Or strSpec = "italic and bold number" _
-                            Or strSpec = "italic and bold numbers" _
-                            Then
+                            Or strSpec = "bold numbers" Then
                             For lngB = 1 To 9
                                 arrList(lngB, 12) = True
                             Next lngB
                         'Saves the italic spec (_, 13).
-                        ElseIf strSpec = "italic bullet" _
-                            Or strSpec = "italic bullets" _
-                            Or strSpec = "bold italic bullet" _
-                            Or strSpec = "bold italic bullets" _
-                            Or strSpec = "italic bold bullet" _
-                            Or strSpec = "italic bold bullets" _
-                            Or strSpec = "bold and italic bullet" _
-                            Or strSpec = "bold and italic bullets" _
-                            Or strSpec = "italic and bold bullet" _
-                            Or strSpec = "italic and bold bullets" _
-                            Or strSpec = "italic number" _
-                            Or strSpec = "italic numbers" _
-                            Or strSpec = "bold italic number" _
+                        ElseIf strSpec = "italic number" _
+                            Or strSpec = "italic numbers" Then
+                            For lngB = 1 To 9
+                                arrList(lngB, 13) = True
+                            Next lngB
+                        ElseIf strSpec = "bold italic number" _
                             Or strSpec = "bold italic numbers" _
                             Or strSpec = "italic bold number" _
                             Or strSpec = "italic bold numbers" _
                             Or strSpec = "bold and italic number" _
                             Or strSpec = "bold and italic numbers" _
                             Or strSpec = "italic and bold number" _
-                            Or strSpec = "italic and bold numbers" _
-                            Then
+                            Or strSpec = "italic and bold numbers" Then
                             For lngB = 1 To 9
+                                arrList(lngB, 12) = True
                                 arrList(lngB, 13) = True
                             Next lngB
                         'Saves the color (_, 14).
@@ -447,10 +422,10 @@ Sub sctApplySpecs()
                     strStyle = Left(strStyle, InStr(strStyle, "style") - 2)
                     For lngA = 1 To UBound(arrSpecs)
                         strSpec = arrSpecs(lngA)
+                        dblSpec = Val(strSpec)
                         'Saves the bullet or number indent (_, 5).
                         If Right(strSpec, 13) = "bullet indent" _
                             Or Right(strSpec, 13) = "number indent" Then
-                            dblSpec = Split(strSpec, """")(0)
                             For lngB = 1 To 9
                                 If arrList(lngB, 1) = strStyle Then
                                     arrList(lngB, 5) = dblSpec
@@ -459,7 +434,6 @@ Sub sctApplySpecs()
                             Next lngB
                         'Saves the text indent (_, 7).
                         ElseIf Right(strSpec, 11) = "text indent" Then
-                            dblSpec = Split(strSpec, """")(0)
                             For lngB = 1 To 9
                                 If arrList(lngB, 1) = strStyle Then
                                     arrList(lngB, 7) = dblSpec
@@ -503,42 +477,32 @@ Sub sctApplySpecs()
                         .ResetOnHigher = (lngA - 1)
                         .StartAt = 1
                         .LinkedStyle = arrList(lngA, 1)
-                        'The linked style name must be after the indents.
+                        'The linked style name must be set after the indents.
                     End With
                 Next lngA
             End With
 'Margins'
 '-------'Sets the margins.
         ElseIf arrSpecs(0) = "Margins" Then
-            With ActiveDocument.PageSetup
-                For lngA = 1 To UBound(arrSpecs)
-                    strSpec = arrSpecs(lngA)
+            For lngA = 1 To UBound(arrSpecs)
+                strSpec = arrSpecs(lngA)
+                dblSpec = Val(arrSpecs(lngA))
+                With ActiveDocument.PageSetup
                     If InStr(strSpec, "left") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
                         .LeftMargin = InchesToPoints(dblSpec)
-                    End If
-                    If InStr(strSpec, "right") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
+                    ElseIf InStr(strSpec, "right") <> 0 Then
                         .RightMargin = InchesToPoints(dblSpec)
-                    End If
-                    If InStr(strSpec, "top") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
+                    ElseIf InStr(strSpec, "top") <> 0 Then
                         .TopMargin = InchesToPoints(dblSpec)
-                    End If
-                    If InStr(strSpec, "bottom") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
+                    ElseIf InStr(strSpec, "bottom") <> 0 Then
                         .BottomMargin = InchesToPoints(dblSpec)
-                    End If
-                    If InStr(strSpec, "header") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
+                    ElseIf InStr(strSpec, "header") <> 0 Then
                         .HeaderDistance = InchesToPoints(dblSpec)
-                    End If
-                    If InStr(strSpec, "footer") <> 0 Then
-                        dblSpec = Left(strSpec, InStr(strSpec, """") - 1)
+                    ElseIf InStr(strSpec, "footer") <> 0 Then
                         .FooterDistance = InchesToPoints(dblSpec)
                     End If
-                Next lngA
-            End With
+                End With
+            Next lngA
 'Gallery'
 '-------'Customizes the quick styles gallery.
         ElseIf arrSpecs(0) = "Styles gallery" Then
@@ -577,28 +541,27 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
         strSpec = arrSpecs(lngA)
         
         With ActiveDocument.Styles(strStyle)
-            If Left(strSpec, 8) = "based on" Then '------------ based on style
+            If Left(strSpec, 8) = "based on" Then '------------- based on style
                 strSpec = Right(strSpec, Len(strSpec) - 9)
                 If strSpec = "no style" Then
-                    strSpec = ""
-                End If
-                If strStyle <> "Normal" _
+                    .BaseStyle = ""
+                ElseIf strStyle <> "Normal" _
                     And strStyle <> "Default Paragraph Font" Then
                     .BaseStyle = strSpec
                 End If
-            End If
-            If Left(strSpec, 11) = "followed by" Then '------- following style
+            ElseIf Left(strSpec, 11) = "followed by" Then '---- following style
                 strSpec = Right(strSpec, Len(strSpec) - 12)
+                If Right(strSpec, 6) = " style" Then
+                    strSpec = Left(strSpec, Len(strSpec) - 6)
+                End If
                 .NextParagraphStyle = strSpec
-            End If
-            If strSpec = "space between" _
+            ElseIf strSpec = "space between" _
                 Or strSpec = "add space between" _
                 Or strSpec = "space between paragraphs of the same style" _
                 Or strSpec = "add space between paragraphs of the same style" _
                 Then '------------------------------------------ space between
                 .NoSpaceBetweenParagraphsOfSameStyle = False
-            End If
-            If strSpec = "no space between" _
+            ElseIf strSpec = "no space between" _
                 Or strSpec = "no space between paragraphs of the same style" _
                 Or strSpec = "don't add space between paragraphs" _
                 Or strSpec = "don't add space between paragraphs of the same" _
@@ -608,36 +571,27 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
         End With
         
         With ActiveDocument.Styles(strStyle).Font
-            If Right(strSpec, 4) = "font" Then '------------------- font
+            If Right(strSpec, 4) = "font" Then '-------------------------- font
                 strSpec = Left(strSpec, Len(strSpec) - 5)
                 If strSpec = "Body" Or strSpec = "Headings" Then
                     strSpec = "+" & strSpec
                 End If
                 .Name = strSpec
-            End If
-            If Right(strSpec, 4) = "size" Then '------------------- size
-                dblSpec = Split(strSpec, " ")(0)
-                .Size = dblSpec
-            End If
-            If strSpec = "bold" Then '----------------------------- bold
-            .Bold = True
-            End If
-            If strSpec = "not bold" Or strSpec = "no bold" Then
-            .Bold = False
-            End If
-            If strSpec = "italic" Then '------------------------- italic
+            ElseIf Right(strSpec, 4) = "size" Then '---------------------- size
+                .Size = Val(strSpec)
+            ElseIf strSpec = "bold" Then '-------------------------------- bold
+                .Bold = True
+            ElseIf strSpec = "not bold" Or strSpec = "no bold" Then
+                .Bold = False
+            ElseIf strSpec = "italic" Then '---------------------------- italic
                 .Italic = True
-            End If
-            If strSpec = "not italic" Or strSpec = "no italic" Then
+            ElseIf strSpec = "not italic" Or strSpec = "no italic" Then
                 .Italic = False
-            End If
-            If strSpec = "small caps" Then '----------------- small caps
+            ElseIf strSpec = "small caps" Then '-------------------- small caps
                 .SmallCaps = False
-            End If
-            If strSpec = "uppercase" Or strSpec = "all caps" Then ' caps
+            ElseIf strSpec = "uppercase" Or strSpec = "all caps" Then '--- caps
                 .AllCaps = False
-            End If
-            If Right(strSpec, 5) = "color" Then '----------------- color
+            ElseIf Right(strSpec, 5) = "color" Then '-------------------- color
                 strSpec = Split(strSpec, " ")(0)
                 If Left(strSpec, 1) = "#" Then
                     strSpec = Right(strSpec, Len(strSpec) - 1)
@@ -646,45 +600,37 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                     & Left(strSpec, 2)
                 dblSpec = Val("&H" & strSpec)
                 .Color = dblSpec
-            End If
-            If strSpec = "normal character spacing" Then 'letter spacing
+            ElseIf strSpec = "normal character spacing" Then '-- letter spacing
                 .Spacing = 0
-            End If
-            If strSpec = "kerning" Then '----------------------- kerning
+            ElseIf strSpec = "kerning" Then '-------------------------- kerning
                 .Kerning = 8
-            End If
-            If strSpec = "no kerning" Then
+            ElseIf strSpec = "no kerning" Then
                 .Kerning = 0
             End If
         End With
         
         If lngType = wdStyleTypeParagraph Then
             With ActiveDocument.Styles(strStyle).ParagraphFormat
-                If Right(strSpec, 11) = "left indent" Then '---- left indent
+                If Right(strSpec, 11) = "left indent" Then '------- left indent
                     dblSpec = Split(strSpec, """")(0)
                     .LeftIndent = InchesToPoints(dblSpec)
-                End If
-                If Right(strSpec, 12) = "right indent" Then '-- right indent
+                ElseIf Right(strSpec, 12) = "right indent" Then '- right indent
                     dblSpec = Split(strSpec, """")(0)
                     .RightIndent = InchesToPoints(dblSpec)
-                End If
-                If Right(strSpec, 6) = "before" _
-                    And strSpec <> "page break before" Then '-- space before
+                ElseIf Right(strSpec, 6) = "before" _
+                    And strSpec <> "page break before" Then '----- space before
                     dblSpec = Split(strSpec, " ")(0)
                     .SpaceBefore = dblSpec
-                End If
-                If Right(strSpec, 5) = "after" Then '----------- space after
+                ElseIf Right(strSpec, 5) = "after" Then '---------- space after
                     dblSpec = Split(strSpec, " ")(0)
                     .SpaceAfter = dblSpec
-                End If
-                If Right(strSpec, 12) = "line spacing" Then '-- line spacing
+                ElseIf Right(strSpec, 12) = "line spacing" Then '- line spacing
                     dblSpec = Split(strSpec, " ")(0)
                     .LineSpacingRule = wdLineSpaceMultiple
                     .LineSpacing = LinesToPoints(dblSpec)
-                End If
-                If strSpec = "left aligned" Or strSpec = "centered" _
+                ElseIf strSpec = "left aligned" Or strSpec = "centered" _
                     Or strSpec = "right aligned" Or strSpec = "justified" _
-                    Then '---------------------------------------- alignment
+                    Then '------------------------------------------- alignment
                     If strSpec = "left aligned" Then
                         dblSpec = wdAlignParagraphLeft
                     ElseIf strSpec = "centered" Then
@@ -695,39 +641,38 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                         dblSpec = wdAlignParagraphJustify
                     End If
                     .Alignment = dblSpec
-                End If
-                If strSpec = "widow/orphan control" _
+                ElseIf strSpec = "widow/orphan control" _
+                    Or strSpec = "orphan/widow control" _
+                    Or strSpec = "widow and orphan control" _
+                    Or strSpec = "orphan and widow control" _
                     Or strSpec = "widow control" _
-                    Or strSpec = "orphan control" Then '------ widow control
+                    Or strSpec = "orphan control" Then '--------- widow control
                     .WidowControl = True
-                End If
-                If strSpec = "no widow/orphan control" _
+                ElseIf strSpec = "no widow/orphan control" _
+                    Or strSpec = "no orphan/widow control" _
+                    Or strSpec = "no widow and orphan control" _
+                    Or strSpec = "no orphan and widow control" _
+                    Or strSpec = "no widow or orphan control" _
+                    Or strSpec = "no orphan or widow control" _
                     Or strSpec = "no widow control" _
                     Or strSpec = "no orphan control" Then
                     .WidowControl = False
-                End If
-                If strSpec = "keep with next" Then '--------- keep with next
+                ElseIf strSpec = "keep with next" Then '-------- keep with next
                     .KeepWithNext = True
-                End If
-                If strSpec = "don't keep with next" _
+                ElseIf strSpec = "don't keep with next" _
                     Or strSpec = "do not keep with next" Then
                     .KeepWithNext = False
-                End If
-                If strSpec = "keep together" _
-                    Or strSpec = "keep lines together" _
-                    Then '------------------------------ keep lines together
+                ElseIf strSpec = "keep lines together" _
+                    Or strSpec = "keep together" Then '---- keep lines together
                     .KeepTogether = True
-                End If
-                If strSpec = "don't keep together" _
+                ElseIf strSpec = "don't keep together" _
                     Or strSpec = "don't keep lines together" _
                     Or strSpec = "do not keep together" _
                     Or strSpec = "do not keep lines together" Then
                     .KeepTogether = False
-                End If
-                If strSpec = "page break before" Then '--- page break before
+                ElseIf strSpec = "page break before" Then '-- page break before
                     .PageBreakBefore = True
-                End If
-                If strSpec = "no page break before" Then
+                ElseIf strSpec = "no page break before" Then
                     .PageBreakBefore = False
                 End If
             End With
@@ -735,17 +680,17 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
     Next lngA
 End Sub
 
-Private Function sctStyleExists(ByVal styleToTest As String, _
-    ByVal docToTest As Word.Document) As Boolean
+Private Function sctStyleExists(ByVal strStyle As String, _
+    ByVal objDocument As Word.Document) As Boolean
 'Source: http://www.vbaexpress.com/forum/showthread.php?15259-Solved-How-to-check-if-a-Word-Style-exists
 'Source: https://roxtonlabs.blogspot.com/2015/09/vba-test-if-style-exists-in-word.html
-    Dim testStyle As Word.Style, listStyle As Word.ListTemplate
+    Dim objStyle As Word.Style, objListTemplate As Word.ListTemplate
     On Error Resume Next
-    Set testStyle = docToTest.Styles(styleToTest)
-    sctStyleExists = Not testStyle Is Nothing
+    Set objStyle = objDocument.Styles(strStyle)
+    sctStyleExists = Not objStyle Is Nothing
     If Not sctStyleExists Then
-        Set listStyle = docToTest.ListTemplates(styleToTest)
-        sctStyleExists = Not listStyle Is Nothing
+        Set objListTemplate = objDocument.ListTemplates(strStyle)
+        sctStyleExists = Not objListTemplate Is Nothing
     End If
 End Function
 ```
