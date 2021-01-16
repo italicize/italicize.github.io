@@ -1,6 +1,6 @@
 # Sample specifications
 
-Copy and paste these specifications into your document, then make changes.
+Note, Copy and paste these specifications into your document, then make changes.
 
 
 ## General settings
@@ -16,7 +16,7 @@ Normal style, defaults.
 Body Text style, 6 pt after, 0.5&quot; left indent.
 
 
-## Heading styles
+## Heading style settings
 
 Heading 1 style, Headings font, bold, #2D415A (blue) color, 16 pt size, 12 pt before, 6 pt after, keep with next, page break before.
 
@@ -31,7 +31,7 @@ Heading 5 style, Body font, italic, 6 pt after, 0.5&quot; left indent, keep with
 TOC Heading style, based on Heading 1.
 
 
-## Other styles
+## Other style settings
 
 Header style, Body font italic, #2D415A (blue) color, 10 pt size, no tabs, bottom border.
 
@@ -44,7 +44,7 @@ Title style, Headings font, bold, #F8F8F8 (gray) color, 42 pt size, 1.03 line sp
 Subtitle style, Headings font, #F8F8F8 (gray) color, 24 pt size, 1.03 line spacing.
 
 
-## Bullet list
+## Bullet list settings
 
 ListBullets list styles, List Bullet, List Bullet 2, List Bullet 3, List Bullet 4, List Bullet 5.
 
@@ -62,10 +62,10 @@ List Bullet 4 style, 1.25&quot; bullet indent, 1.5&quot; text indent, 6 pt after
 
 List Bullet 5 style, 1.5&quot; bullet indent, 1.75&quot; text indent, 6 pt after, no space between, followed by List Bullet 5.
 
-(End of ListBullets)
+End of ListBullets.
 
 
-## List without bullets
+## List without bullets settings
 
 ListContinues list styles, List Continue, List Continue 2, List Continue 3, List Continue 4, List Continue 5.
 
@@ -81,10 +81,10 @@ List Continue 4 style, 1.25&quot; bullet indent, 1.5&quot; text indent, 6 pt aft
 
 List Continue 5 style, 1.5&quot; bullet indent, 1.75&quot; text indent, 6 pt after, no space between, followed by List Bullet 5.
 
-(End of ListContinues)
+End of ListContinues.
 
 
-## Heading List
+## Heading list settings
 
 ListHeadingsToNumbers list styles, Heading 1, Heading 2, Heading 3, Heading 4, List Number, List Number 2, List Number 3, List Number 4, List Number 5.
 
@@ -119,45 +119,7 @@ List Number 4 style, 1.25&quot; number indent, 1.5&quot; text indent, 6 pt after
 
 List Number 5 style, 1.5&quot; number indent, 1.75&quot; text indent, 6 pt after, no space between, followed by List Number 5.
 
-(End of ListHeadingsToNumbers)
-
-
-## Heading List
-
-**ListHeadingsToNumbers** list styles, Heading 1, Heading 2, Heading 3, Heading 4, List Number, List Number 2, List Number 3, List Number 4, List Number 5.
-
-ListHeadingsToNumbers numbers,  
-&quot;%1. &quot; arabic number,  
-&quot;%1.%2. &quot; arabic number,  
-&quot;&quot; number,  
-&quot;&quot; number,  
-&quot;%5.&quot; arabic number,  
-&quot;%6.&quot; lowercase letter,  
-&quot;%7.&quot; lowercase roman numeral,  
-&quot;%8.&quot; uppercase letter,  
-&quot;%9.&quot; uppercase roman numeral.
-
-ListHeadingsToNumbers number defaults, default font, default color, tab after number.
-
-**Heading 1**  style, 0&quot; number indent, 0.5&quot; text indent.
-
-**Heading 2**  style, 0&quot; number indent, 0.5&quot; text indent.
-
-**Heading 3**  style, 0&quot; number indent, 0.5&quot; text indent.
-
-**Heading 4**  style, 0&quot; number indent, 0.5&quot; text indent.
-
-**List Number** style, 0.5&quot; number indent, 0.75&quot; text indent, 6 pt after, space between, followed by List Number.
-
-**List Number 2** style, 0.75&quot; number indent, 1&quot; text indent, 6 pt after, space between, followed by List Number 2.
-
-**List Number 3** style, 1&quot; number indent, 1.25&quot; text indent, 6 pt after, no space between, followed by List Number 3.
-
-**List Number 4** style, 1.25&quot; number indent, 1.5&quot; text indent, 6 pt after, no space between, followed by List Number 4.
-
-**List Number 5** style, 1.5&quot; number indent, 1.75&quot; text indent, 6 pt after, no space between, followed by List Number 5.
-
-(End of ListHeadingsToNumbers)
+End of ListHeadingsToNumbers.
 
 
 # Code
@@ -295,10 +257,9 @@ Sub sctApplySpecs()
                 arrSpecs = Split(strSpec, ", ")
                 
                 'If a line says "end of," stops looking at lines.
-                If Left(arrSpecs(0), 7) = "(End of" _
-                    Or Left(arrSpecs(0), 6) = "End of" _
-                    Or Left(arrSpecs(0), 7) = "(end of" _
-                    Or Left(arrSpecs(0), 6) = "end of" Then
+                If Lcase(Left(arrSpecs(0), 4)) = "end." _
+                    Or Lcase(Left(arrSpecs(0), 7)) = "end," _
+                    Or Lcase(Left(arrSpecs(0), 6)) = "end " Then
                     Exit For
                 
                 'If a line has bullets, saves bullets (_, 2) and style (_, 4).
@@ -321,7 +282,7 @@ Sub sctApplySpecs()
                 ElseIf arrSpecs(0) = strList & " numbers" Then
                     ReDim Preserve arrSpecs(9)
                     For lngA = 1 To 9
-                        strSpec = arrSpecs(lngA)
+                        strSpec = LCase(arrSpecs(lngA))
                         If strSpec = "no number" _
                             Or strSpec = "no numbers" _
                             Or strSpec = "" Then
