@@ -453,7 +453,7 @@ Sub sctApplySpecs()
                 Set objListTemplate = ActiveDocument.ListTemplates(strList)
             Else
                 Set objListTemplate = _
-                    ActiveDocument.ListTemplates.Add(True, strList)
+                    ActiveDocument.ListTemplates.Add(True, CStr(strList))
             End If
             'Applies the list template specifications.
             With objListTemplate
