@@ -542,7 +542,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
         strSpec = arrSpecs(lngA)
         
         With ActiveDocument.Styles(strStyle)
-            If Left(strSpec, 8) = "based on" Then '------------- based on style
+            If Left(strSpec, 9) = "based on " Then '------------ based on style
                 strSpec = Right(strSpec, Len(strSpec) - 9)
                 If strSpec = "no style" Then
                     .BaseStyle = ""
@@ -550,7 +550,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                     And strStyle <> "Default Paragraph Font" Then
                     .BaseStyle = strSpec
                 End If
-            ElseIf Left(strSpec, 11) = "followed by" Then '---- following style
+            ElseIf Left(strSpec, 12) = "followed by " Then '--- following style
                 strSpec = Right(strSpec, Len(strSpec) - 12)
                 If Right(strSpec, 6) = " style" Then
                     strSpec = Left(strSpec, Len(strSpec) - 6)
