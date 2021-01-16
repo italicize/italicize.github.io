@@ -5,9 +5,9 @@ Copy and paste these specifications into your document, then make changes.
 
 ## General settings
 
-**Margins**, 0.5" left, 0.5" right, 0.5" top, 0.5" bottom, 0.25" header, 0.25" footer.
+**Margins,** 0.5" left, 0.5" right, 0.5" top, 0.5" bottom, 0.25" header, 0.25" footer.
 
-**Styles** gallery, Body Text, List Bullet, List Number, List Continue, Heading 1, Heading 2, Heading 3, Heading 4, Caption.
+**Styles gallery,** Body Text, List Bullet, List Number, List Continue, Heading 1, Heading 2, Heading 3, Heading 4, Caption.
 
 **Defaults** for all defined styles, Body font, 11 pt size, 1.15 line spacing, 0 pt before, 0 pt after, 0" left indent, 0" right indent, left aligned, based on no style, followed by Body Text, normal character spacing, kerning.
 
