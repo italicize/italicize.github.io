@@ -48,7 +48,7 @@ Subtitle style, Headings font, #F8F8F8 (gray) color, 24 pt size, 1.03 line spaci
 
 ListBullets list styles, List Bullet, List Bullet 2, List Bullet 3, List Bullet 4, List Bullet 5.
 
-ListBullets bullets, • bullet, ◦ bullet, ▪ bullet, ▫ bullet, ∙ bullet.
+ListBullets bullets, &#8226; bullet, &#9702; bullet, &#9642; bullet, &#9643; bullet, &#8729; bullet.
 
 ListBullets bullet defaults, Segoe UI font, #2D415A (blue) color, tab after bullet.
 
