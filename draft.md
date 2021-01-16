@@ -290,15 +290,6 @@ Sub sctApplySpecs()
                             arrList(lngA, 2) = ""
                             arrList(lngA, 4) = wdListNumberStyleNone
                         Else
-                            strSpec = Split(strSpec, " ")(0)
-                            'Removes quotation marks.
-                            If Left(strSpec, 1) = """" Then
-                                strSpec = Right(strSpec, Len(strSpec) - 1)
-                            End If
-                            If Right(strSpec, 1) = """" Then
-                                strSpec = Left(strSpec, Len(strSpec) - 1)
-                            End If
-                            arrList(lngA, 2) = strSpec
                             'Saves the number style (_, 4).
                             dblSpec = wdListNumberStyleArabic
                             If InStr(strSpec, "uppercase roman") <> 0 Then
@@ -313,6 +304,16 @@ Sub sctApplySpecs()
                                 dblSpec = wdListNumberStyleLegal
                             End If
                             arrList(lngA, 4) = dblSpec
+                            'Saves the number format (_, 2).
+                            strSpec = Split(strSpec, " ")(0)
+                                'Removes quotation marks.
+                                If Left(strSpec, 1) = """" Then
+                                    strSpec = Right(strSpec, Len(strSpec) - 1)
+                                End If
+                                If Right(strSpec, 1) = """" Then
+                                    strSpec = Left(strSpec, Len(strSpec) - 1)
+                                End If
+                            arrList(lngA, 2) = strSpec
                         End If
                     Next lngA
                 
