@@ -505,6 +505,8 @@ Sub sctApplySpecs()
                         .HeaderDistance = InchesToPoints(dblSpec)
                     ElseIf InStr(strSpec, "footer") <> 0 Then
                         .FooterDistance = InchesToPoints(dblSpec)
+                    ElseIf InStr(strSpec, "mirror margins") <> 0 Then
+                        .MirrorMargins = True
                     End If
                 End With
             Next lngA
