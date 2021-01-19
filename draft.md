@@ -242,7 +242,7 @@ Sub sctApplySpecs()
             rngSearch.MoveEnd wdParagraph, 12
             For Each objListParagraph In rngSearch.Paragraphs
                 strSpec = objListParagraph.Range.Text
-                'Removes a carriage return, spaces, and a period at the end of a line.
+                'Removes a carriage return, spaces, and a period at the end.
                 If Right(strSpec, 1) = vbCr Then
                     strSpec = Left(strSpec, Len(strSpec) - 1)
                 End If
