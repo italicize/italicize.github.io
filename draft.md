@@ -31,7 +31,7 @@ Heading 5 style, Body font, italic, 6 pt after, 0.5&quot; left indent, keep with
 TOC Heading style, based on Heading 1.
 
 
-## Other style settings
+## Other built-in style settings
 
 Header style, Body font italic, #2D415A (blue) color, 10 pt size, no tabs, bottom border.
 
@@ -42,6 +42,11 @@ Caption style, Headings font, #2D415A (blue) color, 10 pt size, 6 pt after, 0.5&
 Title style, Headings font, bold, #F8F8F8 (gray) color, 42 pt size, 1.03 line spacing.
 
 Subtitle style, Headings font, #F8F8F8 (gray) color, 24 pt size, 1.03 line spacing.
+
+
+## Custom style settings
+
+TBD
 
 
 ## Bullet list settings
@@ -169,14 +174,12 @@ Sub sctApplySpecs()
     'Reads each line.
     For Each objParagraph In ActiveDocument.Paragraphs
         strSpec = objParagraph.Range.Text
-        'Ignores a period and carriage return at the end of a line.
-        If Right(strSpec, 2) = ". " & vbCr Then
-            strSpec = Left(strSpec, Len(strSpec) - 3)
-        ElseIf Right(strSpec, 2) = "." & vbCr Then
-            strSpec = Left(strSpec, Len(strSpec) - 2)
-        ElseIf Right(strSpec, 2) = " " & vbCr Then
-            strSpec = Left(strSpec, Len(strSpec) - 2)
-        ElseIf Right(strSpec, 1) = vbCr Then
+        'Removes a carriage return, spaces, and a period at the end of a line.
+        If Right(strSpec, 1) = vbCr Then
+            strSpec = Left(strSpec, Len(strSpec) - 1)
+        End If
+        strSpec = Trim(strSpec)
+        If Right(strSpec, 1) = "." Then
             strSpec = Left(strSpec, Len(strSpec) - 1)
         End If
         'Replaces manual line breaks with a space and removes extra spaces.
@@ -239,14 +242,12 @@ Sub sctApplySpecs()
             rngSearch.MoveEnd wdParagraph, 12
             For Each objListParagraph In rngSearch.Paragraphs
                 strSpec = objListParagraph.Range.Text
-                'Ignores a period and carriage return at the end of a line.
-                If Right(strSpec, 2) = ". " & vbCr Then
-                    strSpec = Left(strSpec, Len(strSpec) - 3)
-                ElseIf Right(strSpec, 2) = "." & vbCr Then
-                    strSpec = Left(strSpec, Len(strSpec) - 2)
-                ElseIf Right(strSpec, 2) = " " & vbCr Then
-                    strSpec = Left(strSpec, Len(strSpec) - 2)
-                ElseIf Right(strSpec, 1) = vbCr Then
+                'Removes a carriage return, spaces, and a period at the end of a line.
+                If Right(strSpec, 1) = vbCr Then
+                    strSpec = Left(strSpec, Len(strSpec) - 1)
+                End If
+                strSpec = Trim(strSpec)
+                If Right(strSpec, 1) = "." Then
                     strSpec = Left(strSpec, Len(strSpec) - 1)
                 End If
                 'Replaces manual line breaks and removes extra spaces.
