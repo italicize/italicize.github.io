@@ -174,7 +174,7 @@ Sub sctApplySpecs()
     'Reads each line.
     For Each objParagraph In ActiveDocument.Paragraphs
         strSpec = objParagraph.Range.Text
-        'Removes a carriage return, spaces, and a period at the end of a line.
+        'Doesn't save a carriage return, spaces, or period at the end of a line.
         If Right(strSpec, 1) = vbCr Then
             strSpec = Left(strSpec, Len(strSpec) - 1)
         End If
@@ -186,8 +186,8 @@ Sub sctApplySpecs()
         strSpec = Replace(strSpec, Chr(11), " ")
         strSpec = Replace(strSpec, "   ", " ")
         strSpec = Replace(strSpec, "  ", " ")
-        'Puts something on an empty line.
-        If strSpec = "" Then strSpec = "NA"
+        'Saves something instead of an empty line.
+        If strSpec = "" Then strSpec = "[empty line]"
         'Saves the specifications on each line (between commas) in an array.
         arrSpecs = Split(strSpec, ", ")
 'Styles-'
@@ -242,7 +242,7 @@ Sub sctApplySpecs()
             rngSearch.MoveEnd wdParagraph, 12
             For Each objListParagraph In rngSearch.Paragraphs
                 strSpec = objListParagraph.Range.Text
-                'Removes a carriage return, spaces, and a period at the end.
+                'Doesn't save a carriage return, spaces, or period at the end.
                 If Right(strSpec, 1) = vbCr Then
                     strSpec = Left(strSpec, Len(strSpec) - 1)
                 End If
@@ -258,9 +258,9 @@ Sub sctApplySpecs()
                 arrSpecs = Split(strSpec, ", ")
                 
                 'If a line says "end of," stops looking at lines.
-                If Lcase(Left(arrSpecs(0), 4)) = "end." _
-                    Or Lcase(Left(arrSpecs(0), 7)) = "end," _
-                    Or Lcase(Left(arrSpecs(0), 6)) = "end " Then
+                If LCase(Left(arrSpecs(0), 4)) = "end." _
+                    Or LCase(Left(arrSpecs(0), 4)) = "end," _
+                    Or LCase(Left(arrSpecs(0), 4)) = "end " Then
                     Exit For
                 
                 'If a line has bullets, saves bullets (_, 2) and style (_, 4).
@@ -604,11 +604,15 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                 strSpec = Split(strSpec, " ")(0)
                 If Left(strSpec, 1) = "#" Then
                     strSpec = Right(strSpec, Len(strSpec) - 1)
+                    strSpec = Right(strSpec, 2) & Mid(strSpec, 3, 2) _
+                        & Left(strSpec, 2)
+                    dblSpec = Val("&H" & strSpec)
+                    .Color = dblSpec
+                ElseIf strSpec = "automatic color" Or strSpec = "auto color" _
+                    Or strSpec = "color automatic" Or strSpec = "no color" Then
+                    dblSpec = wdColorAutomatic
+                    .Color = dblSpec
                 End If
-                strSpec = Right(strSpec, 2) & Mid(strSpec, 3, 2) _
-                    & Left(strSpec, 2)
-                dblSpec = Val("&H" & strSpec)
-                .Color = dblSpec
             ElseIf strSpec = "normal character spacing" Then '-- letter spacing
                 .Spacing = 0
             ElseIf strSpec = "kerning" Then '-------------------------- kerning
@@ -634,19 +638,33 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                     dblSpec = Split(strSpec, " ")(0)
                     .SpaceAfter = dblSpec
                 ElseIf Right(strSpec, 12) = "line spacing" Then '- line spacing
-                    dblSpec = Split(strSpec, " ")(0)
-                    .LineSpacingRule = wdLineSpaceMultiple
-                    .LineSpacing = LinesToPoints(dblSpec)
-                ElseIf strSpec = "left aligned" Or strSpec = "centered" _
-                    Or strSpec = "right aligned" Or strSpec = "justified" _
+                    If Split(strSpec, " ")(1) = "pt" _
+                        Or Split(strSpec, " ")(1) = "pt." Then
+                        dblSpec = Split(strSpec, " ")(0)
+                        .LineSpacingRule = wdLineSpaceExactly
+                        .LineSpacing = dblSpec
+                    ElseIf Split(strSpec, " ")(1) = "least" Then
+                        dblSpec = Split(strSpec, " ")(2)
+                        .LineSpacingRule = wdLineSpaceAtLeast
+                        .LineSpacing = dblSpec
+                    Else
+                        dblSpec = Split(strSpec, " ")(0)
+                        .LineSpacingRule = wdLineSpaceMultiple
+                        .LineSpacing = LinesToPoints(dblSpec)
+                    End If
+                ElseIf strSpec = "left aligned" Or strSpec = "right aligned" _
+                    Or strSpec = "centered" Or strSpec = "center" _
+                    Or strSpec = "center align" _
+                    Or strSpec = "justified" Or strSpec = "justify" _
                     Then '------------------------------------------- alignment
                     If strSpec = "left aligned" Then
                         dblSpec = wdAlignParagraphLeft
-                    ElseIf strSpec = "centered" Then
-                        dblSpec = wdAlignParagraphCenter
                     ElseIf strSpec = "right aligned" Then
                         dblSpec = wdAlignParagraphRight
-                    ElseIf strSpec = "justified" Then
+                    ElseIf strSpec = "centered" Or strSpec = "center" _
+                        Or strSpec = "center align" Then
+                        dblSpec = wdAlignParagraphCenter
+                    ElseIf strSpec = "justified" Or strSpec = "justify" Then
                         dblSpec = wdAlignParagraphJustify
                     End If
                     .Alignment = dblSpec
