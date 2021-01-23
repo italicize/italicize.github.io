@@ -127,7 +127,9 @@ List Number 5 style, 1.5&quot; number indent, 1.75&quot; text indent, 6 pt after
 End of ListHeadingsToNumbers.
 
 
-# Code
+# Fallback Code
+
+Use this if the code in "General settings.docm" has problems.
 
 ```vb
 Option Explicit
@@ -611,6 +613,9 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                 ElseIf strSpec = "automatic color" Or strSpec = "auto color" _
                     Or strSpec = "color automatic" Or strSpec = "no color" Then
                     dblSpec = wdColorAutomatic
+                    .Color = dblSpec
+                ElseIf strSpec = "black color" Then
+                    dblSpec = wdColorBlack
                     .Color = dblSpec
                 End If
             ElseIf strSpec = "normal character spacing" Then '-- letter spacing
