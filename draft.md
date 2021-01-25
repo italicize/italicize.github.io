@@ -98,9 +98,9 @@ To apply a style descriptions, open a new Word document, set the style defaults,
 1. Select a folder.
 1. Type a file name. For the sample styles, type **Sample standard styles**.
 1. Select a file type. \
-To start a document, leave **Word Document (\*.docx)** as the file type. \
-To start a template, leave **Word Template (\*.dotx)**. \
-To make further style changes with the macro, select **Word Macro-Enabled Document (\*.docm)**
+&bull; To start a document, leave **Word Document (\*.docx)** as the file type. \
+&bull; To start a template, leave **Word Template (\*.dotx)**. \
+&bull; To make further style changes with the macro, select **Word Macro-Enabled Document (\*.docm)**.
 1. Click **Save.**
 
 ## Macro to read the style descriptions
