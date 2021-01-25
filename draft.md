@@ -6,7 +6,7 @@ For example, suppose you want a template that matches the format of an ANSI stan
 
 ## Sample style descriptions
 
-General settings . . . . . . . . . . . .
+**General settings . . . . . . . . . . . .**
 
 Margins, 1&quot; left, 1.25&quot; right, 1&quot; top, 1&quot; bottom, 0.5&quot; header, 0.5&quot; footer, mirror margins.
 
@@ -16,7 +16,7 @@ Normal style, defaults.
 
 Body Text style, 12 pt after, 0.5&quot; left indent.
 
-Heading styles . . . . . . . . . . . .
+**Heading styles . . . . . . . . . . . .**
 
 Heading 1 style, Headings font, bold, black color, 14 pt size, 24 pt before, 18 pt after, 2.25 pt bottom border, keep with next.
 
@@ -26,7 +26,7 @@ Heading 3 style, Headings font, bold, black color, 11 pt size, 18 pt before, 6 p
 
 Heading 4 style, Headings font, bold, black color, 10 pt size, 18 pt before, 6 pt after, keep with next.
 
-Headings list settings . . . . . . . . . . . .
+**Headings list settings . . . . . . . . . . . .**
 
 ListHeadings list styles, Heading 1, Heading 2, Heading 3, Heading 4.
 
@@ -36,7 +36,7 @@ ListHeadings number defaults, Headings font, auto color, 0&quot; number indent, 
 
 End of ListHeadings.
 
-Other styles . . . . . . . . . . . .
+**Other styles . . . . . . . . . . . .**
 
 Header style, Headings font, bold, 11 pt size, no tabs.
 
@@ -46,7 +46,7 @@ Caption style, Headings font, bold, 6 pt after, centered.
 
 Table Text style, 8.5 pt size, single line spacing.
 
-Bullet list settings . . . . . . . . . . . .
+**Bullet list settings . . . . . . . . . . . .**
 
 ListBullets list styles, List Bullet, (others TBD).
 
