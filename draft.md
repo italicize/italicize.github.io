@@ -1,4 +1,4 @@
-# Define styles for a new Word template
+# Define styles for a new Word&nbsp;template: a short example
 
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
@@ -11,8 +11,6 @@ For example, suppose you want a template that matches the format of an ANSI stan
 Margins, 1&quot; left, 1.25&quot; right, 1&quot; top, 1&quot; bottom, 0.5&quot; header, 0.5&quot; footer, mirror margins.
 
 Defaults for all defined styles, Body font, auto color, not italic, not bold, 10 pt size, 1.04 line spacing, 0 pt before, 0 pt after, 0&quot; left indent, 0&quot; right indent, left aligned, based on no style, followed by Body Text, normal character spacing.
-
-Normal style, defaults.
 
 Body Text style, 12 pt after, 0.5&quot; left indent.
 
@@ -755,25 +753,6 @@ Private Sub sctDefineStyle(ByVal strStyle As String, ByVal arrSpecs As Variant)
                     If dblSpec2 <> 0 Then
                         With .Borders(dblSpec2)
                             .LineStyle = wdLineStyleSingle
-'                            If dblSpec = 0.25 Then
-'                                .LineWidth = wdLineWidth025pt
-'                            ElseIf dblSpec = 0.5 Then
-'                                .LineWidth = wdLineWidth050pt
-'                            ElseIf dblSpec = 0.75 Then
-'                                .LineWidth = wdLineWidth075pt
-'                            ElseIf dblSpec = 1 Then
-'                                .LineWidth = wdLineWidth100pt
-'                            ElseIf dblSpec = 1.5 Then
-'                                .LineWidth = wdLineWidth150pt
-'                            ElseIf dblSpec = 2.25 Then
-'                                .LineWidth = wdLineWidth225pt
-'                            ElseIf dblSpec = 3 Then
-'                                .LineWidth = wdLineWidth300pt
-'                            ElseIf dblSpec = 4.5 Then
-'                                .LineWidth = wdLineWidth450pt
-'                            ElseIf dblSpec = 6 Then
-'                                .LineWidth = wdLineWidth600pt
-'                            End If
                             Select Case dblSpec
                                 Case 0
                                     .LineWidth = wdUndefined
