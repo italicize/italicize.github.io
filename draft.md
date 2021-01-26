@@ -2,7 +2,7 @@
 
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
-For example, suppose you want a template that matches the format of an ANSI standard, [Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010). Measure its margins with a ruler, compare the font sizes to some samples, and write a description in the following format. 
+For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description in the following format. 
 
 ## Sample style descriptions
 
@@ -68,18 +68,19 @@ To apply a style descriptions, open a new Word document, set the style defaults,
 ### Set the style defaults
 
 1. In Word, click the **Design** menu and click **Fonts**.
-1. Select the theme fonts. For this example, click **Arial**.
-1. Click the **Tell Me** box, type **manage styles**, and press **Enter**.
+1. Select the theme fonts. For these sample styles, click **Arial**.
+1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'> **Tell Me** box, type **manage styles**, and press **Enter**.
 1. Click the **Manage Styles** button (highlighted in the Styles pane).
 1. Click the **Set Defaults** tab of the Manage Styles dialog. 
-    1. Select a font size. For the sample styles, select **10**. 
+    1. Select a font size. For these sample styles, select **10**. 
     1. For the paragraph spacing after, select **0 pt**. 
-    1. Select the line spacing. For the sample styles, leave **Multiple** and type **1.04**.
+    1. Select the line spacing. For these sample styles, leave **Multiple** and type **1.04**.
     1. Click **OK**. 
 
-### Add and run the macro
+### Add the style descriptions and macro
 
-1. Click the **Tell Me** box, type **visual basic**, and press **Enter**.
+1. Copy the style descriptions (above) and paste in the document.
+1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'> **Tell Me** box, type **visual basic**, and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
     1. Copy the macro (next section) and paste in Visual Basic.
     1. Click **File** and **Close and Return to Microsoft Word**.
