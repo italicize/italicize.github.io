@@ -69,9 +69,9 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 1. In Word, click the **Design** menu and click **Fonts**.
 1. Select the theme fonts. For these sample styles, click **Arial**.
-1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **manage styles**, and press **Enter**.
-1. Click the **Manage Styles** button (highlighted in the Styles pane).
-1. Click the **Set Defaults** tab of the Manage Styles dialog. 
+1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **styles**, and press **Enter**.
+1. Click **Manage Styles**, the third button in the Styles pane.
+1. Click the **Set Defaults** tab of the Manage Styles window. 
     1. Select a font size. For these sample styles, select **10**. 
     1. For the paragraph spacing after, select **0 pt**. 
     1. Select the line spacing. For these sample styles, leave **Multiple** and type **1.04**.
@@ -79,7 +79,8 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 ### Add the style descriptions and macro
 
-1. Copy the style descriptions (above) and paste in the document.
+1. Copy the style descriptions (above).
+1. Right-click the Word document. For the paste option, select **Keep Text Only**.
 1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **visual basic**, and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
     1. Copy the macro (next section) and paste in Visual Basic.
