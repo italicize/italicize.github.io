@@ -58,7 +58,7 @@ End of ListBullets.
 
 ## Apply the style descriptions
 
-To apply a style descriptions, open a new Word document, set the style defaults, paste the style decriptions, paste and run the style macro, and save the Word document.
+To apply style descriptions, open a new Word document, set the style defaults, paste the style descriptions, paste and run the style macro, and save the Word document.
 
 ###  Open a document without styles
 
@@ -69,7 +69,7 @@ To apply a style descriptions, open a new Word document, set the style defaults,
 
 1. In Word, click the **Design** menu and click **Fonts**.
 1. Select the theme fonts. For these sample styles, click **Arial**.
-1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'> **Tell Me** box, type **manage styles**, and press **Enter**.
+1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **manage styles**, and press **Enter**.
 1. Click the **Manage Styles** button (highlighted in the Styles pane).
 1. Click the **Set Defaults** tab of the Manage Styles dialog. 
     1. Select a font size. For these sample styles, select **10**. 
@@ -80,7 +80,7 @@ To apply a style descriptions, open a new Word document, set the style defaults,
 ### Add the style descriptions and macro
 
 1. Copy the style descriptions (above) and paste in the document.
-1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'> **Tell Me** box, type **visual basic**, and press **Enter**.
+1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **visual basic**, and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
     1. Copy the macro (next section) and paste in Visual Basic.
     1. Click **File** and **Close and Return to Microsoft Word**.
