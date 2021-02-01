@@ -1,4 +1,4 @@
-# Define styles for a new Word&nbsp;template: a short example
+# Define styles for a new Word&nbsp;template: first example
 
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
