@@ -69,9 +69,10 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 1. Copy the style descriptions (see above).
 1. Right-click the Word document and select the paste option **Keep Text Only**.
+1. Copy the macro (see below).
 1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **visual basic**, and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
-    1. Copy the macro (see below) and paste in Visual Basic.
+    1. Click **Edit** and **Paste**.
     1. Click **File** and **Close and Return to Microsoft Word**.
 1. In Word, click the **View** menu and click **Macros**.
 1. Select the macro **sctApplySpecs** and click **Run**.
@@ -226,7 +227,7 @@ Sub sctApplySpecs()
             
             'Saves the list name.
             If Right(strLabelLow, 4) = "list" _
-                And Left(strLabel, InStr(strLabelLow, " multi") - 1) <> 0 Then
+                And InStr(strLabelLow, " multi") <> 0 Then
                 strList = Left(strLabel, InStr(strLabelLow, " multi") - 1)
             Else
                 strList = Left(strLabel, InStr(strLabelLow, " list") - 1)
