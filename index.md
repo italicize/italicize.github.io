@@ -4,7 +4,7 @@ Information to help technical writers and editors.
 
 ## [Word templates made easy](/word_template)
 
-A Word template is easier to set up with [a macro that reads style descriptions](/word_template).
+A new Word template is easier to start with [a macro that reads style descriptions](/word_template).
 
 ## [Next steps after a fresh installation of Windows&nbsp;10](/windows_setup)
 
