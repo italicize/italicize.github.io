@@ -93,7 +93,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 ```vba
 Const sctSpecs As Long = 20
-Const strDefaultStyleGallery As String = "Normal, No Spacing, Heading 1, " _
+Const sctDefaultStyleGallery As String = "Normal, No Spacing, Heading 1, " _
     & "Heading 2, Heading 3, Heading 4, Heading 5, Heading 6, Heading 7, " _
     & "Heading 8, Heading 9, Title, Subtitle, Subtle Emphasis, Emphasis, " _
     & "Intense Emphasis, Strong, Quote, Intense Quote, Subtle Reference, " _
@@ -203,7 +203,7 @@ Sub sctApplySpecs()
 '-------'Customizes the quick styles gallery.
         ElseIf strLabelLow = "styles gallery" Then
             'Removes the defaults.
-            arrDefaultStyleGallery = Split(strDefaultStyleGallery, ", ")
+            arrDefaultStyleGallery = Split(sctDefaultStyleGallery, ", ")
             For lngSpec = LBound(arrDefaultStyleGallery) _
                 To UBound(arrDefaultStyleGallery)
                 strStyle = arrDefaultStyleGallery(lngSpec)
