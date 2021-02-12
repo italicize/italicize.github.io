@@ -24,3 +24,4 @@ and <https://unicode-search.net/unicode-namesearch.pl?term=SPACE>.
 |round|triangle|circle|small|small square|circled|circled, filled|
 |`&bullet;`|`&#8227;`|`&#9702;`|`&#8729;`|`&#9642;`|`&olcir;`|`&ofcir;`|
 
+For more bullets, see <https://www.fileformat.info/info/unicode/block/geometric_shapes/list.htm>.
