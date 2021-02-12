@@ -1,5 +1,11 @@
 # Define styles for a new Word&nbsp;template: first example
 
+> Microsoft Word users (and who among us isn't) are invited to try a macro I wrote, hoping to make new templates simple. 
+>
+> A new template means many styles to define, which means many clicks and drop-downs. Instead, try a macro that reads a description, such as "Body Text style, 6 pt after, 0.5&quot; left indent." 
+>
+> I'm interested to hear whether my shortcut seems short to others or only me. I'm interested to hear what other shortcuts people know, which might be shorter still. I'm interested in every suggestion and comment you have. 
+
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
 For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description. Use the format shown below, with a style name at the beginning of the line and commas between the specifications. 
@@ -48,12 +54,12 @@ ListBullets bullet defaults, Body bullet font, tab after bullet.
 
 To apply style descriptions, open a new Word document, set the style defaults, paste the style descriptions, paste and run the style macro, and save the Word document.
 
-###  Open a document without styles
+####  Open a document without styles
 
 1. Type **winword /a /w** in the Windows taskbar and press **Enter**. \
 <span style='font-size:small; color:darkgray;'>&#128712; The /a switch opens Word without opening your Normal template, which might have custom styles. The /w switch opens a new blank document. For more info see [Command-line switches for Microsoft Office products](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6).</span>
 
-### Set the style defaults
+#### Set the style defaults
 
 1. In Word, click the **Design** menu and click **Fonts**.
 1. Select the theme fonts. For these sample styles, click **Arial**.
@@ -65,7 +71,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
     1. Select the line spacing. For these sample styles, leave **Multiple** and type **1.04**.
     1. Click **OK**. 
 
-### Add the style descriptions and macro
+#### Add the style descriptions and macro
 
 1. Copy the style descriptions (see above).
 1. Right-click the Word document and select the paste option **Keep Text Only**.
@@ -77,7 +83,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 1. In Word, click the **View** menu and click **Macros**.
 1. Select the macro **sctApplySpecs** and click **Run**.
 
-### Save the file
+#### Save the file
 
 1. Click **File** and **Save As**.
 1. Click **Browse**.
