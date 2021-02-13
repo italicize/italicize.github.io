@@ -16,9 +16,9 @@ For more html entities, see <https://www.w3.org/TR/WD-math-970515/fnewtable05.ht
 |`&emsp;`|`&ensp;`|`&thinsp;`|`&hairsp;`|`&nbsp;`|`&#8239;`|
 |2003|2002|2009, 2006|200A|00A0|202F|
 
-|&numsp;|&numsp;|2007|
+|`&numsp;`|&numsp;|2007|
 
-|&puncsp;|&puncsp;|2008|
+|`&puncsp;`|&puncsp;|2008|
 
 For more spaces, see <http://jkorpela.fi/chars/spaces.html> and <https://en.wikipedia.org/wiki/Whitespace_character>
 and <https://unicode-search.net/unicode-namesearch.pl?term=SPACE>.
