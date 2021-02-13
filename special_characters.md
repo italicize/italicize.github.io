@@ -7,6 +7,8 @@
 |`-`|`&#2012;`|`&ndash;`|`&mdash;`|`&#2015;`|`&#173;`|`&#8209;`|
 |2010|2012|2013|2014|2015|173|8209|
 
+For more html entities, see <https://www.w3.org/TR/WD-math-970515/fnewtable05.html>.
+
 |Spaces||||||
 |:---|:---|:---|:---|:---|:---|
 |&emsp;|&ensp;|&thinsp;|&hairsp;|&nbsp;|&#8239;|
