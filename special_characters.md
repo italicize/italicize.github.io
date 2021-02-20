@@ -7,7 +7,7 @@
 |`-`|`&#2012;`|`&ndash;`|`&mdash;`|`&#2015;`|`&#173;`|`&#8209;`|
 |2010|2012|2013|2014|2015|173|8209|
 
-For more html entities, see <https://dev.w3.org/html5/html-author/charref> and <https://www.w3.org/TR/xml-entity-names/027.html> and <https://www.w3.org/wiki/Common_HTML_entities_used_for_typography> and <https://www.w3.org/TR/html4/sgml/entities.html>.
+For more html entities, see <https://dev.w3.org/html5/html-author/charref> and <https://www.w3.org/TR/xml-entity-names/Overview.html#blocks> and <https://www.w3.org/wiki/Common_HTML_entities_used_for_typography> and <https://www.w3.org/TR/html4/sgml/entities.html>.
 
 |Spaces||||||
 |:---|:---|:---|:---|:---|:---|
