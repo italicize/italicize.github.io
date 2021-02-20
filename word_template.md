@@ -76,7 +76,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 1. Copy the style descriptions (see above).
 1. Right-click the Word document and select the paste option **Keep Text Only**.
 1. Copy the macro (see below).
-1. In the search box in the menu bar, type **visual basic**, and press **Enter**.
+1. In the search box in the menu bar, type **visual basic** and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
     1. Click **Edit** and **Paste**.
     1. Click **File** and **Close and Return to Microsoft Word**.
