@@ -63,7 +63,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 1. In Word, click the **Design** menu and click **Fonts**.
 1. Select the theme fonts. For these sample styles, click **Arial**.
-1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **styles**, and press **Enter**.
+1. In the search box in the menu bar, type **styles** and press **Enter**.
 1. Click **Manage Styles**, the third button in the Styles pane.
 1. Click the **Set Defaults** tab in the Manage Styles window. 
     1. Select a font size. For these sample styles, select **10**. 
@@ -76,7 +76,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 1. Copy the style descriptions (see above).
 1. Right-click the Word document and select the paste option **Keep Text Only**.
 1. Copy the macro (see below).
-1. Click the <img src='far/lightbulb.svg' alt='light bulb' height='12'>&ensp;**Tell Me** box, type **visual basic**, and press **Enter**.
+1. In the search box in the menu bar, type **visual basic**, and press **Enter**.
     1. In the Visual Basic window, click **Insert** and **Module**.
     1. Click **Edit** and **Paste**.
     1. Click **File** and **Close and Return to Microsoft Word**.
@@ -113,7 +113,7 @@ Sub sctApplySpecs()
     Dim strSpecLow As String, lngSpec As Long, dblSpec As Double
     Dim arrStyles() As String, lngStyles As Long, strStyle As String
     Dim arrDefaultStyleGallery() As String
-    Dim arrList() As String, strList As String, lngList As Long
+    Dim arrList() As Variant, strList As String, lngList As Long
     Dim lngLevel As Long, lngLevels As Long
     Dim objListTemplate As ListTemplate
     
@@ -207,7 +207,8 @@ Sub sctApplySpecs()
             sctDefineStyle strStyle, arrSpecs
 'Gallery'
 '-------'Customizes the quick styles gallery.
-        ElseIf strLabelLow = "styles gallery" Then
+        ElseIf strLabelLow = "styles gallery" Or _
+            strLabelLow = "style gallery" Then
             'Removes the defaults.
             arrDefaultStyleGallery = Split(sctDefaultStyleGallery, ", ")
             For lngSpec = LBound(arrDefaultStyleGallery) _
@@ -293,9 +294,7 @@ Sub sctApplySpecs()
             'Applies the list template specifications.
             For lngLevel = 1 To lngLevels
                 With objListTemplate.ListLevels(lngLevel)
-                    If arrList(lngLevel, 2) <> "" Then
-                        .NumberFormat = arrList(lngLevel, 2)
-                    End If
+                    arrList(lngLevel, 2) = arrList(lngLevel, 2)
                     With .Font
                         If arrList(lngLevel, 11) <> "" Then
                             .Name = arrList(lngLevel, 11)
@@ -642,7 +641,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
     Next lngSpec
 End Sub
 
-Private Sub sctDefineList(ByRef arrList() As String, ByVal lngLevel As Long, _
+Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
     arrSpecs() As String)
     
     Dim lngSpec As Long, strSpec As String, strSpecLow As String
@@ -653,6 +652,13 @@ Private Sub sctDefineList(ByRef arrList() As String, ByVal lngLevel As Long, _
         strSpec = arrSpecs(lngSpec)
         strSpecLow = LCase(strSpec)
         dblSpec = Val(strSpec)
+        
+        'Saves defaults for true/false and number values
+        arrList(lngLevel, 3) = wdTrailingSpace
+        arrList(lngLevel, 4) = wdListNumberStyleNone
+        arrList(lngLevel, 12) = False 'not bold
+        arrList(lngLevel, 13) = False 'not italic
+        arrList(lngLevel, 14) = wdColorAutomatic
     
         'Saves whether no bullet or number is specified.
         If Right(strSpecLow, 9) = "no number" _
