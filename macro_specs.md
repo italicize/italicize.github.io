@@ -8,7 +8,7 @@ For example, the Microsoft default margins are **Margins, 1" left, 1" right, 1" 
 
 Specification|Examples|Note
 :---|:---|:---
-_ left,<br>_ right,<br>_ top,<br>_ bottom,<br>_ header,<br>_ footer|0.6&quot;&nbsp;left,<br>1&nbsp;inch&nbsp;top|The number at the beginning is read to set a margin in inches (whether inch or in. or &Prime; is included or not). Currently the macro doesn't look for a unit, such as cm or pt.
+\_&nbsp;left,<br>\_&nbsp;right,<br>\_&nbsp;top,<br>\_&nbsp;bottom,<br>\_&nbsp;header,<br>\_&nbsp;footer|0.6&quot;&nbsp;left,<br>1&nbsp;inch&nbsp;top|The number at the beginning is read to set a margin in inches (whether inch or in. or &Prime; is included or not). Currently the macro doesn't look for a unit, such as cm or pt.
 mirror&nbsp;margins,<br>no&nbsp;mirror&nbsp;margins||Swaps the left and right margins on odd and even pages<br>(or doesn't swap if "no" at the beginning). 
 
 #### `Defaults for all defined styles, . . .` defines all styles.<br>
@@ -39,58 +39,34 @@ For example, **ListBullets bullet defaults, Body bullet font, tab after bullet.*
 
 Specification|Examples|Note
 :---|:---|:---
-based&nbsp;on _ |based&nbsp;on&nbsp;no&nbsp;style,<br>based&nbsp;on&nbsp;Heading&nbsp;1|The end is read as a style name, the style with specifications to copy. The Microsoft defaults are "based on Normal" for paragraph styles and "based on Default Paragraph Font" for font styles.
-_ font|Palatino&nbsp;Linotype&nbsp;font,<br>body&nbsp;font,<br>headings&nbsp;font|The beginning is read as a font name. "Body font" and "headings font" use the defaults (defined through the Design menu). 
-_ size|11 pt size|The number at the beginning is read as the font size in points (whether pt or point is included or not). 
+based&nbsp;on&nbsp;\_ |based&nbsp;on&nbsp;no&nbsp;style,<br>based&nbsp;on&nbsp;Heading&nbsp;1|The end is read as a style name, the style with specifications to copy. The Microsoft defaults are "based on Normal" for paragraph styles and "based on Default Paragraph Font" for font styles.
+\_&nbsp;font|Palatino&nbsp;Linotype&nbsp;font,<br>body&nbsp;font,<br>headings&nbsp;font|The beginning is read as a font name. "Body font" and "headings font" use the defaults (defined through the Design menu). 
+\_&nbsp;size|11 pt size|The number at the beginning is read as the font size in points (whether pt or point is included or not). 
 bold,<br>not bold||
 italic,<br>not italic||
 small caps||
 all caps||
-_ color|#808080&nbsp;color,<br>black&nbsp;color,<br>automatic&nbsp;color|The number at the beginning is read as a hex value. Words after the number are ignored, such as "#808080 gray color." Currently the macro reads the word black but not other colors.
-_ character spacing|normal character spacing,<br>0.5 pt character spacing|The number at the beginning is read as points. "Normal" is read as 0 pt, meaning no extra space or reduced space between characters.
+\_&nbsp;color|#808080&nbsp;color,<br>black&nbsp;color,<br>automatic&nbsp;color|The number at the beginning is read as a hex value. Words after the number are ignored, such as "#808080 gray color." Currently the macro reads the word black but not other colors.
+\_&nbsp;character&nbsp;spacing|normal&nbsp;character&nbsp;spacing,<br>0.5 pt&nbsp;character&nbsp;spacing|The number at the beginning is read as points. "Normal" is read as 0 pt, meaning no extra space or reduced space between characters.
 kerning,<br>no&nbsp;kerning||
         
 #### Paragraph style specifications
 
 Specification|Examples|Note
 :---|:---|:---
-followed&nbsp;by _ |followed&nbsp;by&nbsp;Body&nbsp;Text|The end is read as a style name, the style for the next paragraph after pressing Enter.
+followed&nbsp;by&nbsp;\_ |followed&nbsp;by&nbsp;Body&nbsp;Text|The end is read as a style name, the style for the next paragraph after pressing Enter.
 space&nbsp;between,<br>no&nbsp;space&nbsp;between||Several variations are accepted, such as "add space between paragraphs of the same style" and "don't add space between paragraphs." No space between is Microsoft's default setting for bullet lists.
-_ left&nbsp;indent,<br>_ right&nbsp;indent|0.5&quot;&nbsp;left&nbsp;indent,<br>-0.05&nbsp;right&nbsp;indent|The number at the beginning is read as an indent or outdent from the margin in inches (whether inch or in. or &Prime; is included or not). Currently the macro doesn't look for a unit, such as cm or pt.
-_ before,<br>_ after|6 pt after|The number at the beginning is read as points for the space before or after a paragraph. Both before and after can be defined, but defining the space after is enough.
-_ line&nbsp;spacing|1.08&nbsp;line&nbsp;spacing,<br>12&nbsp;pt&nbsp;line&nbsp;spacing,<br>at&nbsp;least&nbsp;10.5&nbsp;pt&nbsp;line&nbsp;spacing|The number at the beginning is read as the number of lines or, if "pt" appears, as the number of points of line spacing. The words "exact" or "at least" can appear before the number of points.
+\_&nbsp;left&nbsp;indent,<br>\_&nbsp;right&nbsp;indent|0.5&quot;&nbsp;left&nbsp;indent,<br>-0.05&nbsp;right&nbsp;indent|The number at the beginning is read as an indent or outdent from the margin in inches (whether inch or in. or &Prime; is included or not). Currently the macro doesn't look for a unit, such as cm or pt.
+\_&nbsp;before,<br>\_&nbsp;after|6 pt after|The number at the beginning is read as points for the space before or after a paragraph. Both before and after can be defined, but defining the space after is enough.
+\_&nbsp;line&nbsp;spacing|1.08&nbsp;line&nbsp;spacing,<br>12&nbsp;pt&nbsp;line&nbsp;spacing,<br>at&nbsp;least&nbsp;10.5&nbsp;pt&nbsp;line&nbsp;spacing|The number at the beginning is read as the number of lines or, if "pt" appears, as the number of points of line spacing. The words "exact" or "at least" can appear before the number of points.
 left&nbsp;aligned,<br>right&nbsp;aligned,<br>centered,<br>justified||Several variations are accepted, such as "align left" and "center align" and "justify."
 widow/orphan&nbsp;control,<br>no&nbsp;widow/orphan&nbsp;control||Several variations are accepted, such as "widow control" and "no widow or orphan control."
-keep&nbsp;with&nbsp;next,<br>don't&nbsp;keep&nbsp;with&nbsp;next||Several variations are accepted, such as "keep the paragraph with the next paragraph."
-keep&nbsp;lines&nbsp;together,<br>don't&nbsp;keep&nbsp;lines&nbsp;together||Several variations are accepted, such as "keep paragraph lines on the same page."
-page&nbsp;break&nbsp;before,<br>no&nbsp;page&nbsp;break&nbsp;before||
-_ top&nbsp;border,<br>_ bottom&nbsp;border,<br>_ left&nbsp;border,<br>_ right&nbsp;border||The number at the beginning is read as the line width in points.
+keep&nbsp;with&nbsp;next,<br>don't&nbsp;keep&nbsp;with&nbsp;next||Several variations are accepted, such as "keep the paragraph with the next paragraph" and "allow a page break after the paragraph."
+keep&nbsp;lines&nbsp;together,<br>don't&nbsp;keep&nbsp;lines&nbsp;together||Several variations are accepted, such as "keep the paragraph lines together" and "allow a page break within the paragraph."
+page&nbsp;break&nbsp;before,<br>no&nbsp;page&nbsp;break&nbsp;before||Several variations are accepted, such as "page break above the paragraph" and "don't require a page break before the paragraph."
+\_&nbsp;top&nbsp;border,<br>\_&nbsp;bottom&nbsp;border,<br>\_&nbsp;left&nbsp;border,<br>\_&nbsp;right&nbsp;border|1 pt top border|The number at the beginning is read as the border line width in points.
+\_&nbsp;left&nbsp;tab,<br>\_&nbsp;center&nbsp;tab,<br>\_&nbsp;right&nbsp;tab,<br>center&nbsp;tab,<br>right&nbsp;tab,<br>no&nbsp;tabs|1&quot;&nbsp;left&nbsp;tab|The number at the beginning is read as a tab position in inches (whether inch or in. or &Prime; is included or not). If no number appears, then "center tab" is centered between the page margins and "right tab" is at the right margin.
 
-                ElseIf strSpecLow = "no tabs" _
-                    Or strSpecLow = "clear tabs" Then '-------------------- tabs
-                    .TabStops.ClearAll
-                ElseIf strSpecLow = "center tab" _
-                    Or strSpecLow = "centered tab" Then
-                    dblSpec = ActiveDocument.PageSetup.PageWidth _
-                        - ActiveDocument.PageSetup.LeftMargin _
-                        - ActiveDocument.PageSetup.RightMargin _
-                        - .LeftIndent - .RightIndent
-                    .TabStops.Add Position:=(dblSpec / 2), _
-                        Alignment:=wdAlignTabCenter, _
-                        Leader:=wdTabLeaderSpaces
-                ElseIf strSpecLow = "right tab" Then
-                    dblSpec = ActiveDocument.PageSetup.PageWidth _
-                        - ActiveDocument.PageSetup.LeftMargin _
-                        - ActiveDocument.PageSetup.RightMargin _
-                        - .LeftIndent - .RightIndent
-                    .TabStops.Add Position:=dblSpec, _
-                        Alignment:=wdAlignTabRight, _
-                        Leader:=wdTabLeaderSpaces
-                End If
-            End With
-        End If
-    Next lngSpec
-End Sub
 
 Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
     arrSpecs() As String)
