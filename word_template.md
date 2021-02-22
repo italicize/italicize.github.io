@@ -97,7 +97,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 
 ## Macro to read the style descriptions
 
-```vba
+```vb
 Const sctSpecs As Long = 20
 Const sctDefaultStyleGallery As String = "Normal, No Spacing, Heading 1, " _
     & "Heading 2, Heading 3, Heading 4, Heading 5, Heading 6, Heading 7, " _
@@ -129,7 +129,7 @@ Sub sctApplySpecs()
         strLabelLow = LCase(strLabel)
 'Margins'
 '-------'Sets the margins.
-        If strLabelLow = "margins" Then
+        If strLabelLow = "margins" Or strLabelLow = "margin" Then
             For lngSpec = 1 To UBound(arrSpecs)
                 strSpec = arrSpecs(lngSpec)
                 strSpecLow = LCase(strSpec)
@@ -207,8 +207,8 @@ Sub sctApplySpecs()
             sctDefineStyle strStyle, arrSpecs
 'Gallery'
 '-------'Customizes the quick styles gallery.
-        ElseIf strLabelLow = "styles gallery" Or _
-            strLabelLow = "style gallery" Then
+        ElseIf strLabelLow = "styles gallery" _
+            Or strLabelLow = "style gallery" Then
             'Removes the defaults.
             arrDefaultStyleGallery = Split(sctDefaultStyleGallery, ", ")
             For lngSpec = LBound(arrDefaultStyleGallery) _
@@ -294,7 +294,7 @@ Sub sctApplySpecs()
             'Applies the list template specifications.
             For lngLevel = 1 To lngLevels
                 With objListTemplate.ListLevels(lngLevel)
-                    arrList(lngLevel, 2) = arrList(lngLevel, 2)
+                    .NumberFormat = arrList(lngLevel, 2)
                     With .Font
                         If arrList(lngLevel, 11) <> "" Then
                             .Name = arrList(lngLevel, 11)
@@ -344,8 +344,9 @@ Sub sctApplySpecs()
             .Collapse wdCollapseEnd
             .TypeParagraph
             .ClearFormatting
+            sctInsertSampleText arrStyles
+            .EndKey Unit:=wdStory
         End With
-        sctInsertSampleText arrStyles
     End If
 End Sub
 
@@ -386,17 +387,6 @@ Private Function sctStyleExists(ByVal strStyle As String, _
     End If
 End Function
 
-Private Sub sctInsertSampleText(arrStyles() As String)
-    Dim lngStyle As Long
-    For lngStyle = LBound(arrStyles) To UBound(arrStyles)
-        With Selection
-            .InsertAfter arrStyles(lngStyle) & " sample" & vbCrLf
-            .Paragraphs(1).Style = arrStyles(lngStyle)
-            .Collapse wdCollapseEnd
-        End With
-     Next lngStyle
-End Sub
-
 Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
     
     Dim lngType As Long, lngSpec As Long, strSpec As String, dblSpec As Double
@@ -427,23 +417,22 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                     strSpec = Left(strSpec, Len(strSpec) - 6)
                 End If
                 .NextParagraphStyle = strSpec
-            ElseIf strSpecLow = "space between" _
-                Or strSpecLow = "add space between" _
-                Or strSpecLow = "space between paragraphs of the same style" _
-                Or strSpecLow = "add space between paragraphs of the same" _
-                & " style" Then '--------------------------------- space between
+            ElseIf Left(strSpecLow, 13) = "space between" _
+                Or Left(strSpecLow, 17) = "add space between" _
+                Then '-------------------------------------------- space between
                 .NoSpaceBetweenParagraphsOfSameStyle = False
-            ElseIf strSpecLow = "no space between" _
-                Or strSpecLow = "no space between paragraphs of the same style" _
-                Or strSpecLow = "don't add space between paragraphs" _
-                Or strSpecLow = "don't add space between paragraphs of the" _
-                & " same style" Then
+            ElseIf Left(strSpecLow, 16) = "no space between" _
+                Or Left(strSpecLow, 23) = "don't add space between" _
+                Or Left(strSpecLow, 23) = "don’t add space between" _
+                Or Left(strSpecLow, 24) = "do not add space between" Then
                 .NoSpaceBetweenParagraphsOfSameStyle = True
             End If
         End With
         
         With ActiveDocument.Styles(strStyle).Font
-            If Right(strSpecLow, 4) = "font" Then '------------------------ font
+            If Right(strSpecLow, 4) = "font" _
+                And Right(strSpecLow, 11) <> "bullet font" _
+                And Right(strSpecLow, 11) <> "number font" Then '---------- font
                 strSpec = Left(strSpec, Len(strSpec) - 5)
                 strSpecLow = LCase(strSpec)
                 If strSpecLow = "body" Then
@@ -465,11 +454,15 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                 .Italic = True
             ElseIf strSpecLow = "not italic" Or strSpecLow = "no italic" Then
                 .Italic = False
+            ElseIf strSpecLow = "bold and italic" _
+                Or strSpecLow = "italic and bold" Then
+                .Bold = True
+                .Italic = True
             ElseIf strSpecLow = "small caps" Then '------------------ small caps
-                .SmallCaps = False
+                .SmallCaps = True
             ElseIf strSpecLow = "uppercase" Or strSpecLow = "all caps" _
                 Then '----------------------------------------------------- caps
-                .AllCaps = False
+                .AllCaps = True
             ElseIf Right(strSpecLow, 5) = "color" Then '------------------ color
                 strSpec = Split(strSpec, " ")(0)
                 strSpecLow = LCase(strSpec)
@@ -489,6 +482,8 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                 End If
             ElseIf strSpecLow = "normal character spacing" Then ' letter spacing
                 .Spacing = 0
+            ElseIf Right(strSpecLow, 17) = "character spacing" Then
+                .Spacing = dblSpec
             ElseIf strSpecLow = "kerning" Then '------------------------ kerning
                 .Kerning = 8
             ElseIf strSpecLow = "no kerning" Then
@@ -502,15 +497,19 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                     .LeftIndent = InchesToPoints(dblSpec)
                 ElseIf Right(strSpecLow, 12) = "right indent" Then
                     .RightIndent = InchesToPoints(dblSpec)
-                ElseIf Right(strSpecLow, 6) = "before" _
+                ElseIf (Right(strSpecLow, 6) = "before" _
                     And strSpecLow <> "page break before" _
-                    And strSpecLow <> "no page break before" Then ' space before
+                    And strSpecLow <> "no page break before") _
+                    Or Right(strSpecLow, 5) = "above" Then '------- space before
                     .SpaceBefore = dblSpec
-                ElseIf Right(strSpecLow, 5) = "after" Then '-------- space after
+                ElseIf Right(strSpecLow, 5) = "after" _
+                    Or Right(strSpecLow, 5) = "below" Then '-------- space after
                     .SpaceAfter = dblSpec
                 ElseIf Right(strSpecLow, 12) = "line spacing" Then 'line spacing
                     If Split(strSpecLow, " ")(1) = "pt" _
-                        Or Split(strSpecLow, " ")(1) = "pt." Then
+                        Or Split(strSpecLow, " ")(1) = "pt." _
+                        Or Split(strSpecLow, " ")(1) = "point" _
+                        Or Split(strSpecLow, " ")(1) = "points" Then
                         .LineSpacingRule = wdLineSpaceExactly
                         .LineSpacing = dblSpec
                     ElseIf Split(strSpecLow, " ")(0) = "exact" _
@@ -529,16 +528,31 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                         .LineSpacing = LinesToPoints(dblSpec)
                     End If
                 ElseIf strSpecLow = "left aligned" _
+                    Or strSpecLow = "left align" _
+                    Or strSpecLow = "aligned left" _
+                    Or strSpecLow = "align left" _
                     Or strSpecLow = "right aligned" _
+                    Or strSpecLow = "right align" _
+                    Or strSpecLow = "aligned right" _
+                    Or strSpecLow = "align right" _
                     Or strSpecLow = "centered" Or strSpecLow = "center" _
+                    Or strSpecLow = "center aligned" _
+                    Or strSpecLow = "aligned center" _
                     Or strSpecLow = "center align" _
+                    Or strSpecLow = "align center" _
                     Or strSpecLow = "justified" Or strSpecLow = "justify" _
-                    Then '---------------------------------- --------- alignment
+                    Then '-------------------------------------------- alignment
                     dblSpec = wdAlignParagraphLeft
-                    If strSpecLow = "right aligned" Then
+                    If strSpecLow = "right aligned" _
+                        Or strSpecLow = "right align" _
+                        Or strSpecLow = "aligned right" _
+                        Or strSpecLow = "align right" Then
                         dblSpec = wdAlignParagraphRight
                     ElseIf strSpecLow = "centered" Or strSpecLow = "center" _
-                        Or strSpecLow = "center align" Then
+                        Or strSpecLow = "center aligned" _
+                        Or strSpecLow = "aligned center" _
+                        Or strSpecLow = "center align" _
+                        Or strSpecLow = "align center" Then
                         dblSpec = wdAlignParagraphCenter
                     ElseIf strSpecLow = "justified" Or strSpecLow = "justify" _
                         Then
@@ -561,22 +575,98 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                     Or strSpecLow = "no widow control" _
                     Or strSpecLow = "no orphan control" Then
                     .WidowControl = False
-                ElseIf strSpecLow = "keep with next" Then '------ keep with next
+                ElseIf Left(strSpecLow, 14) = "keep with next" _
+                    Or Left(strSpecLow, 24) = "keep paragraph with next" _
+                    Or Left(strSpecLow, 30) = "keep the paragraph with the ne" _
+                    Or Left(strSpecLow, 22) = "no page break after" _
+                    Or Left(strSpecLow, 22) = "no page break below" _
+                    Or Left(strSpecLow, 28) = "don't allow page break after" _
+                    Or Left(strSpecLow, 30) = "don't allow a page break after" _
+                    Or Left(strSpecLow, 28) = "don't allow page break below" _
+                    Or Left(strSpecLow, 30) = "don't allow a page break below" _
+                    Or Left(strSpecLow, 28) = "don’t allow page break after" _
+                    Or Left(strSpecLow, 30) = "don’t allow a page break after" _
+                    Or Left(strSpecLow, 28) = "don’t allow page break below" _
+                    Or Left(strSpecLow, 30) = "don’t allow a page break below" _
+                    Or Left(strSpecLow, 29) = "do not allow page break after" _
+                    Or Left(strSpecLow, 30) = "do not allow a page break afte" _
+                    Or Left(strSpecLow, 29) = "do not allow page break below" _
+                    Or Left(strSpecLow, 30) = "do not allow a page break belo" _
+                    Then '--------------------------------------- keep with next
                     .KeepWithNext = True
-                ElseIf strSpecLow = "don't keep with next" _
-                    Or strSpecLow = "do not keep with next" Then
+                ElseIf Left(strSpecLow, 17) = "no keep with next" _
+                    Or Left(strSpecLow, 27) = "no keep paragraph with next" _
+                    Or Left(strSpecLow, 30) = "no keep the paragraph with nex" _
+                    Or Left(strSpecLow, 20) = "don't keep with next" _
+                    Or Left(strSpecLow, 30) = "don't keep paragraph with next" _
+                    Or Left(strSpecLow, 30) = "don't keep the paragraph with " _
+                    Or Left(strSpecLow, 20) = "don’t keep with next" _
+                    Or Left(strSpecLow, 30) = "don’t keep paragraph with next" _
+                    Or Left(strSpecLow, 30) = "don’t keep the paragraph with " _
+                    Or Left(strSpecLow, 21) = "do not keep with next" _
+                    Or Left(strSpecLow, 30) = "do not keep paragraph with nex" _
+                    Or Left(strSpecLow, 30) = "do not keep the paragraph with" _
+                    Or Left(strSpecLow, 22) = "allow page break after" _
+                    Or Left(strSpecLow, 24) = "allow a page break after" _
+                    Or Left(strSpecLow, 22) = "allow page break below" _
+                    Or Left(strSpecLow, 24) = "allow a page break below" _
+                    Then
                     .KeepWithNext = False
-                ElseIf strSpecLow = "keep lines together" _
-                    Or strSpecLow = "keep together" Then '-- keep lines together
+                ElseIf Left(strSpecLow, 13) = "keep together" _
+                    Or Left(strSpecLow, 19) = "keep lines together" _
+                    Or Left(strSpecLow, 29) = "keep paragraph lines together" _
+                    Or Left(strSpecLow, 30) = "keep the paragraph lines toget" _
+                    Or Left(strSpecLow, 30) = "keep the paragraph lines on th" _
+                    Or Left(strSpecLow, 21) = "keep on the same page" _
+                    Or Left(strSpecLow, 27) = "keep lines on the same page" _
+                    Or Left(strSpecLow, 30) = "keep paragraph lines on the sa" _
+                    Then '---------------------------------- keep lines together
                     .KeepTogether = True
-                ElseIf strSpecLow = "don't keep together" _
+                ElseIf strSpecLow = "no keep together" _
+                    Or strSpecLow = "no keep lines together" _
+                    Or strSpecLow = "no keep paragraph lines together" _
+                    Or strSpecLow = "don't keep together" _
                     Or strSpecLow = "don't keep lines together" _
+                    Or strSpecLow = "don't keep paragraph lines together" _
+                    Or strSpecLow = "don’t keep together" _
+                    Or strSpecLow = "don’t keep lines together" _
+                    Or strSpecLow = "don’t keep paragraph lines together" _
                     Or strSpecLow = "do not keep together" _
-                    Or strSpecLow = "do not keep lines together" Then
+                    Or strSpecLow = "do not keep lines together" _
+                    Or strSpecLow = "do not keep paragraph lines together" _
+                    Or Left(strSpecLow, 19) = "allow page break in" _
+                    Or Left(strSpecLow, 21) = "allow a page break in" _
+                    Or Left(strSpecLow, 23) = "allow page break within" _
+                    Or Left(strSpecLow, 25) = "allow a page break within" _
+                    Then
                     .KeepTogether = False
-                ElseIf strSpecLow = "page break before" Then ' page break before
+                ElseIf Left(strSpecLow, 17) = "page break before" _
+                    Or Left(strSpecLow, 25) = "require page break before" _
+                    Or Left(strSpecLow, 27) = "require a page break before" _
+                    Or Left(strSpecLow, 16) = "page break above" _
+                    Or Left(strSpecLow, 24) = "require page break above" _
+                    Or Left(strSpecLow, 26) = "require a page break above" _
+                    Then '------------------------------------ page break before
                     .PageBreakBefore = True
-                ElseIf strSpecLow = "no page break before" Then
+                ElseIf Left(strSpecLow, 20) = "no page break before" _
+                    Or Left(strSpecLow, 28) = "no require page break before" _
+                    Or Left(strSpecLow, 30) = "no require a page break before" _
+                    Or Left(strSpecLow, 30) = "don't require page break befor" _
+                    Or Left(strSpecLow, 30) = "don't require a page break bef" _
+                    Or Left(strSpecLow, 30) = "don’t require page break befor" _
+                    Or Left(strSpecLow, 30) = "don’t require a page break bef" _
+                    Or Left(strSpecLow, 30) = "do not require page break befo" _
+                    Or Left(strSpecLow, 30) = "do not require a page break be" _
+                    Or Left(strSpecLow, 19) = "no page break above" _
+                    Or Left(strSpecLow, 27) = "no require page break above" _
+                    Or Left(strSpecLow, 29) = "no require a page break above" _
+                    Or Left(strSpecLow, 30) = "don't require page break above" _
+                    Or Left(strSpecLow, 30) = "don't require a page break abo" _
+                    Or Left(strSpecLow, 30) = "don’t require page break above" _
+                    Or Left(strSpecLow, 30) = "don’t require a page break abo" _
+                    Or Left(strSpecLow, 30) = "do not require page break abov" _
+                    Or Left(strSpecLow, 30) = "do not require a page break ab" _
+                    Then
                     .PageBreakBefore = False
                 ElseIf Right(strSpecLow, 6) = "border" Then '----------- borders
                     If InStr(strSpecLow, "top") <> 0 Then
@@ -616,7 +706,10 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                         End With
                     End If
                 ElseIf strSpecLow = "no tabs" _
-                    Or strSpecLow = "clear tabs" Then '-------------------- tabs
+                    Or strSpecLow = "clear tabs" _
+                    Or strSpecLow = "clear all tabs" _
+                    Or strSpecLow = "remove tabs" _
+                    Or strSpecLow = "remove all tabs" Then '--------------- tabs
                     .TabStops.ClearAll
                 ElseIf strSpecLow = "center tab" _
                     Or strSpecLow = "centered tab" Then
@@ -635,6 +728,21 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                     .TabStops.Add Position:=dblSpec, _
                         Alignment:=wdAlignTabRight, _
                         Leader:=wdTabLeaderSpaces
+                ElseIf Right(strSpecLow, 3) = "tab" Then
+                    If InStr(strSpecLow, "left") <> 0 Then
+                        dblSpec2 = wdAlignTabLeft
+                    ElseIf InStr(strSpecLow, "center") <> 0 Then
+                        dblSpec2 = wdAlignTabCenter
+                    ElseIf InStr(strSpecLow, "right") <> 0 Then
+                        dblSpec2 = wdAlignTabRight
+                    Else
+                        dblSpec2 = 99
+                    End If
+                    If dblSpec2 <> 99 Then
+                        .TabStops.Add Position:=(dblSpec), _
+                            Alignment:=dblSpec2, _
+                            Leader:=wdTabLeaderSpaces
+                    End If
                 End If
             End With
         End If
@@ -653,8 +761,8 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         strSpecLow = LCase(strSpec)
         dblSpec = Val(strSpec)
         
-        'Saves defaults for true/false and number values
-        arrList(lngLevel, 3) = wdTrailingSpace
+        'Saves values and false instead of "" as the default.
+        arrList(lngLevel, 3) = wdTrailingNone
         arrList(lngLevel, 4) = wdListNumberStyleNone
         arrList(lngLevel, 12) = False 'not bold
         arrList(lngLevel, 13) = False 'not italic
@@ -663,20 +771,22 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         'Saves whether no bullet or number is specified.
         If Right(strSpecLow, 9) = "no number" _
             Or Right(strSpecLow, 9) = "no bullet" _
+            Or Right(strSpecLow, 9) = "no letter" _
             Or Right(strSpecLow, 10) = "no numbers" _
             Or Right(strSpecLow, 10) = "no bullets" _
-            Or strSpecLow = "no numbers and bullets" _
-            Or strSpecLow = "no bullets and numbers" _
-            Or strSpecLow = "no numbers or bullets" _
-            Or strSpecLow = "no bullets or numbers" Then
+            Or Right(strSpecLow, 10) = "no letters" Then
             arrList(lngLevel, 2) = ""
             arrList(lngLevel, 4) = wdListNumberStyleNone
         
         'Saves whether a tab or space follows (spec 3).
         ElseIf Right(strSpecLow, 12) = "after bullet" _
             Or Right(strSpecLow, 14) = "follows bullet" _
+            Or Right(strSpecLow, 16) = "following bullet" _
             Or Right(strSpecLow, 12) = "after number" _
-            Or Right(strSpecLow, 14) = "follows number" Then
+            Or Right(strSpecLow, 14) = "follows number" _
+            Or Right(strSpecLow, 16) = "following letter" _
+            Or Right(strSpecLow, 14) = "follows letter" _
+            Or Right(strSpecLow, 16) = "following letter" Then
             If Split(strSpecLow, " ")(0) = "one" _
                 Or Split(strSpecLow, " ")(0) = "a" _
                 Or Split(strSpecLow, " ")(0) = "only" Then
@@ -694,9 +804,10 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
             End If
             arrList(lngLevel, 3) = dblSpec
         
-        'Saves the bullet or number font name (spec 11).
+        'Saves the font for the bullet or number (spec 11).
         ElseIf Right(strSpecLow, 11) = "bullet font" _
-            Or Right(strSpecLow, 11) = "number font" Then
+            Or Right(strSpecLow, 11) = "number font" _
+            Or Right(strSpecLow, 11) = "letter font" Then
             strSpec = Left(strSpec, Len(strSpec) - 12)
             strSpecLow = LCase(strSpec)
             If strSpecLow = "body" Then
@@ -713,12 +824,16 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         ElseIf strSpecLow = "bold bullet" _
             Or strSpecLow = "bold bullets" _
             Or strSpecLow = "bold number" _
-            Or strSpecLow = "bold numbers" Then
+            Or strSpecLow = "bold numbers" _
+            Or strSpecLow = "bold letter" _
+            Or strSpecLow = "bold letters" Then
             arrList(lngLevel, 12) = True
         
         'Saves the number italic spec (spec 13).
         ElseIf strSpecLow = "italic number" _
-            Or strSpecLow = "italic numbers" Then
+            Or strSpecLow = "italic numbers" _
+            Or strSpecLow = "italic letter" _
+            Or strSpecLow = "italic letters" Then
             arrList(lngLevel, 13) = True
         ElseIf strSpecLow = "bold italic number" _
             Or strSpecLow = "bold italic numbers" _
@@ -728,13 +843,21 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
             Or strSpecLow = "bold and italic numbers" _
             Or strSpecLow = "italic and bold number" _
             Or strSpecLow = "italic and bold numbers" _
-            Then
+            Or strSpecLow = "bold italic letter" _
+            Or strSpecLow = "bold italic letters" _
+            Or strSpecLow = "italic bold letter" _
+            Or strSpecLow = "italic bold letters" _
+            Or strSpecLow = "bold and italic letter" _
+            Or strSpecLow = "bold and italic letters" _
+            Or strSpecLow = "italic and bold letter" _
+            Or strSpecLow = "italic and bold letters" Then
             arrList(lngLevel, 12) = True
             arrList(lngLevel, 13) = True
         
         'Saves the bullet or number color (spec 14).
         ElseIf Right(strSpecLow, 12) = "bullet color" _
-            Or Right(strSpecLow, 12) = "number color" Then
+            Or Right(strSpecLow, 12) = "number color" _
+            Or Right(strSpecLow, 12) = "letter color" Then
             strSpec = Split(strSpec, " ")(0)
             strSpecLow = LCase(strSpec)
             If Left(strSpec, 1) = "#" Then
@@ -752,7 +875,8 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         
         'Saves the bullet or number indent (_, 5).
         ElseIf Right(strSpecLow, 13) = "bullet indent" _
-            Or Right(strSpecLow, 13) = "number indent" Then
+            Or Right(strSpecLow, 13) = "number indent" _
+            Or Right(strSpecLow, 13) = "letter indent" Then
             arrList(lngLevel, 5) = InchesToPoints(dblSpec)
         'Saves the text indent (_, 7).
         ElseIf Right(strSpecLow, 11) = "text indent" Then
@@ -765,14 +889,22 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
             arrList(lngLevel, 4) = wdListNumberStyleBullet
         
         'If numbers, saves the number specs.
-        ElseIf Right(strSpecLow, 6) = "number" Then
+        ElseIf (Right(strSpecLow, 6) = "number" _
+            And Left(strSpecLow, 11) <> "followed by") _
+            Or (Right(strSpecLow, 6) = "letter" _
+            And Left(strSpecLow, 11) <> "followed by") _
+            Then
             'Saves the number format (_, 2).
             strSpec = Split(strSpec, " ")(0)
                 'Removes quotation marks.
-                If Left(strSpec, 1) = """" Then
+                If Left(strSpec, 1) = Chr(34) Then
+                    strSpec = Right(strSpec, Len(strSpec) - 1)
+                ElseIf Left(strSpec, 1) = Chr(147) Then
                     strSpec = Right(strSpec, Len(strSpec) - 1)
                 End If
-                If Right(strSpec, 1) = """" Then
+                If Right(strSpec, 1) = Chr(34) Then
+                    strSpec = Left(strSpec, Len(strSpec) - 1)
+                ElseIf Right(strSpec, 1) = Chr(148) Then
                     strSpec = Left(strSpec, Len(strSpec) - 1)
                 End If
             arrList(lngLevel, 2) = strSpec
@@ -793,6 +925,17 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         
         End If
     Next
+End Sub
+
+Private Sub sctInsertSampleText(arrStyles() As String)
+    Dim lngStyle As Long
+    For lngStyle = LBound(arrStyles) To UBound(arrStyles)
+        With Selection
+            .InsertAfter arrStyles(lngStyle) & " sample" & vbCrLf
+            .Paragraphs(1).Style = arrStyles(lngStyle)
+            .Collapse wdCollapseEnd
+        End With
+     Next lngStyle
 End Sub
 
 '    This program is free software: you can redistribute it and/or modify
