@@ -239,14 +239,9 @@ Sub sctApplySpecs()
             Else
                 strList = Left(strLabel, InStr(strLabelLow, " list") - 1)
             End If
-            'Adds a list template if it doesn't exist.
-            If Not sctStyleExists(strList, ActiveDocument) Then
-                ActiveDocument.ListTemplates.Add True, CStr(strList)
-            End If
             'Counts the styles in the list.
             lngLevels = UBound(arrSpecs)
             If lngLevels > 9 Then lngLevels = 9
-            
             'Saves the style names in an array (_, 1).
             Erase arrList
             ReDim arrList(1 To lngLevels, 1 To sctSpecs)
@@ -290,7 +285,6 @@ Sub sctApplySpecs()
                 Set objListTemplate = _
                     ActiveDocument.ListTemplates.Add(True, CStr(strList))
             End If
-            
             'Applies the list template specifications.
             For lngLevel = 1 To lngLevels
                 With objListTemplate.ListLevels(lngLevel)
@@ -735,6 +729,8 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                         dblSpec2 = wdAlignTabCenter
                     ElseIf InStr(strSpecLow, "right") <> 0 Then
                         dblSpec2 = wdAlignTabRight
+                    ElseIf InStr(strSpecLow, "decimal") <> 0 Then
+                        dblSpec2 = wdAlignTabDecimal
                     Else
                         dblSpec2 = 99
                     End If
@@ -761,13 +757,6 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         strSpecLow = LCase(strSpec)
         dblSpec = Val(strSpec)
         
-        'Saves values and false instead of "" as the default.
-        arrList(lngLevel, 3) = wdTrailingNone
-        arrList(lngLevel, 4) = wdListNumberStyleNone
-        arrList(lngLevel, 12) = False 'not bold
-        arrList(lngLevel, 13) = False 'not italic
-        arrList(lngLevel, 14) = wdColorAutomatic
-    
         'Saves whether no bullet or number is specified.
         If Right(strSpecLow, 9) = "no number" _
             Or Right(strSpecLow, 9) = "no bullet" _
@@ -922,9 +911,9 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
                 dblSpec = wdListNumberStyleLegal
             End If
             arrList(lngLevel, 4) = dblSpec
-        
+
         End If
-    Next
+    Next lngSpec
 End Sub
 
 Private Sub sctInsertSampleText(arrStyles() As String)
