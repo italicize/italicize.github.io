@@ -188,8 +188,9 @@ Sub sctApplySpecs()
         strLabel = arrSpecs(0)
         strLabelLow = LCase(strLabel)
         
-        'If the line begins "Defaults for all defined styles," then...
-        If strLabelLow = "defaults for all defined styles" _
+        'If the line begins "Style defaults," then...
+        If strLabelLow = "style defaults" Or strLabelLow = "style default" _
+            Or strLabelLow = "defaults for all defined styles" _
             Or strLabelLow = "defaults for defined styles" _
             Or strLabelLow = "default for all defined styles" _
             Or strLabelLow = "default for defined styles" Then
@@ -258,11 +259,15 @@ Sub sctApplySpecs()
                 strLabel = arrSpecs(0)
                 strLabelLow = LCase(strLabel)
                 
-                'If a line has defaults for the list, saves them in the array.
+                'If a line has defaults for the list...
                 If Left(strLabel, Len(strList)) = strList _
-                    And Right(strLabelLow, 9) = " defaults" Then
+                    And (Right(strLabelLow, 9) = " defaults" _
+                    Or Right(strLabelLow, 8) = " default") Then
                     For lngLevel = 1 To lngLevels
+                        '...saves the specs in the array...
                         sctDefineList arrList, lngLevel, arrSpecs
+                        '...and applies any style specs.
+                        sctDefineStyle arrList(lngLevel, 1), arrSpecs
                     Next lngLevel
                 
                 'If a line has specs for a style...
@@ -273,6 +278,28 @@ Sub sctApplySpecs()
                         If arrList(lngLevel, 1) = strStyle Then
                             '...saves the specs in the array.
                             sctDefineList arrList, lngLevel, arrSpecs
+                        End If
+                    Next lngLevel
+                End If
+            Next lngListPara
+            
+            'Reapplies any style specs, in case they override the list defaults.
+            For lngListPara = LBound(arrParas) To UBound(arrParas)
+                strPara = arrParas(lngListPara)
+                'Saves the specifications on each line (between commas).
+                arrSpecs = Split(strPara, ", ")
+                'Saves the first specification on each line.
+                strLabel = arrSpecs(0)
+                strLabelLow = LCase(strLabel)
+                
+                'If a line has specs for a style...
+                If Right(strLabelLow, 5) = "style" Then
+                    strStyle = Left(strLabel, InStr(strLabelLow, " style") - 1)
+                    '...and if the style is in the list...
+                    For lngLevel = 1 To lngLevels
+                        If arrList(lngLevel, 1) = strStyle Then
+                            '...applies any style specs again.
+                            sctDefineStyle strStyle, arrSpecs
                         End If
                     Next lngLevel
                 End If
@@ -426,7 +453,8 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
         With ActiveDocument.Styles(strStyle).Font
             If Right(strSpecLow, 4) = "font" _
                 And Right(strSpecLow, 11) <> "bullet font" _
-                And Right(strSpecLow, 11) <> "number font" Then '---------- font
+                And Right(strSpecLow, 11) <> "number font" _
+                And Right(strSpecLow, 11) <> "letter font" Then '---------- font
                 strSpec = Left(strSpec, Len(strSpec) - 5)
                 strSpecLow = LCase(strSpec)
                 If strSpecLow = "body" Then
@@ -457,7 +485,10 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
             ElseIf strSpecLow = "uppercase" Or strSpecLow = "all caps" _
                 Then '----------------------------------------------------- caps
                 .AllCaps = True
-            ElseIf Right(strSpecLow, 5) = "color" Then '------------------ color
+            ElseIf Right(strSpecLow, 5) = "color" _
+                And Right(strSpecLow, 12) <> "bullet color" _
+                And Right(strSpecLow, 12) <> "number color" _
+                And Right(strSpecLow, 12) <> "letter color" Then '-------- color
                 strSpec = Split(strSpec, " ")(0)
                 strSpecLow = LCase(strSpec)
                 If Left(strSpec, 1) = "#" Then
@@ -873,15 +904,16 @@ Private Sub sctDefineList(ByRef arrList() As Variant, ByVal lngLevel As Long, _
         
         'If bullets, saves bullets (_, 2) and style (_, 4).
         ElseIf Right(strSpecLow, 6) = "bullet" _
+            And Left(strSpecLow, 8) <> "based on" _
             And Left(strSpecLow, 11) <> "followed by" Then
             arrList(lngLevel, 2) = Left(strSpec, 1)
             arrList(lngLevel, 4) = wdListNumberStyleBullet
         
         'If numbers, saves the number specs.
         ElseIf (Right(strSpecLow, 6) = "number" _
-            And Left(strSpecLow, 11) <> "followed by") _
-            Or (Right(strSpecLow, 6) = "letter" _
-            And Left(strSpecLow, 11) <> "followed by") _
+            Or Right(strSpecLow, 6) = "letter") _
+            And Left(strSpecLow, 8) <> "based on" _
+            And Left(strSpecLow, 11) <> "followed by" _
             Then
             'Saves the number format (_, 2).
             strSpec = Split(strSpec, " ")(0)
