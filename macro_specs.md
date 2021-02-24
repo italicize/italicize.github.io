@@ -2,7 +2,7 @@
 
 The macro reads specific words. The specifications can appear in any order, except for `_ list` and `Styles gallery` specifications.
 
-#### `_ style, . . .` defines a style.
+#### <span style='background-color: #C0C0C0;'>`_ style, . . .`</span> defines a style.
 
 The available specifications appear in tables below.<br>
 Style definitions don't need to repeat any default specifications, which allows style definitions to be shorter.
