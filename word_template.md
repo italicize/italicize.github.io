@@ -702,7 +702,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                     dblSpec2 = wdBorderRight
                 End If
                 If dblSpec2 <> 0 Then
-                    With .Borders(dblSpec2)
+                    With objFormat.Borders(dblSpec2)
                         .LineStyle = wdLineStyleSingle
                         Select Case dblSpec
                             Case 0
