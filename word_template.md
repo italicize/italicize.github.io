@@ -14,6 +14,10 @@ Margins, 1&quot; left, 1.25&quot; right, 1&quot; top, 1&quot; bottom, 0.5&quot; 
 
 Style defaults, body font, auto color, not italic, not bold, 10 pt size, 1.04 line spacing, 0 pt before, 12 pt after, 0&quot; left indent, 0&quot; right indent, left aligned, based on no style, followed by Body Text, normal character spacing, no kerning.
 
+Normal style, 0 pt after.
+
+Body Text style, 0.5&quot; left indent.
+
 *Headings . . . . . . . . . . . .*
 
 Heading 1 style, &quot;%1&quot; number, 14 pt size, 24 pt before, 18 pt after, 2.25 pt bottom border.
@@ -29,10 +33,6 @@ ListHeadings list, Heading 1, Heading 2, Heading 3, Heading 4.
 ListHeadings list defaults, headings font, bold, 0&quot; number indent, 0.5&quot; text indent, tab after number, keep with next.
 
 *Other styles . . . . . . . . . . . .*
-
-Normal style, 0 pt after.
-
-Body Text style, 0.5&quot; left indent.
 
 Header style, headings font, bold, 11 pt size, no tabs.
 
