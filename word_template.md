@@ -704,25 +704,25 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
                         .LineStyle = wdLineStyleSingle
                         Select Case dblSpec
                             Case 0
-                                objFormat.LineWidth = wdUndefined
+                                .LineWidth = wdUndefined
                             Case Is <= 0.25
-                                objFormat.LineWidth = wdLineWidth025pt
+                                .LineWidth = wdLineWidth025pt
                             Case Is <= 0.5
-                                objFormat.LineWidth = wdLineWidth050pt
+                                .LineWidth = wdLineWidth050pt
                             Case Is <= 0.75
-                                objFormat.LineWidth = wdLineWidth075pt
+                                .LineWidth = wdLineWidth075pt
                             Case Is <= 1
-                                objFormat.LineWidth = wdLineWidth100pt
+                                .LineWidth = wdLineWidth100pt
                             Case Is <= 1.5
-                                objFormat.LineWidth = wdLineWidth150pt
+                                .LineWidth = wdLineWidth150pt
                             Case Is <= 2.25
-                                objFormat.LineWidth = wdLineWidth225pt
+                                .LineWidth = wdLineWidth225pt
                             Case Is <= 3
-                                objFormat.LineWidth = wdLineWidth300pt
+                                .LineWidth = wdLineWidth300pt
                             Case Is <= 4.5
-                                objFormat.LineWidth = wdLineWidth450pt
+                                .LineWidth = wdLineWidth450pt
                             Case Is > 4.5
-                                objFormat.LineWidth = wdLineWidth600pt
+                                .LineWidth = wdLineWidth600pt
                         End Select
                     End With
                 End If
