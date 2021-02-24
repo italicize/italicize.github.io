@@ -91,7 +91,8 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 &bull; To start a document, leave **Word Document (\*.docx)** as the file type. \
 &bull; To start a template, leave **Word Template (\*.dotx)**. \
 &bull; To make further style changes with the macro, select **Word Macro-Enabled Document (\*.docm)**.
-1. Click **Save.**
+1. Click **Save.** \
+Click **Yes** in response to "...Continue saving as a macro-free document?"
 
 ## Macro to read the style descriptions
 
