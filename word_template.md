@@ -412,6 +412,7 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
     
     Dim lngType As Long, lngSpec As Long, strSpec As String, dblSpec As Double
     Dim strSpecLow As String, dblSpec2 As Double
+    Dim objStyle As Object, objFont As Object, objFormat As Object
     
     lngType = ActiveDocument.Styles(strStyle).Type
     
@@ -421,357 +422,353 @@ Private Sub sctDefineStyle(ByVal strStyle As String, arrSpecs() As String)
         strSpecLow = LCase(strSpec)
         dblSpec = Val(strSpec)
         
-        With ActiveDocument.Styles(strStyle)
-            If Left(strSpecLow, 8) = "based on" Then '----------- based on style
-                strSpec = Right(strSpec, Len(strSpec) - 9)
-                strSpecLow = LCase(strSpec)
-                If strSpecLow = "no style" Then
-                    .BaseStyle = ""
-                ElseIf strStyle <> "Normal" _
-                    And strStyle <> "Default Paragraph Font" Then
-                    .BaseStyle = strSpec
-                End If
-            ElseIf Left(strSpecLow, 11) = "followed by" Then '-- following style
-                strSpec = Right(strSpec, Len(strSpec) - 12)
-                strSpecLow = LCase(strSpec)
-                If Right(strSpecLow, 6) = " style" Then
-                    strSpec = Left(strSpec, Len(strSpec) - 6)
-                End If
-                .NextParagraphStyle = strSpec
-            ElseIf Left(strSpecLow, 13) = "space between" _
-                Or Left(strSpecLow, 17) = "add space between" _
-                Then '-------------------------------------------- space between
-                .NoSpaceBetweenParagraphsOfSameStyle = False
-            ElseIf Left(strSpecLow, 16) = "no space between" _
-                Or Left(strSpecLow, 23) = "don't add space between" _
-                Or Left(strSpecLow, 23) = "don’t add space between" _
-                Or Left(strSpecLow, 24) = "do not add space between" Then
-                .NoSpaceBetweenParagraphsOfSameStyle = True
-            End If
-        End With
+        Set objStyle = ActiveDocument.Styles(strStyle)
+        Set objFont = objStyle.Font
+        Set objFormat = objStyle.ParagraphFormat
         
-        With ActiveDocument.Styles(strStyle).Font
-            If Right(strSpecLow, 4) = "font" _
-                And Right(strSpecLow, 11) <> "bullet font" _
-                And Right(strSpecLow, 11) <> "number font" _
-                And Right(strSpecLow, 11) <> "letter font" Then '---------- font
-                strSpec = Left(strSpec, Len(strSpec) - 5)
-                strSpecLow = LCase(strSpec)
-                If strSpecLow = "body" Then
-                    strSpec = "+Body"
-                ElseIf strSpecLow = "headings" _
-                    Or strSpecLow = "heading" Then
-                    strSpec = "+Headings"
-                ElseIf strSpecLow = "default" Then
-                    strSpec = ""
-                End If
-                .Name = strSpec
-            ElseIf Right(strSpecLow, 4) = "size" Then '-------------------- size
-                .Size = Val(strSpec)
-            ElseIf strSpecLow = "bold" Then '------------------------------ bold
-                .Bold = True
-            ElseIf strSpecLow = "not bold" Or strSpecLow = "no bold" Then
-                .Bold = False
-            ElseIf strSpecLow = "italic" Then '-------------------------- italic
-                .Italic = True
-            ElseIf strSpecLow = "not italic" Or strSpecLow = "no italic" Then
-                .Italic = False
-            ElseIf strSpecLow = "bold and italic" _
-                Or strSpecLow = "italic and bold" Then
-                .Bold = True
-                .Italic = True
-            ElseIf strSpecLow = "small caps" Then '------------------ small caps
-                .SmallCaps = True
-            ElseIf strSpecLow = "uppercase" Or strSpecLow = "all caps" _
-                Then '----------------------------------------------------- caps
-                .AllCaps = True
-            ElseIf Right(strSpecLow, 5) = "color" _
-                And Right(strSpecLow, 12) <> "bullet color" _
-                And Right(strSpecLow, 12) <> "number color" _
-                And Right(strSpecLow, 12) <> "letter color" Then '-------- color
-                strSpec = Split(strSpec, " ")(0)
-                strSpecLow = LCase(strSpec)
-                If Left(strSpec, 1) = "#" Then
-                    strSpec = Right(strSpec, Len(strSpec) - 1)
-                    strSpec = Right(strSpec, 2) & Mid(strSpec, 3, 2) _
-                        & Left(strSpec, 2)
-                    dblSpec = Val("&H" & strSpec)
-                    .Color = dblSpec
-                ElseIf strSpecLow = "automatic" Or strSpecLow = "auto" _
-                    Or strSpecLow = "no" Then
-                    dblSpec = wdColorAutomatic
-                    .Color = dblSpec
-                ElseIf strSpecLow = "black" Then
-                    dblSpec = wdColorBlack
-                    .Color = dblSpec
-                End If
-            ElseIf strSpecLow = "normal character spacing" Then ' letter spacing
-                .Spacing = 0
-            ElseIf Right(strSpecLow, 17) = "character spacing" Then
-                .Spacing = dblSpec
-            ElseIf strSpecLow = "kerning" Then '------------------------ kerning
-                .Kerning = 8
-            ElseIf strSpecLow = "no kerning" Then
-                .Kerning = 0
+        If Left(strSpecLow, 8) = "based on" Then '----------- based on style
+            strSpec = Right(strSpec, Len(strSpec) - 9)
+            strSpecLow = LCase(strSpec)
+            If strSpecLow = "no style" Then
+                objStyle.BaseStyle = ""
+            ElseIf strStyle <> "Normal" _
+                And strStyle <> "Default Paragraph Font" Then
+                objStyle.BaseStyle = strSpec
             End If
-        End With
+        ElseIf Left(strSpecLow, 11) = "followed by" Then '-- following style
+            strSpec = Right(strSpec, Len(strSpec) - 12)
+            strSpecLow = LCase(strSpec)
+            If Right(strSpecLow, 6) = " style" Then
+                strSpec = Left(strSpec, Len(strSpec) - 6)
+            End If
+            objStyle.NextParagraphStyle = strSpec
+        ElseIf Left(strSpecLow, 13) = "space between" _
+            Or Left(strSpecLow, 17) = "add space between" _
+            Then '-------------------------------------------- space between
+            objStyle.NoSpaceBetweenParagraphsOfSameStyle = False
+        ElseIf Left(strSpecLow, 16) = "no space between" _
+            Or Left(strSpecLow, 23) = "don't add space between" _
+            Or Left(strSpecLow, 23) = "don’t add space between" _
+            Or Left(strSpecLow, 24) = "do not add space between" Then
+            objStyle.NoSpaceBetweenParagraphsOfSameStyle = True
         
-        If lngType = wdStyleTypeParagraph Then
-            With ActiveDocument.Styles(strStyle).ParagraphFormat
-                If Right(strSpecLow, 11) = "left indent" Then '--------- indents
-                    .LeftIndent = InchesToPoints(dblSpec)
-                ElseIf Right(strSpecLow, 12) = "right indent" Then
-                    .RightIndent = InchesToPoints(dblSpec)
-                ElseIf (Right(strSpecLow, 6) = "before" _
-                    And strSpecLow <> "page break before" _
-                    And strSpecLow <> "no page break before") _
-                    Or Right(strSpecLow, 5) = "above" Then '------- space before
-                    .SpaceBefore = dblSpec
-                ElseIf Right(strSpecLow, 5) = "after" _
-                    Or Right(strSpecLow, 5) = "below" Then '-------- space after
-                    .SpaceAfter = dblSpec
-                ElseIf Right(strSpecLow, 12) = "line spacing" Then 'line spacing
-                    If Split(strSpecLow, " ")(1) = "pt" _
-                        Or Split(strSpecLow, " ")(1) = "pt." _
-                        Or Split(strSpecLow, " ")(1) = "point" _
-                        Or Split(strSpecLow, " ")(1) = "points" Then
-                        .LineSpacingRule = wdLineSpaceExactly
-                        .LineSpacing = dblSpec
-                    ElseIf Split(strSpecLow, " ")(0) = "exact" _
-                        Or Split(strSpecLow, " ")(0) = "exactly" Then
-                        dblSpec = Val(Split(strSpec, " ")(1))
-                        .LineSpacingRule = wdLineSpaceExactly
-                        .LineSpacing = dblSpec
-                    ElseIf Split(strSpecLow, " ")(1) = "least" Then
-                        dblSpec = Val(Split(strSpec, " ")(2))
-                        .LineSpacingRule = wdLineSpaceAtLeast
-                        .LineSpacing = dblSpec
-                    ElseIf Split(strSpecLow, " ")(0) = "single" Then
-                        .LineSpacingRule = wdLineSpaceSingle
-                    Else
-                        .LineSpacingRule = wdLineSpaceMultiple
-                        .LineSpacing = LinesToPoints(dblSpec)
-                    End If
-                ElseIf strSpecLow = "left aligned" _
-                    Or strSpecLow = "left align" _
-                    Or strSpecLow = "aligned left" _
-                    Or strSpecLow = "align left" _
-                    Or strSpecLow = "right aligned" _
+        ElseIf Right(strSpecLow, 4) = "font" _
+            And Right(strSpecLow, 11) <> "bullet font" _
+            And Right(strSpecLow, 11) <> "number font" _
+            And Right(strSpecLow, 11) <> "letter font" Then '---------- font
+            strSpec = Left(strSpec, Len(strSpec) - 5)
+            strSpecLow = LCase(strSpec)
+            If strSpecLow = "body" Then
+                strSpec = "+Body"
+            ElseIf strSpecLow = "headings" _
+                Or strSpecLow = "heading" Then
+                strSpec = "+Headings"
+            ElseIf strSpecLow = "default" Then
+                strSpec = ""
+            End If
+            objFont.Name = strSpec
+        ElseIf Right(strSpecLow, 4) = "size" Then '-------------------- size
+            objFont.Size = Val(strSpec)
+        ElseIf strSpecLow = "bold" Then '------------------------------ bold
+            objFont.Bold = True
+        ElseIf strSpecLow = "not bold" Or strSpecLow = "no bold" Then
+            objFont.Bold = False
+        ElseIf strSpecLow = "italic" Then '-------------------------- italic
+            objFont.Italic = True
+        ElseIf strSpecLow = "not italic" Or strSpecLow = "no italic" Then
+            objFont.Italic = False
+        ElseIf strSpecLow = "bold and italic" _
+            Or strSpecLow = "italic and bold" Then
+            objFont.Bold = True
+            objFont.Italic = True
+        ElseIf strSpecLow = "small caps" Then '------------------ small caps
+            objFont.SmallCaps = True
+        ElseIf strSpecLow = "uppercase" Or strSpecLow = "all caps" _
+            Then '----------------------------------------------------- caps
+            objFont.AllCaps = True
+        ElseIf Right(strSpecLow, 5) = "color" _
+            And Right(strSpecLow, 12) <> "bullet color" _
+            And Right(strSpecLow, 12) <> "number color" _
+            And Right(strSpecLow, 12) <> "letter color" Then '-------- color
+            strSpec = Split(strSpec, " ")(0)
+            strSpecLow = LCase(strSpec)
+            If Left(strSpec, 1) = "#" Then
+                strSpec = Right(strSpec, Len(strSpec) - 1)
+                strSpec = Right(strSpec, 2) & Mid(strSpec, 3, 2) _
+                    & Left(strSpec, 2)
+                dblSpec = Val("&H" & strSpec)
+                objFont.Color = dblSpec
+            ElseIf strSpecLow = "automatic" Or strSpecLow = "auto" _
+                Or strSpecLow = "no" Then
+                dblSpec = wdColorAutomatic
+                objFont.Color = dblSpec
+            ElseIf strSpecLow = "black" Then
+                dblSpec = wdColorBlack
+                objFont.Color = dblSpec
+            End If
+        ElseIf strSpecLow = "normal character spacing" Then ' letter spacing
+            objFont.Spacing = 0
+        ElseIf Right(strSpecLow, 17) = "character spacing" Then
+            objFont.Spacing = dblSpec
+        ElseIf strSpecLow = "kerning" Then '------------------------ kerning
+            objFont.Kerning = 8
+        ElseIf strSpecLow = "no kerning" Then
+            objFont.Kerning = 0
+        
+        ElseIf lngType = wdStyleTypeParagraph Then
+            If Right(strSpecLow, 11) = "left indent" Then '--------- indents
+                objFormat.LeftIndent = InchesToPoints(dblSpec)
+            ElseIf Right(strSpecLow, 12) = "right indent" Then
+                objFormat.RightIndent = InchesToPoints(dblSpec)
+            ElseIf (Right(strSpecLow, 6) = "before" _
+                And strSpecLow <> "page break before" _
+                And strSpecLow <> "no page break before") _
+                Or Right(strSpecLow, 5) = "above" Then '------- space before
+                objFormat.SpaceBefore = dblSpec
+            ElseIf Right(strSpecLow, 5) = "after" _
+                Or Right(strSpecLow, 5) = "below" Then '-------- space after
+                objFormat.SpaceAfter = dblSpec
+            ElseIf Right(strSpecLow, 12) = "line spacing" Then 'line spacing
+                If Split(strSpecLow, " ")(1) = "pt" _
+                    Or Split(strSpecLow, " ")(1) = "pt." _
+                    Or Split(strSpecLow, " ")(1) = "point" _
+                    Or Split(strSpecLow, " ")(1) = "points" Then
+                    objFormat.LineSpacingRule = wdLineSpaceExactly
+                    objFormat.LineSpacing = dblSpec
+                ElseIf Split(strSpecLow, " ")(0) = "exact" _
+                    Or Split(strSpecLow, " ")(0) = "exactly" Then
+                    dblSpec = Val(Split(strSpec, " ")(1))
+                    objFormat.LineSpacingRule = wdLineSpaceExactly
+                    objFormat.LineSpacing = dblSpec
+                ElseIf Split(strSpecLow, " ")(1) = "least" Then
+                    dblSpec = Val(Split(strSpec, " ")(2))
+                    objFormat.LineSpacingRule = wdLineSpaceAtLeast
+                    objFormat.LineSpacing = dblSpec
+                ElseIf Split(strSpecLow, " ")(0) = "single" Then
+                    objFormat.LineSpacingRule = wdLineSpaceSingle
+                Else
+                    objFormat.LineSpacingRule = wdLineSpaceMultiple
+                    objFormat.LineSpacing = LinesToPoints(dblSpec)
+                End If
+            ElseIf strSpecLow = "left aligned" _
+                Or strSpecLow = "left align" _
+                Or strSpecLow = "aligned left" _
+                Or strSpecLow = "align left" _
+                Or strSpecLow = "right aligned" _
+                Or strSpecLow = "right align" _
+                Or strSpecLow = "aligned right" _
+                Or strSpecLow = "align right" _
+                Or strSpecLow = "centered" Or strSpecLow = "center" _
+                Or strSpecLow = "center aligned" _
+                Or strSpecLow = "aligned center" _
+                Or strSpecLow = "center align" _
+                Or strSpecLow = "align center" _
+                Or strSpecLow = "justified" Or strSpecLow = "justify" _
+                Then '-------------------------------------------- alignment
+                dblSpec = wdAlignParagraphLeft
+                If strSpecLow = "right aligned" _
                     Or strSpecLow = "right align" _
                     Or strSpecLow = "aligned right" _
-                    Or strSpecLow = "align right" _
-                    Or strSpecLow = "centered" Or strSpecLow = "center" _
+                    Or strSpecLow = "align right" Then
+                    dblSpec = wdAlignParagraphRight
+                ElseIf strSpecLow = "centered" Or strSpecLow = "center" _
                     Or strSpecLow = "center aligned" _
                     Or strSpecLow = "aligned center" _
                     Or strSpecLow = "center align" _
-                    Or strSpecLow = "align center" _
-                    Or strSpecLow = "justified" Or strSpecLow = "justify" _
-                    Then '-------------------------------------------- alignment
-                    dblSpec = wdAlignParagraphLeft
-                    If strSpecLow = "right aligned" _
-                        Or strSpecLow = "right align" _
-                        Or strSpecLow = "aligned right" _
-                        Or strSpecLow = "align right" Then
-                        dblSpec = wdAlignParagraphRight
-                    ElseIf strSpecLow = "centered" Or strSpecLow = "center" _
-                        Or strSpecLow = "center aligned" _
-                        Or strSpecLow = "aligned center" _
-                        Or strSpecLow = "center align" _
-                        Or strSpecLow = "align center" Then
-                        dblSpec = wdAlignParagraphCenter
-                    ElseIf strSpecLow = "justified" Or strSpecLow = "justify" _
-                        Then
-                        dblSpec = wdAlignParagraphJustify
-                    End If
-                    .Alignment = dblSpec
-                ElseIf strSpecLow = "widow/orphan control" _
-                    Or strSpecLow = "orphan/widow control" _
-                    Or strSpecLow = "widow and orphan control" _
-                    Or strSpecLow = "orphan and widow control" _
-                    Or strSpecLow = "widow control" _
-                    Or strSpecLow = "orphan control" Then '------- widow control
-                    .WidowControl = True
-                ElseIf strSpecLow = "no widow/orphan control" _
-                    Or strSpecLow = "no orphan/widow control" _
-                    Or strSpecLow = "no widow and orphan control" _
-                    Or strSpecLow = "no orphan and widow control" _
-                    Or strSpecLow = "no widow or orphan control" _
-                    Or strSpecLow = "no orphan or widow control" _
-                    Or strSpecLow = "no widow control" _
-                    Or strSpecLow = "no orphan control" Then
-                    .WidowControl = False
-                ElseIf Left(strSpecLow, 14) = "keep with next" _
-                    Or Left(strSpecLow, 24) = "keep paragraph with next" _
-                    Or Left(strSpecLow, 30) = "keep the paragraph with the ne" _
-                    Or Left(strSpecLow, 22) = "no page break after" _
-                    Or Left(strSpecLow, 22) = "no page break below" _
-                    Or Left(strSpecLow, 28) = "don't allow page break after" _
-                    Or Left(strSpecLow, 30) = "don't allow a page break after" _
-                    Or Left(strSpecLow, 28) = "don't allow page break below" _
-                    Or Left(strSpecLow, 30) = "don't allow a page break below" _
-                    Or Left(strSpecLow, 28) = "don’t allow page break after" _
-                    Or Left(strSpecLow, 30) = "don’t allow a page break after" _
-                    Or Left(strSpecLow, 28) = "don’t allow page break below" _
-                    Or Left(strSpecLow, 30) = "don’t allow a page break below" _
-                    Or Left(strSpecLow, 29) = "do not allow page break after" _
-                    Or Left(strSpecLow, 30) = "do not allow a page break afte" _
-                    Or Left(strSpecLow, 29) = "do not allow page break below" _
-                    Or Left(strSpecLow, 30) = "do not allow a page break belo" _
-                    Then '--------------------------------------- keep with next
-                    .KeepWithNext = True
-                ElseIf Left(strSpecLow, 17) = "no keep with next" _
-                    Or Left(strSpecLow, 27) = "no keep paragraph with next" _
-                    Or Left(strSpecLow, 30) = "no keep the paragraph with nex" _
-                    Or Left(strSpecLow, 20) = "don't keep with next" _
-                    Or Left(strSpecLow, 30) = "don't keep paragraph with next" _
-                    Or Left(strSpecLow, 30) = "don't keep the paragraph with " _
-                    Or Left(strSpecLow, 20) = "don’t keep with next" _
-                    Or Left(strSpecLow, 30) = "don’t keep paragraph with next" _
-                    Or Left(strSpecLow, 30) = "don’t keep the paragraph with " _
-                    Or Left(strSpecLow, 21) = "do not keep with next" _
-                    Or Left(strSpecLow, 30) = "do not keep paragraph with nex" _
-                    Or Left(strSpecLow, 30) = "do not keep the paragraph with" _
-                    Or Left(strSpecLow, 22) = "allow page break after" _
-                    Or Left(strSpecLow, 24) = "allow a page break after" _
-                    Or Left(strSpecLow, 22) = "allow page break below" _
-                    Or Left(strSpecLow, 24) = "allow a page break below" _
+                    Or strSpecLow = "align center" Then
+                    dblSpec = wdAlignParagraphCenter
+                ElseIf strSpecLow = "justified" Or strSpecLow = "justify" _
                     Then
-                    .KeepWithNext = False
-                ElseIf Left(strSpecLow, 13) = "keep together" _
-                    Or Left(strSpecLow, 19) = "keep lines together" _
-                    Or Left(strSpecLow, 29) = "keep paragraph lines together" _
-                    Or Left(strSpecLow, 30) = "keep the paragraph lines toget" _
-                    Or Left(strSpecLow, 30) = "keep the paragraph lines on th" _
-                    Or Left(strSpecLow, 21) = "keep on the same page" _
-                    Or Left(strSpecLow, 27) = "keep lines on the same page" _
-                    Or Left(strSpecLow, 30) = "keep paragraph lines on the sa" _
-                    Then '---------------------------------- keep lines together
-                    .KeepTogether = True
-                ElseIf strSpecLow = "no keep together" _
-                    Or strSpecLow = "no keep lines together" _
-                    Or strSpecLow = "no keep paragraph lines together" _
-                    Or strSpecLow = "don't keep together" _
-                    Or strSpecLow = "don't keep lines together" _
-                    Or strSpecLow = "don't keep paragraph lines together" _
-                    Or strSpecLow = "don’t keep together" _
-                    Or strSpecLow = "don’t keep lines together" _
-                    Or strSpecLow = "don’t keep paragraph lines together" _
-                    Or strSpecLow = "do not keep together" _
-                    Or strSpecLow = "do not keep lines together" _
-                    Or strSpecLow = "do not keep paragraph lines together" _
-                    Or Left(strSpecLow, 19) = "allow page break in" _
-                    Or Left(strSpecLow, 21) = "allow a page break in" _
-                    Or Left(strSpecLow, 23) = "allow page break within" _
-                    Or Left(strSpecLow, 25) = "allow a page break within" _
-                    Then
-                    .KeepTogether = False
-                ElseIf Left(strSpecLow, 17) = "page break before" _
-                    Or Left(strSpecLow, 25) = "require page break before" _
-                    Or Left(strSpecLow, 27) = "require a page break before" _
-                    Or Left(strSpecLow, 16) = "page break above" _
-                    Or Left(strSpecLow, 24) = "require page break above" _
-                    Or Left(strSpecLow, 26) = "require a page break above" _
-                    Then '------------------------------------ page break before
-                    .PageBreakBefore = True
-                ElseIf Left(strSpecLow, 20) = "no page break before" _
-                    Or Left(strSpecLow, 28) = "no require page break before" _
-                    Or Left(strSpecLow, 30) = "no require a page break before" _
-                    Or Left(strSpecLow, 30) = "don't require page break befor" _
-                    Or Left(strSpecLow, 30) = "don't require a page break bef" _
-                    Or Left(strSpecLow, 30) = "don’t require page break befor" _
-                    Or Left(strSpecLow, 30) = "don’t require a page break bef" _
-                    Or Left(strSpecLow, 30) = "do not require page break befo" _
-                    Or Left(strSpecLow, 30) = "do not require a page break be" _
-                    Or Left(strSpecLow, 19) = "no page break above" _
-                    Or Left(strSpecLow, 27) = "no require page break above" _
-                    Or Left(strSpecLow, 29) = "no require a page break above" _
-                    Or Left(strSpecLow, 30) = "don't require page break above" _
-                    Or Left(strSpecLow, 30) = "don't require a page break abo" _
-                    Or Left(strSpecLow, 30) = "don’t require page break above" _
-                    Or Left(strSpecLow, 30) = "don’t require a page break abo" _
-                    Or Left(strSpecLow, 30) = "do not require page break abov" _
-                    Or Left(strSpecLow, 30) = "do not require a page break ab" _
-                    Then
-                    .PageBreakBefore = False
-                ElseIf Right(strSpecLow, 6) = "border" Then '----------- borders
-                    If InStr(strSpecLow, "top") <> 0 Then
-                        dblSpec2 = wdBorderTop
-                    ElseIf InStr(strSpecLow, "bottom") <> 0 Then
-                        dblSpec2 = wdBorderBottom
-                    ElseIf InStr(strSpecLow, "left") <> 0 Then
-                        dblSpec2 = wdBorderLeft
-                    ElseIf InStr(strSpecLow, "right") <> 0 Then
-                        dblSpec2 = wdBorderRight
-                    End If
-                    If dblSpec2 <> 0 Then
-                        With .Borders(dblSpec2)
-                            .LineStyle = wdLineStyleSingle
-                            Select Case dblSpec
-                                Case 0
-                                    .LineWidth = wdUndefined
-                                Case Is <= 0.25
-                                    .LineWidth = wdLineWidth025pt
-                                Case Is <= 0.5
-                                    .LineWidth = wdLineWidth050pt
-                                Case Is <= 0.75
-                                    .LineWidth = wdLineWidth075pt
-                                Case Is <= 1
-                                    .LineWidth = wdLineWidth100pt
-                                Case Is <= 1.5
-                                    .LineWidth = wdLineWidth150pt
-                                Case Is <= 2.25
-                                    .LineWidth = wdLineWidth225pt
-                                Case Is <= 3
-                                    .LineWidth = wdLineWidth300pt
-                                Case Is <= 4.5
-                                    .LineWidth = wdLineWidth450pt
-                                Case Is > 4.5
-                                    .LineWidth = wdLineWidth600pt
-                            End Select
-                        End With
-                    End If
-                ElseIf strSpecLow = "no tabs" _
-                    Or strSpecLow = "clear tabs" _
-                    Or strSpecLow = "clear all tabs" _
-                    Or strSpecLow = "remove tabs" _
-                    Or strSpecLow = "remove all tabs" Then '--------------- tabs
-                    .TabStops.ClearAll
-                ElseIf strSpecLow = "center tab" _
-                    Or strSpecLow = "centered tab" Then
-                    dblSpec = ActiveDocument.PageSetup.PageWidth _
-                        - ActiveDocument.PageSetup.LeftMargin _
-                        - ActiveDocument.PageSetup.RightMargin _
-                        - .LeftIndent - .RightIndent
-                    .TabStops.Add Position:=(dblSpec / 2), _
-                        Alignment:=wdAlignTabCenter, _
-                        Leader:=wdTabLeaderSpaces
-                ElseIf strSpecLow = "right tab" Then
-                    dblSpec = ActiveDocument.PageSetup.PageWidth _
-                        - ActiveDocument.PageSetup.LeftMargin _
-                        - ActiveDocument.PageSetup.RightMargin _
-                        - .LeftIndent - .RightIndent
-                    .TabStops.Add Position:=dblSpec, _
-                        Alignment:=wdAlignTabRight, _
-                        Leader:=wdTabLeaderSpaces
-                ElseIf Right(strSpecLow, 3) = "tab" Then
-                    If InStr(strSpecLow, "left") <> 0 Then
-                        dblSpec2 = wdAlignTabLeft
-                    ElseIf InStr(strSpecLow, "center") <> 0 Then
-                        dblSpec2 = wdAlignTabCenter
-                    ElseIf InStr(strSpecLow, "right") <> 0 Then
-                        dblSpec2 = wdAlignTabRight
-                    ElseIf InStr(strSpecLow, "decimal") <> 0 Then
-                        dblSpec2 = wdAlignTabDecimal
-                    Else
-                        dblSpec2 = 99
-                    End If
-                    If dblSpec2 <> 99 Then
-                        .TabStops.Add Position:=(dblSpec), _
-                            Alignment:=dblSpec2, _
-                            Leader:=wdTabLeaderSpaces
-                    End If
+                    dblSpec = wdAlignParagraphJustify
                 End If
-            End With
+                objFormat.Alignment = dblSpec
+            ElseIf strSpecLow = "widow/orphan control" _
+                Or strSpecLow = "orphan/widow control" _
+                Or strSpecLow = "widow and orphan control" _
+                Or strSpecLow = "orphan and widow control" _
+                Or strSpecLow = "widow control" _
+                Or strSpecLow = "orphan control" Then '------- widow control
+                objFormat.WidowControl = True
+            ElseIf strSpecLow = "no widow/orphan control" _
+                Or strSpecLow = "no orphan/widow control" _
+                Or strSpecLow = "no widow and orphan control" _
+                Or strSpecLow = "no orphan and widow control" _
+                Or strSpecLow = "no widow or orphan control" _
+                Or strSpecLow = "no orphan or widow control" _
+                Or strSpecLow = "no widow control" _
+                Or strSpecLow = "no orphan control" Then
+                objFormat.WidowControl = False
+            ElseIf Left(strSpecLow, 14) = "keep with next" _
+                Or Left(strSpecLow, 24) = "keep paragraph with next" _
+                Or Left(strSpecLow, 30) = "keep the paragraph with the ne" _
+                Or Left(strSpecLow, 22) = "no page break after" _
+                Or Left(strSpecLow, 22) = "no page break below" _
+                Or Left(strSpecLow, 28) = "don't allow page break after" _
+                Or Left(strSpecLow, 30) = "don't allow a page break after" _
+                Or Left(strSpecLow, 28) = "don't allow page break below" _
+                Or Left(strSpecLow, 30) = "don't allow a page break below" _
+                Or Left(strSpecLow, 28) = "don’t allow page break after" _
+                Or Left(strSpecLow, 30) = "don’t allow a page break after" _
+                Or Left(strSpecLow, 28) = "don’t allow page break below" _
+                Or Left(strSpecLow, 30) = "don’t allow a page break below" _
+                Or Left(strSpecLow, 29) = "do not allow page break after" _
+                Or Left(strSpecLow, 30) = "do not allow a page break afte" _
+                Or Left(strSpecLow, 29) = "do not allow page break below" _
+                Or Left(strSpecLow, 30) = "do not allow a page break belo" _
+                Then '--------------------------------------- keep with next
+                objFormat.KeepWithNext = True
+            ElseIf Left(strSpecLow, 17) = "no keep with next" _
+                Or Left(strSpecLow, 27) = "no keep paragraph with next" _
+                Or Left(strSpecLow, 30) = "no keep the paragraph with nex" _
+                Or Left(strSpecLow, 20) = "don't keep with next" _
+                Or Left(strSpecLow, 30) = "don't keep paragraph with next" _
+                Or Left(strSpecLow, 30) = "don't keep the paragraph with " _
+                Or Left(strSpecLow, 20) = "don’t keep with next" _
+                Or Left(strSpecLow, 30) = "don’t keep paragraph with next" _
+                Or Left(strSpecLow, 30) = "don’t keep the paragraph with " _
+                Or Left(strSpecLow, 21) = "do not keep with next" _
+                Or Left(strSpecLow, 30) = "do not keep paragraph with nex" _
+                Or Left(strSpecLow, 30) = "do not keep the paragraph with" _
+                Or Left(strSpecLow, 22) = "allow page break after" _
+                Or Left(strSpecLow, 24) = "allow a page break after" _
+                Or Left(strSpecLow, 22) = "allow page break below" _
+                Or Left(strSpecLow, 24) = "allow a page break below" _
+                Then
+                objFormat.KeepWithNext = False
+            ElseIf Left(strSpecLow, 13) = "keep together" _
+                Or Left(strSpecLow, 19) = "keep lines together" _
+                Or Left(strSpecLow, 29) = "keep paragraph lines together" _
+                Or Left(strSpecLow, 30) = "keep the paragraph lines toget" _
+                Or Left(strSpecLow, 30) = "keep the paragraph lines on th" _
+                Or Left(strSpecLow, 21) = "keep on the same page" _
+                Or Left(strSpecLow, 27) = "keep lines on the same page" _
+                Or Left(strSpecLow, 30) = "keep paragraph lines on the sa" _
+                Then '---------------------------------- keep lines together
+                objFormat.KeepTogether = True
+            ElseIf strSpecLow = "no keep together" _
+                Or strSpecLow = "no keep lines together" _
+                Or strSpecLow = "no keep paragraph lines together" _
+                Or strSpecLow = "don't keep together" _
+                Or strSpecLow = "don't keep lines together" _
+                Or strSpecLow = "don't keep paragraph lines together" _
+                Or strSpecLow = "don’t keep together" _
+                Or strSpecLow = "don’t keep lines together" _
+                Or strSpecLow = "don’t keep paragraph lines together" _
+                Or strSpecLow = "do not keep together" _
+                Or strSpecLow = "do not keep lines together" _
+                Or strSpecLow = "do not keep paragraph lines together" _
+                Or Left(strSpecLow, 19) = "allow page break in" _
+                Or Left(strSpecLow, 21) = "allow a page break in" _
+                Or Left(strSpecLow, 23) = "allow page break within" _
+                Or Left(strSpecLow, 25) = "allow a page break within" _
+                Then
+                objFormat.KeepTogether = False
+            ElseIf Left(strSpecLow, 17) = "page break before" _
+                Or Left(strSpecLow, 25) = "require page break before" _
+                Or Left(strSpecLow, 27) = "require a page break before" _
+                Or Left(strSpecLow, 16) = "page break above" _
+                Or Left(strSpecLow, 24) = "require page break above" _
+                Or Left(strSpecLow, 26) = "require a page break above" _
+                Then '------------------------------------ page break before
+                objFormat.PageBreakBefore = True
+            ElseIf Left(strSpecLow, 20) = "no page break before" _
+                Or Left(strSpecLow, 28) = "no require page break before" _
+                Or Left(strSpecLow, 30) = "no require a page break before" _
+                Or Left(strSpecLow, 30) = "don't require page break befor" _
+                Or Left(strSpecLow, 30) = "don't require a page break bef" _
+                Or Left(strSpecLow, 30) = "don’t require page break befor" _
+                Or Left(strSpecLow, 30) = "don’t require a page break bef" _
+                Or Left(strSpecLow, 30) = "do not require page break befo" _
+                Or Left(strSpecLow, 30) = "do not require a page break be" _
+                Or Left(strSpecLow, 19) = "no page break above" _
+                Or Left(strSpecLow, 27) = "no require page break above" _
+                Or Left(strSpecLow, 29) = "no require a page break above" _
+                Or Left(strSpecLow, 30) = "don't require page break above" _
+                Or Left(strSpecLow, 30) = "don't require a page break abo" _
+                Or Left(strSpecLow, 30) = "don’t require page break above" _
+                Or Left(strSpecLow, 30) = "don’t require a page break abo" _
+                Or Left(strSpecLow, 30) = "do not require page break abov" _
+                Or Left(strSpecLow, 30) = "do not require a page break ab" _
+                Then
+                objFormat.PageBreakBefore = False
+            ElseIf Right(strSpecLow, 6) = "border" Then '----------- borders
+                If InStr(strSpecLow, "top") <> 0 Then
+                    dblSpec2 = wdBorderTop
+                ElseIf InStr(strSpecLow, "bottom") <> 0 Then
+                    dblSpec2 = wdBorderBottom
+                ElseIf InStr(strSpecLow, "left") <> 0 Then
+                    dblSpec2 = wdBorderLeft
+                ElseIf InStr(strSpecLow, "right") <> 0 Then
+                    dblSpec2 = wdBorderRight
+                End If
+                If dblSpec2 <> 0 Then
+                    With .Borders(dblSpec2)
+                        .LineStyle = wdLineStyleSingle
+                        Select Case dblSpec
+                            Case 0
+                                objFormat.LineWidth = wdUndefined
+                            Case Is <= 0.25
+                                objFormat.LineWidth = wdLineWidth025pt
+                            Case Is <= 0.5
+                                objFormat.LineWidth = wdLineWidth050pt
+                            Case Is <= 0.75
+                                objFormat.LineWidth = wdLineWidth075pt
+                            Case Is <= 1
+                                objFormat.LineWidth = wdLineWidth100pt
+                            Case Is <= 1.5
+                                objFormat.LineWidth = wdLineWidth150pt
+                            Case Is <= 2.25
+                                objFormat.LineWidth = wdLineWidth225pt
+                            Case Is <= 3
+                                objFormat.LineWidth = wdLineWidth300pt
+                            Case Is <= 4.5
+                                objFormat.LineWidth = wdLineWidth450pt
+                            Case Is > 4.5
+                                objFormat.LineWidth = wdLineWidth600pt
+                        End Select
+                    End With
+                End If
+            ElseIf strSpecLow = "no tabs" _
+                Or strSpecLow = "clear tabs" _
+                Or strSpecLow = "clear all tabs" _
+                Or strSpecLow = "remove tabs" _
+                Or strSpecLow = "remove all tabs" Then '--------------- tabs
+                objFormat.TabStops.ClearAll
+            ElseIf strSpecLow = "center tab" _
+                Or strSpecLow = "centered tab" Then
+                dblSpec = ActiveDocument.PageSetup.PageWidth _
+                    - ActiveDocument.PageSetup.LeftMargin _
+                    - ActiveDocument.PageSetup.RightMargin _
+                    - objFormat.LeftIndent - objFormat.RightIndent
+                objFormat.TabStops.Add Position:=(dblSpec / 2), _
+                    Alignment:=wdAlignTabCenter, _
+                    Leader:=wdTabLeaderSpaces
+            ElseIf strSpecLow = "right tab" Then
+                dblSpec = ActiveDocument.PageSetup.PageWidth _
+                    - ActiveDocument.PageSetup.LeftMargin _
+                    - ActiveDocument.PageSetup.RightMargin _
+                    - objFormat.LeftIndent - objFormat.RightIndent
+                objFormat.TabStops.Add Position:=dblSpec, _
+                    Alignment:=wdAlignTabRight, _
+                    Leader:=wdTabLeaderSpaces
+            ElseIf Right(strSpecLow, 3) = "tab" Then
+                If InStr(strSpecLow, "left") <> 0 Then
+                    dblSpec2 = wdAlignTabLeft
+                ElseIf InStr(strSpecLow, "center") <> 0 Then
+                    dblSpec2 = wdAlignTabCenter
+                ElseIf InStr(strSpecLow, "right") <> 0 Then
+                    dblSpec2 = wdAlignTabRight
+                ElseIf InStr(strSpecLow, "decimal") <> 0 Then
+                    dblSpec2 = wdAlignTabDecimal
+                Else
+                    dblSpec2 = 99
+                End If
+                If dblSpec2 <> 99 Then
+                    objFormat.TabStops.Add Position:=(dblSpec), _
+                        Alignment:=dblSpec2, _
+                        Leader:=wdTabLeaderSpaces
+                End If
+            End If
         End If
     Next lngSpec
 End Sub
