@@ -2,7 +2,9 @@
 
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
-For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description. Use the format shown below, with a style name at the beginning of the line and commas between the specifications. 
+For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description. Use the format shown below, with a style name at the beginning of the line and commas between the specifications.
+
+[Many other specifications](https://www.mechanicaledit.com/macro_specs) can be included, using the same format as the sample.
 
 ## Sample style descriptions
 
@@ -16,15 +18,15 @@ Style defaults, body font, auto color, not italic, not bold, 10 pt size, 1.04 li
 
 Heading 1 style, &quot;%1&quot; number, 14 pt size, 24 pt before, 18 pt after, 2.25 pt bottom border.
 
-Heading 2 style, &quot;%1.%2&quot; number, headings font, bold, black color, 12 pt size, 24 pt before, 12 pt after, 0.5 top border.
+Heading 2 style, &quot;%1.%2&quot; number, 12 pt size, 24 pt before, 12 pt after, 0.5 top border.
 
-Heading 3 style, &quot;%1.%2.%3&quot; number, headings font, bold, black color, 11 pt size, 18 pt before, 6 pt after.
+Heading 3 style, &quot;%1.%2.%3&quot; number, 11 pt size, 18 pt before, 6 pt after.
 
-Heading 4 style, &quot;%1.%2.%3.%4&quot; number, headings font, bold, black color, 10 pt size, 18 pt before, 6 pt after.
+Heading 4 style, &quot;%1.%2.%3.%4&quot; number, 10 pt size, 18 pt before, 6 pt after.
 
 ListHeadings list, Heading 1, Heading 2, Heading 3, Heading 4.
 
-ListHeadings list defaults, headings font, bold, black color, auto number color, 0&quot; number indent, 0.5&quot; text indent, tab after number, keep with next.
+ListHeadings list defaults, headings font, bold, 0&quot; number indent, 0.5&quot; text indent, tab after number, keep with next.
 
 *Other styles . . . . . . . . . . . .*
 
@@ -44,7 +46,7 @@ List Bullet style, &#8226; bullet, 0.5&quot; bullet indent, 0.75&quot; text inde
 
 ListBullets list, List Bullet.
 
-ListBullets list defaults, Body bullet font, tab after bullet, space between.
+ListBullets list defaults, tab after bullet, space between.
 
 ## Apply the style descriptions
 
