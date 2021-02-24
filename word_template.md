@@ -1,11 +1,5 @@
 # Define styles for a new Word&nbsp;template: first example
 
-> Microsoft Word users (and who among us isn't) are invited to try a macro I wrote, hoping to make new templates simple. 
->
-> A new template means many styles to define, which means many clicks and drop-downs. Instead, try a macro that reads a description, such as "Body Text style, 6 pt after, 0.5&quot; left indent." 
->
-> I'm interested to hear whether my shortcut seems short to others or only me. I'm interested to hear what other shortcuts people know, which might be shorter still. I'm interested in every suggestion and comment you have. 
-
 To make a new Word template means defining many styles. The easiest way I've found is to write a description of the styles, then run a macro that defines styles like the description.
 
 For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description. Use the format shown below, with a style name at the beginning of the line and commas between the specifications. 
@@ -16,39 +10,41 @@ For example, suppose you want a template that matches the format of an ANSI stan
 
 Margins, 1&quot; left, 1.25&quot; right, 1&quot; top, 1&quot; bottom, 0.5&quot; header, 0.5&quot; footer, mirror margins.
 
-Defaults for all defined styles, Body font, auto color, not italic, not bold, 10 pt size, 1.04 line spacing, 0 pt before, 0 pt after, 0&quot; left indent, 0&quot; right indent, left aligned, based on no style, followed by Body Text, normal character spacing, no kerning.
+Style defaults, body font, auto color, not italic, not bold, 10 pt size, 1.04 line spacing, 0 pt before, 12 pt after, 0&quot; left indent, 0&quot; right indent, left aligned, based on no style, followed by Body Text, normal character spacing, no kerning.
 
 *Headings . . . . . . . . . . . .*
 
-Heading 1 style, &quot;%1&quot; number, Headings font, bold, black color, 14 pt size, 24 pt before, 18 pt after, 2.25 pt bottom border, keep with next.
+Heading 1 style, &quot;%1&quot; number, 14 pt size, 24 pt before, 18 pt after, 2.25 pt bottom border.
 
-Heading 2 style, &quot;%1.%2&quot; number, Headings font, bold, black color, 12 pt size, 24 pt before, 12 pt after, 0.5 top border, keep with next.
+Heading 2 style, &quot;%1.%2&quot; number, headings font, bold, black color, 12 pt size, 24 pt before, 12 pt after, 0.5 top border.
 
-Heading 3 style, &quot;%1.%2.%3&quot; number, Headings font, bold, black color, 11 pt size, 18 pt before, 6 pt after, keep with next.
+Heading 3 style, &quot;%1.%2.%3&quot; number, headings font, bold, black color, 11 pt size, 18 pt before, 6 pt after.
 
-Heading 4 style, &quot;%1.%2.%3.%4&quot; number, Headings font, bold, black color, 10 pt size, 18 pt before, 6 pt after, keep with next.
+Heading 4 style, &quot;%1.%2.%3.%4&quot; number, headings font, bold, black color, 10 pt size, 18 pt before, 6 pt after.
 
 ListHeadings list, Heading 1, Heading 2, Heading 3, Heading 4.
 
-ListHeadings number defaults, Headings number font, auto number color, 0&quot; number indent, 0.5&quot; text indent, tab after number.
+ListHeadings list defaults, headings font, bold, black color, auto number color, 0&quot; number indent, 0.5&quot; text indent, tab after number, keep with next.
 
 *Other styles . . . . . . . . . . . .*
 
-Body Text style, 12 pt after, 0.5&quot; left indent.
+Normal style, 0 pt after.
 
-Header style, Headings font, bold, 11 pt size, no tabs.
+Body Text style, 0.5&quot; left indent.
 
-Footer style, Headings font, 9 pt size, 0.13&quot; right indent, clear tabs, right tab.
+Header style, headings font, bold, 11 pt size, no tabs.
 
-Caption style, Headings font, bold, 6 pt after, centered.
+Footer style, headings font, 9 pt size, 0.13&quot; right indent, clear tabs, right tab.
+
+Caption style, headings font, bold, 6 pt after, centered.
 
 Table Text style, 8.5 pt size, single line spacing.
 
-List Bullet style, &#8226; bullet, 0.5&quot; bullet indent, 0.75&quot; text indent, 6 pt after, space between, followed by List Bullet.
+List Bullet style, &#8226; bullet, 0.5&quot; bullet indent, 0.75&quot; text indent, 6 pt after, followed by List Bullet.
 
 ListBullets list, List Bullet.
 
-ListBullets bullet defaults, Body bullet font, tab after bullet.
+ListBullets list defaults, Body bullet font, tab after bullet, space between.
 
 ## Apply the style descriptions
 
