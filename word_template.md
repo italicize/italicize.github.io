@@ -4,7 +4,7 @@ To make a new Word template means defining many styles. The easiest way I've fou
 
 For example, suppose you want a template that matches the format of an ANSI standard, "[Scientific and Technical Reports&mdash;Preparation, Presentation, and Preservation](https://www.niso.org/publications/z39.18-2005-r2010)." Measure its margins, compare the font sizes to some samples, and write a description. Use the format shown below, with a style name at the beginning of the line and commas between the specifications.
 
-[Many other specifications](https://www.mechanicaledit.com/macro_specs) can be included, using the same format as the sample.
+Other specifications can be included from the [list of available specifications](https://www.mechanicaledit.com/macro_specs). Check back later for [more sample style descriptions](https://www.mechanicaledit.com/style_descriptions) for other types of documents.
 
 ## Sample style descriptions
 
