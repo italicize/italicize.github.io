@@ -1,8 +1,8 @@
 # Baptism records
 
-Portuguese|English
-'---
-<b>No 8</b><br>
+|Portuguese|English|
+|:---|:---|
+|<b>No 8</b><br>
 <b>Manuel</b><br>
 Aos quinze dias do mez de fevereiro<br>
 do anno de mil novecentos e cinco,<br>
