@@ -1,10 +1,13 @@
 # Baptism records
 
-|Portuguese|English|
-|:---|:---|
-|<b>No 8</b><br>
-<b>Manuel</b><br>
-Aos quinze dias do mez de fevereiro<br>
+Portuguese|English
+---
+<b>No 8</b>|
+<b>Manuel</b>|
+Aos quinze dias do mez de fevereiro|On the fifteenth day of the month of February
+
+
+
 do anno de mil novecentos e cinco,<br>
 n’esta egreja parochial<br>
 de Santa Barbara dos Cedros,<br>
