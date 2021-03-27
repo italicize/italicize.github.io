@@ -2,8 +2,7 @@
 
 |Portuguese|English|
 |:---|:---|
-|<b>No 8</b>|
-|<b>Manuel</b>|
+|<b>No 8</b><br><b>Manuel</b>||
 |Aos quinze dias do mez de fevereiro|On the fifteenth day of the month of February|
 
 
