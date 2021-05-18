@@ -52,10 +52,10 @@ ListBullets list defaults, tab after bullet, space between.
 
 To apply style descriptions, open a new Word document, set the style defaults, paste the style descriptions, paste and run the style macro, and save the Word document.
 
-####  Open a document without styles
+####  Open a Word document without styles
 
 1. Type **winword /a /w** in the Windows taskbar and press **Enter**. \
-<span style='font-size:small; color:darkgray;'>&#128712; The /a switch opens Word without opening your Normal template, which might have custom styles. The /w switch opens a new blank document. For more info see [Command-line switches for Microsoft Office products](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6).</span>
+&#128712; <span style='font-size:small; color:darkgray;'>The /a switch opens Word without opening your Normal template, which might have custom styles. The /w switch opens a new blank document. For more info see [Command-line switches for Microsoft Office products](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6).</span>
 
 #### Set the style defaults
 
@@ -65,21 +65,23 @@ To apply style descriptions, open a new Word document, set the style defaults, p
 1. Click **Manage Styles**, the third button in the Styles pane.
 1. Click the **Set Defaults** tab in the Manage Styles window. 
     1. Select a font size. For these sample styles, select **10**. 
-    1. For the paragraph spacing after, select **0 pt**. 
+    1. For the paragraph spacing after, select **0&nbsp;pt**. 
     1. Select the line spacing. For these sample styles, leave **Multiple** and type **1.04**.
     1. Click **OK**. 
+1. Close the Styles pane.
 
 #### Add the style descriptions and macro
 
 1. Copy the style descriptions (see above).
 1. Right-click the Word document and select the paste option **Keep Text Only**.
 1. Copy the macro (see below).
-1. In the search box in the menu bar, type **visual basic** and press **Enter**.
-    1. In the Visual Basic window, click **Insert** and **Module**.
-    1. Click **Edit** and **Paste**.
-    1. Click **File** and **Close and Return to Microsoft Word**.
+1. In the search box in the menu bar, type **visual basic editor** and press **Enter**.
+    1. In the Microsoft Visual Basic for Applications window, click the **Insert** menu and click **Module**.
+    1. Click the **Edit** menu and click **Paste**.
+    1. Click the **File** menu and click **Close and Return to Microsoft Word**.
 1. In Word, click the **View** menu and click **Macros**.
-1. Select the macro **sctApplySpecs** and click **Run**.
+1. Select the macro **sctReadAndApplyTheStyleDescriptions** and click **Run**.
+1. Click **Yes** or **No** to the message "Insert sample text?"
 
 #### Save the file
 
