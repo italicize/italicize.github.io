@@ -28,41 +28,26 @@ The first step is often to adjust an external monitor. Click <img src='fab/windo
 
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings > Update & Security > Windows Update**.
 1. Repeat these steps until you're up to date:
-   1. Click **Check for updates**.
-   1. When asked to restart, click **Restart**.
+   1. Click **Download** or **Check for updates**.
+   1. When asked to restart, click **Restart now**.
 1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Settings.
 1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start > Microsoft Store >** <img src='fas/ellipsis-h.svg' alt='...' width='12'>&nbsp;**See more > Downloads and updates > Get updates**.
 1. After updates finish, <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Store.
 1. To check your Windows activation, visit <https://support.microsoft.com/en-us/help/12440/windows-10-activate>·
 
-## Disable Flash and select other settings in Microsoft Edge
-
-1. Click <img src='fab/windows.svg' alt='Windows' height='12'>&nbsp;**Start > Microsoft Edge**.
-1. Click <img src='fas/ellipsis-h.svg' alt='...' width='12'>&nbsp;**Settings and more >** <img src='fas/cog.svg' alt='Settings' height='12'>&nbsp;**Settings >** <img src='fas/sliders-h.svg' alt='Advanced' height='12'>&nbsp;**Advanced**. 
-1. Click "Use Adobe Flash Player" **Off** (a security recommendation).
-1. Click <img src='fas/cog.svg' alt='General' height='12'>&nbsp;**General**.
-   1. For "Open Microsoft Edge with," select **A specific page or pages**.
-   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
-   1. For "Open new tabs with," select **A blank page**.
-   1. For "Set your home page," select **A specific page**.
-   1. Click and type a favorite URL on the next line, such as `https://pbs.org`. Click <img src='far/save.svg' alt='Save' height='12'>&nbsp;**Save**.
-1. Click <img src='fas/key.svg' alt='Key' height='12'>&nbsp;**Passwords & autofill**.
-   1. Click "Save form data" **Off**.
-1. <img src='fas/times.svg' alt='X' height='12'>&nbsp;**Close** Microsoft Edge.
-
 ## Download and install apps
 
 Install the apps you use frequently. My list of apps is only an example. To start, I install Chrome, Dropbox, Visual Studio Code, and a few others. 
 
-- Driver for a mouse, such as a Logitech mouse, <https://support.logi.com/hc/en-us/articles/360025297913-Unifying-Software>
-- Driver for a printer, such as a Brother printer, <https://www.brother-usa.com/support/dcpl2540dw>
-- Company fonts or personal favorites, such as Charter, <https://practicaltypography.com/charter.html>
 - Chrome, <https://www.google.com/chrome/>, or Firefox, <https://www.mozilla.org/en-US/firefox/new/>, and sign in for your bookmarks
 - Dropbox, <https://www.dropbox.com/install>, and sign in for your files
 - Visual Studio Code, <https://visualstudio.microsoft.com/downloads/>
 - VLC, <https://www.videolan.org/vlc/>
 - GIMP, <https://www.gimp.org/>, and Inkscape, <https://inkscape.org/>
 - GitHub Desktop, <https://desktop.github.com/>
+- Company fonts or personal favorites, such as Charter, <https://practicaltypography.com/charter.html>
+- Driver for a mouse, such as a Logitech mouse, <https://support.logi.com/hc/en-us/articles/360025297913-Unifying-Software>
+- Driver for a printer, such as a Brother printer, <https://www.brother-usa.com/support/dcpl2540dw>
 
 ## Customize shortcuts to apps
 
@@ -127,7 +112,7 @@ Arrange shortcuts to apps the way you're used to. My shortcuts are only an examp
 
 ### Legal
 
-Copyright (C) 2020 Jay Martin. 
+Copyright (C) 2021 Jay Martin. 
 
 **Permission is granted** to copy, distribute and/or modify this document
 under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
