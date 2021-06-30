@@ -4,8 +4,10 @@
    The Styles pane opens.
 1. Click New Style (the first button in the lower-left corner of the Styles pane).
 1. For the name, type Basic Table.
-1. For the style type, select Table. \
-   For "Apply formatting to," leave Whole table.
+1. For the style type, select Table.
+
+#### Style for the whole table
+1. For "Apply formatting to," leave Whole table.
 1. Click Format > Table Properties.
    1. Click the Table tab.
    1. Click Options.
@@ -33,6 +35,8 @@
    1. (Optional) Click the Line and Page Breaks tab. \
       Click to clear the check box for Widow/Orphan control.
    1. Click OK.
+
+#### Style for the header row
 1. For "Apply formatting to," select Header row.
 1. Click Format > Paragraph.
    1. Click the Line and Page Breaks tab.
@@ -42,6 +46,8 @@
    1. Click the Font tab.
    1. For the font, select +Headings.
    1. For the font style, if the same font is used for the body and headings, such as Calisto, then select Bold.
+   1. (Optional) For the size, select 9. \
+      (The font in the column headings, if bold, can be one point smaller than the table cells.)
    1. Click OK.
 1. Click Format > Borders and Shading.
    1. Click the top border button.
@@ -60,6 +66,8 @@
    1. Click OK.
 1. Click OK.
 1. Click the Insert menu.
+
+#### Setting as the default
 1. Click Table and select a 3x3 table or larger.
 1. On the Design tab in the Table Styles Gallery, right-click the Basic Table style (the first option) and select Set as Default.
 1. Click OK to the message "Do you want to the default table style to Basic Table for: This document only?"
@@ -69,10 +77,6 @@
 Click File > Save.
 Click File > Close.
 
-
-On the fly:
-(Optional) For the size, select 9.
-(The font in the column headings, if bold, can be one point smaller than the table cells.)
 
 ..leave whole table.
 Click New Style (a button in the lower-left corner of the Styles pane).
