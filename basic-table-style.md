@@ -11,7 +11,7 @@
 1. Click Format > Table Properties.
    1. Click the Table tab.
    1. Click Options.
-   1. For the default cell margins, for Top type 0.02&quot;, for Bottom type 0.02&quot;, for Left type 0.02&quot;, and for Right type 0.04&quot;. \
+   1. For the default cell margins, for Top type 0.00&quot;, for Bottom type 0.01&quot;, for Left type 0.04&quot;, and for Right type 0.04&quot;. \
       (These cell margins are aesthetic preferences.)
    1. Click OK.
    1. Choose an alignment, either centered or indented: \
@@ -59,10 +59,6 @@
    1. Click twice to clear the check box for "Allow row to break across pages."
    1. Click the Cell tab.
    1. For the vertical alignment, click Bottom.
-   1. (Optional) Click Options.
-   1. Click to clear the check box for "Same as the whole table."
-   1. For Top type 0.02&quot;, for Bottom type 0.02&quot;, for Left type 0.02&quot;, and for Right type 0.04&quot;.
-   1. Click OK.
    1. Click OK.
 1. Click OK.
 1. Click the Insert menu.
