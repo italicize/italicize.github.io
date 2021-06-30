@@ -55,15 +55,15 @@
    1. Click OK.
 1. Click Format > Table Properties.
    1. Click the Row tab.
-   1. Click the check box for "Repeat as header row at the top of each page."
    1. Click twice to clear the check box for "Allow row to break across pages."
+   1. Click the check box for "Repeat as header row at the top of each page."
    1. Click the Cell tab.
    1. For the vertical alignment, click Bottom.
    1. Click OK.
 1. Click OK.
-1. Click the Insert menu.
 
 #### Set as the default
+1. Click the Insert menu.
 1. Click Table and select a 3x3 table or larger.
 1. On the Design tab in the Table Styles Gallery, right-click the Basic Table style (the first option) and select Set as Default.
 1. Click OK to the message "Do you want to the default table style to Basic Table for: This document only?"
