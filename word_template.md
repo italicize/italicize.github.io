@@ -88,7 +88,7 @@ Click **Yes** in response to "...Continue saving as a macro-free document?"
 
 ### Legal
 
-Copyright (C) 2020 Jay Martin. 
+Copyright (C) 2021 Jay Martin. 
 
 **Permission is granted** to copy, distribute and/or modify this document
 under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
