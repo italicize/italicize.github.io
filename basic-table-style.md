@@ -70,6 +70,11 @@
 1. Click the Layout menu (to the right of the Table Design menu).
 1. Click Delete > Delete Table.
 
+#### Apply the default format to a table
+1. Click and drag to select all rows of a table.
+1. Click Clear All Formatting (on the Home menu).
+1. Click Basic Table (in the Table Styles gallery on the Design menu).
+
 #### Make an alternate table
 1. Click New Style (the first button in the lower-left corner of the Styles pane).
 1. For the name, type Basic With Bands.
