@@ -2,7 +2,7 @@
 
 1. If closed, open the Styles pane: On the Home menu, click the lower-right corner of the Styles Group. \
    The Styles pane opens.
-1. Click New Style (a button in the lower-left corner of the Styles pane).
+1. Click New Style (the first button in the lower-left corner of the Styles pane).
 1. For the name, type Basic Table.
 1. For the style type, select Table. \
    For "Apply formatting to," leave Whole table.
@@ -63,7 +63,7 @@
 1. Click Table and select a 3x3 table or larger.
 1. On the Design tab in the Table Styles Gallery, right-click the Basic Table style (the first option) and select Set as Default.
 1. Click OK to the message "Do you want to the default table style to Basic Table for: This document only?"
-1. Click the Layout menu (to the right of the Table Design menu). 
+1. Click the Layout menu (to the right of the Table Design menu).
 1. Click Delete > Delete Table.
 
 Click File > Save.
