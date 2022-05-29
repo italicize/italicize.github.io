@@ -68,7 +68,7 @@ To apply style descriptions, open a new Word document, set the style defaults, p
     1. Click the **File** menu and click **Close and Return to Microsoft Word**. \
        (The macros can be saved in Normal or another template, but we'll skip that task in this short demo.)
 1. In Word, click the **View** menu and click **Macros**.
-1. Select the macro **sctApplyTheStyleDescriptions** and click **Run**.
+1. Select the macro **vbaApplyStyleDescriptions** and click **Run**.
 1. Click **Yes** or **No** to the message "Insert sample text?"
 
 #### Save the file
