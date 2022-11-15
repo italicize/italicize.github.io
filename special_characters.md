@@ -23,6 +23,24 @@ For more html entities, see <https://dev.w3.org/html5/html-author/charref> and <
 For more spaces, see <http://jkorpela.fi/chars/spaces.html> and <https://en.wikipedia.org/wiki/Whitespace_character>
 and <https://unicode-search.net/unicode-namesearch.pl?term=SPACE>.
 
+Spaces that can end a line in Word
+- 0020 space
+- 2002 en space
+- 2003 em space
+- 2005 quarter em space
+- 200B zero width space
+
+Spaces that are non-line-breaking in Word
+- 00A0 no-break space
+- 2004 third em space
+- 2006 sixth em space
+- 2007 figure space
+- 2008 punctuation space
+- 2009 thin space
+- 200A hair space
+- 202F narrow no-break space
+- 205F medium math space
+
 |Bullets|||||||
 |:---|:---|:---|:---|:---|:---|:---|
 |round|triangle|circle|small|small square|circled|circled, filled|
