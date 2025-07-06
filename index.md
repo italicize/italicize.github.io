@@ -22,7 +22,7 @@ If a recipe included every step, it might look like these [highly detailed instr
 
 ### Legal
 
-Copyright (C) 2020-2022 Jay Martin. 
+Copyright (C) 2020-2025 Jay Martin. 
 
 **Permission is granted** to copy, distribute and/or modify this document
 under the terms of the [GNU Free Documentation License, Version 1.3](https://www.gnu.org/licenses/fdl-1.3.txt)
