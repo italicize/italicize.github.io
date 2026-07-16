@@ -2,13 +2,13 @@
 
 Information to help technical writers and editors.
 
-## [Word templates made easy](/word_template)
-
-A new Word template is easier to start with [a macro that reads style descriptions](/word_template).
-
 ## [Checklist for a quick proofread](/proofread_checklist)
 
 Many problems are fixed (or confirmed absent) by a [quick proofread of a Word document](/proofread_checklist).
+
+## [Word templates made easy](/word_template)
+
+A new Word template is easier to start with [a macro that reads style descriptions](/word_template).
 
 ## [Next steps after a fresh installation of Windows](/windows_setup)
 
